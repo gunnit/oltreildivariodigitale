@@ -1,0 +1,115 @@
+{
+    "name": "Oltre il Divario Digitale - Guida IA per PMI Italiane",
+    "short_name": "OIDD",
+    "description": "La guida completa per le PMI italiane che vogliono abbracciare l'Intelligenza Artificiale e trasformare il loro business senza perdere l'anima artigianale.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#003366",
+    "theme_color": "#003366",
+    "orientation": "portrait-primary",
+    "categories": ["business", "education", "productivity"],
+    "lang": "it",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "assets/images/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "assets/images/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "assets/images/icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "assets/images/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "assets/images/icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "assets/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "assets/images/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "assets/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Calcolatore ROI",
+            "short_name": "ROI Calc",
+            "description": "Calcola il ROI dell'IA per la tua azienda",
+            "url": "/pages/tools/roi-calculator.html",
+            "icons": [
+                {
+                    "src": "assets/images/shortcut-roi.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Test Maturità",
+            "short_name": "Test",
+            "description": "Valuta la maturità digitale della tua azienda",
+            "url": "/pages/tools/maturity-assessment.html",
+            "icons": [
+                {
+                    "src": "assets/images/shortcut-test.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Casi Studio",
+            "short_name": "Casi",
+            "description": "Esempi reali di successo con l'IA",
+            "url": "/pages/case-studies.html",
+            "icons": [
+                {
+                    "src": "assets/images/shortcut-cases.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/images/screenshot-wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "assets/images/screenshot-narrow.png",
+            "sizes": "750x1334",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ]
+}
