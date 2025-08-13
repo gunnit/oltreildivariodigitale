@@ -2,7 +2,7 @@
 <html lang="it" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Capitolo 1: Il Grande Paradosso Italiano. Analisi del divario digitale nelle PMI italiane e le opportunità offerte dall'Intelligenza Artificiale.">
     <meta name="keywords" content="capitolo 1, paradosso italiano, divario digitale, PMI, intelligenza artificiale">
     <meta name="author" content="Gregor Maric">
@@ -47,6 +47,10 @@
     <title>Capitolo 1: Il Grande Paradosso Italiano - Oltre il Divario Digitale</title>
 </head>
 <body class="page-chapter">
+    <!-- Progress indicator -->
+    <div class="reading-progress" aria-hidden="true">
+        <div class="reading-progress-bar"></div>
+    </div>
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="sr-only sr-only-focusable">Salta al contenuto principale</a>
     
@@ -98,29 +102,86 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <article class="container py-16">
+            <!-- Chapter Navigation -->
+            <nav class="chapter-nav mb-8" aria-label="Navigazione capitoli">
+                <a href="../../index.html" class="nav-link back">
+                    <span aria-hidden="true">←</span> Torna all'indice
+                </a>
+                <div class="chapter-indicators">
+                    <span class="current-chapter">Capitolo 1 di 7</span>
+                </div>
+                <a href="capitolo-2.html" class="nav-link next">
+                    Prossimo capitolo <span aria-hidden="true">→</span>
+                </a>
+            </nav>
+            
             <header class="text-center mb-12">
                 <h1 class="text-4xl font-playfair font-bold mb-4">Capitolo 1: Il Grande Paradosso Italiano</h1>
                 <p class="text-xl text-gray-600">Quando l'Intelligenza Artificiale Divide più del Nord e del Sud</p>
+                <div class="reading-time" role="note">
+                    <span aria-hidden="true">📖</span> Tempo di lettura: ~8 minuti
+                </div>
             </header>
 
             <div class="prose max-w-prose mx-auto">
+                <!-- Table of Contents -->
+                <aside class="toc-container" role="complementary" aria-labelledby="toc-title">
+                    <h2 id="toc-title" class="toc-title">Contenuti del capitolo</h2>
+                    <nav class="toc" aria-label="Indice del capitolo">
+                        <ol>
+                            <li><a href="#due-destini">Due Destini, Una Strada</a></li>
+                            <li><a href="#azienda-a">L'Azienda Manifatturiera A</a></li>
+                            <li><a href="#impresa-b">L'Impresa Tecnologica B</a></li>
+                            <li><a href="#paradosso">Il Grande Paradosso</a></li>
+                        </ol>
+                    </nav>
+                </aside>
                 
-                <h2 class="font-playfair">Due Destini, Una Strada, Il Grande Paradosso Italiano</h2>
+                <h2 id="due-destini" class="font-playfair">Due Destini, Una Strada, Il Grande Paradosso Italiano</h2>
                 <p class="text-lg italic text-gray-700">Nord Italia, zona industriale, fine 2024</p>
                 <p>In questi cinquecento metri di asfalto grigio che dividono due capannoni industriali si nasconde la metafora più cruda dell'Italia contemporanea. Non è una distanza geografica—è un abisso temporale che separa due modi di concepire il futuro dell'impresa italiana.</p>
+                <h3 id="azienda-a" class="sr-only">L'Azienda Manifatturiera A</h3>
                 <p>Da un lato, l'<strong>Azienda Manifatturiera A</strong>: una cinquantina di dipendenti, nata nel 1987 dalle mani e dalla visione di Marco, imprenditore della generazione che ha costruito il miracolo economico italiano mattone dopo mattone, ordine dopo ordine. Specializzata negli stampi per l'industria automobilistica, rappresenta l'eccellenza manifatturiera che ha reso celebre il "Made in Italy" nel mondo. Fatturato 2024: 3,2 milioni di euro, con un trend che racconta una storia dolorosa: in calo di oltre il dieci per cento rispetto all'anno precedente.</p>
                 <p>Marco, 58 anni, porta nelle mani callose e negli occhi stanchi di chi non ha mai conosciuto ferie la saggezza di tre decenni trascorsi a plasmare il metallo e a interpretare i sussurri delle macchine. "Sento quando la pressa numero tre inizia a vibrare diversamente," ripete con l'orgoglio di chi ha fatto dell'intuizione la propria arma competitiva. "Trent'anni di esperienza non li sostituisce nessun computer. Anche se, lo ammetto, ogni tanto mi sbaglio anch'io. L'altro mese non ho sentito che il motore della numero due stava per andare, e ci è costato due giorni di fermo."</p>
+                <h3 id="impresa-b" class="sr-only">L'Impresa Tecnologica B</h3>
                 <p>Dall'altro lato della strada, l'<strong>Impresa Tecnologica B</strong>: poco più di cinquanta dipendenti, fondata nel 1983 dalla famiglia di Elena; dal 2021 Elena guida la trasformazione, appartenente a quella generazione di imprenditori italiani che ha dovuto imparare a navigare le acque tempestose della globalizzazione senza perdere l'anima artigianale che ci contraddistingue. Stesso settore, stesso mercato, stessa passione per l'eccellenza. Ma un approccio radicalmente diverso al futuro. Fatturato 2024: 8,7 milioni di euro, con una traiettoria che racconta un'altra storia: cresciuto di oltre un terzo rispetto all'anno precedente.</p>
                 <p>Elena, 43 anni, condivide con Marco la stessa determinazione imprenditoriale, la stessa ossessione per la qualità, lo stesso amore per il lavoro ben fatto che caratterizza il DNA dell'imprenditoria italiana. Ma ha abbracciato una filosofia diversa: "Le macchine non mentono mai. Sono gli esseri umani che interpretano male i segnali che ci mandano."</p>
                 <p><strong>La distanza tra questi due mondi non si misura in metri. Si misura in mentalità, in scelte strategiche, in coraggio di abbracciare il cambiamento pur rimanendo fedeli ai propri valori.</strong></p>
                 <p>Non è una questione di qualità del prodotto—entrambe le aziende producono stampi di eccellenza assoluta, degni della migliore tradizione manifatturiera italiana. Non è una questione di esperienza imprenditoriale—Marco vanta quindici anni in più di Elena nel settore. Non è nemmeno una questione di territorio—condividono fornitori, banche, servizi, perfino la stessa Camera di Commercio.</p>
                 <p><strong>La differenza sostanziale è che l'Impresa Tecnologica B ha abbracciato l'intelligenza artificiale nel 2022, mentre l'Azienda Manifatturiera A ancora stampa le email più importanti per archiviarle in faldoni di cartone verde.</strong></p>
                 <p>Ma attenzione: questa non è la solita parabola che contrappone vincitori e perdenti, innovatori e nostalgici, futuro e passato. È qualcosa di più profondo e di più drammaticamente italiano. È la radiografia di un Paese che sta vivendo la più grande trasformazione economica dalla rivoluzione industriale, spesso senza rendersene conto, trascinato tra la fedeltà alle proprie radici e l'urgenza di non perdere il treno della modernità.</p>
+                <h3 id="paradosso" class="sr-only">Il Grande Paradosso</h3>
                 <p>È la storia del <strong>Grande Paradosso Italiano</strong>: un Paese che ha inventato il Rinascimento ma fatica ad abbracciare la rivoluzione digitale. Una nazione che eccelle nell'artigianato di precisione ma esita di fronte agli algoritmi di predizione. Un sistema economico che ha conquistato il mondo con la qualità ma rischia di perderlo per mancanza di velocità.</p>
                 <p>In questi cinquecento metri di strada industriale bergamasca si consuma ogni giorno il dramma silenzioso di migliaia di imprese italiane: la scelta tra rimanere fedeli a un passato glorioso o costruire un futuro incerto ma necessario.</p>
                 <p><strong>È la scelta che definirà il destino dell'Italia dei prossimi vent'anni.</strong></p>
 
             </div>
+            
+            <!-- Chapter Actions -->
+            <div class="chapter-actions text-center mt-12">
+                <div class="action-buttons">
+                    <a href="../tools/maturity-assessment.html" class="btn btn-primary">
+                        <span>Valuta la Tua Azienda</span>
+                        <span class="btn-desc">Test di maturità digitale</span>
+                    </a>
+                    <a href="capitolo-2.html" class="btn btn-secondary">
+                        <span>Continua la Lettura</span>
+                        <span class="btn-desc">Capitolo 2: Fondamenti dell'IA</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Chapter Navigation Bottom -->
+            <nav class="chapter-nav-bottom mt-16" aria-label="Navigazione capitoli">
+                <a href="../../index.html" class="nav-card prev" rel="prev">
+                    <span class="nav-direction">← Precedente</span>
+                    <span class="nav-title">Indice dei Capitoli</span>
+                </a>
+                <a href="capitolo-2.html" class="nav-card next" rel="next">
+                    <span class="nav-direction">Successivo →</span>
+                    <span class="nav-title">Cap. 2: Fondamenti dell'IA</span>
+                </a>
+            </nav>
         </article>
     </main>
 
@@ -183,6 +244,39 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../../assets/js/main.min.js"></script>
+    <script src="../../assets/js/main.min.js" defer></script>
+    
+    <!-- Reading progress and chapter enhancements -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reading progress indicator
+            const progressBar = document.querySelector('.reading-progress-bar');
+            const article = document.querySelector('article');
+            
+            if (progressBar && article) {
+                function updateProgress() {
+                    const rect = article.getBoundingClientRect();
+                    const progress = Math.max(0, Math.min(100, 
+                        (window.innerHeight - rect.top) / (rect.height + window.innerHeight) * 100
+                    ));
+                    progressBar.style.width = progress + '%';
+                }
+                
+                window.addEventListener('scroll', updateProgress);
+                updateProgress();
+            }
+            
+            // Smooth scrolling for TOC links
+            document.querySelectorAll('.toc a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="it" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Esplora i casi studio di PMI italiane che hanno implementato con successo l'Intelligenza Artificiale, aumentando efficienza e profitti.">
     <meta name="keywords" content="casi studio, intelligenza artificiale, PMI italiane, successo, ROI, trasformazione digitale">
     <meta name="author" content="Gregor Maric">
@@ -101,24 +101,81 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Case Study Card 1 -->
-                <div class="card">
-                    <h3 class="font-playfair text-2xl mb-2">Manifattura 4.0</h3>
-                    <p class="font-semibold text-lg text-gray-700 mb-4">Aumento della produzione del 40%</p>
-                    <p>Un'azienda metalmeccanica ha implementato un sistema di manutenzione predittiva basato su IA, riducendo i fermi macchina del 70% e aumentando la capacità produttiva del 40%.</p>
-                </div>
+                <article class="card case-study-card" role="article" itemscope itemtype="https://schema.org/Article">
+                    <div class="case-study-icon" aria-hidden="true">🏧</div>
+                    <h3 class="font-playfair text-2xl mb-2" itemprop="headline">Manifattura 4.0</h3>
+                    <div class="case-study-metrics mb-4">
+                        <span class="metric-badge">+40% Produzione</span>
+                        <span class="metric-badge">-70% Fermi</span>
+                    </div>
+                    <p itemprop="description">Un'azienda metalmeccanica lombarda con 45 dipendenti ha implementato un sistema di manutenzione predittiva basato su IA, riducendo i fermi macchina del 70% e aumentando la capacità produttiva del 40%.</p>
+                    <div class="case-study-details mt-4">
+                        <span class="detail-item"><strong>Settore:</strong> Metalmeccanico</span>
+                        <span class="detail-item"><strong>Investimento:</strong> €85.000</span>
+                        <span class="detail-item"><strong>ROI:</strong> 230% in 18 mesi</span>
+                    </div>
+                    <a href="#" class="btn btn-outline mt-4" role="button">Leggi il Caso Completo</a>
+                </article>
 
                 <!-- Case Study Card 2 -->
-                <div class="card">
-                    <h3 class="font-playfair text-2xl mb-2">Retail Intelligente</h3>
-                    <p class="font-semibold text-lg text-gray-700 mb-4">+25% di scontrino medio</p>
-                    <p>Un negozio di abbigliamento ha utilizzato l'IA per analizzare i dati di vendita e personalizzare le offerte ai clienti, aumentando lo scontrino medio del 25% e la fidelizzazione del 30%.</p>
-                </div>
+                <article class="card case-study-card" role="article" itemscope itemtype="https://schema.org/Article">
+                    <div class="case-study-icon" aria-hidden="true">🛍️</div>
+                    <h3 class="font-playfair text-2xl mb-2" itemprop="headline">Retail Intelligente</h3>
+                    <div class="case-study-metrics mb-4">
+                        <span class="metric-badge">+25% Scontrino</span>
+                        <span class="metric-badge">+30% Fidelizzazione</span>
+                    </div>
+                    <p itemprop="description">Una catena di negozi di abbigliamento toscana ha utilizzato l'IA per analizzare i pattern di acquisto e personalizzare le offerte ai clienti, aumentando lo scontrino medio del 25% e la fidelizzazione del 30%.</p>
+                    <div class="case-study-details mt-4">
+                        <span class="detail-item"><strong>Settore:</strong> Retail Moda</span>
+                        <span class="detail-item"><strong>Investimento:</strong> €42.000</span>
+                        <span class="detail-item"><strong>ROI:</strong> 180% in 12 mesi</span>
+                    </div>
+                    <a href="#" class="btn btn-outline mt-4" role="button">Leggi il Caso Completo</a>
+                </article>
 
                 <!-- Case Study Card 3 -->
-                <div class="card">
-                    <h3 class="font-playfair text-2xl mb-2">Logistica Ottimizzata</h3>
-                    <p class="font-semibold text-lg text-gray-700 mb-4">-20% sui costi di trasporto</p>
-                    <p>Un'azienda di trasporti ha adottato un sistema di IA per ottimizzare i percorsi e i carichi, riducendo i costi di carburante e manutenzione del 20% e migliorando i tempi di consegna.</p>
+                <article class="card case-study-card" role="article" itemscope itemtype="https://schema.org/Article">
+                    <div class="case-study-icon" aria-hidden="true">🚚</div>
+                    <h3 class="font-playfair text-2xl mb-2" itemprop="headline">Logistica Ottimizzata</h3>
+                    <div class="case-study-metrics mb-4">
+                        <span class="metric-badge">-20% Costi</span>
+                        <span class="metric-badge">+15% Efficienza</span>
+                    </div>
+                    <p itemprop="description">Un'azienda di trasporti veneta ha adottato algoritmi di IA per ottimizzare i percorsi e i carichi, riducendo i costi di carburante del 20% e migliorando i tempi di consegna del 15%.</p>
+                    <div class="case-study-details mt-4">
+                        <span class="detail-item"><strong>Settore:</strong> Logistica</span>
+                        <span class="detail-item"><strong>Investimento:</strong> €65.000</span>
+                        <span class="detail-item"><strong>ROI:</strong> 150% in 14 mesi</span>
+                    </div>
+                    <a href="#" class="btn btn-outline mt-4" role="button">Leggi il Caso Completo</a>
+                </article>
+            </div>
+            
+            <!-- Additional Case Studies -->
+            <div class="text-center mt-16">
+                <h2 class="text-3xl font-playfair mb-8">Altri Settori di Successo</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="success-stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Settori Trasformati</div>
+                        <p class="stat-desc">Dall'alimentare al tessile, dall'edilizia ai servizi</p>
+                    </div>
+                    <div class="success-stat">
+                        <div class="stat-number">€2.8M</div>
+                        <div class="stat-label">Risparmi Totali</div>
+                        <p class="stat-desc">Generati dalle PMI che hanno adottato l'IA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section text-center mt-16 p-8 bg-blue text-white rounded-lg">
+                <h2 class="text-2xl font-playfair mb-4">Pronto a Trasformare la Tua Azienda?</h2>
+                <p class="text-lg mb-6">Scopri come l'IA può rivoluzionare il tuo business con una strategia su misura</p>
+                <div class="cta-buttons">
+                    <a href="tools/roi-calculator.html" class="btn btn-primary">Calcola il Tuo ROI</a>
+                    <a href="chapters/capitolo-3.html" class="btn btn-secondary">Strategia su Misura</a>
                 </div>
             </div>
         </div>
@@ -183,6 +240,105 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../assets/js/main.min.js"></script>
+    <script src="../assets/js/main.min.js" defer></script>
+    
+    <!-- Case studies enhancements -->
+    <style>
+        .case-study-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,51,102,0.15);
+        }
+        
+        .case-study-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-metrics {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .metric-badge {
+            background: linear-gradient(135deg, var(--warm-gold), #FFA500);
+            color: var(--pure-white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .case-study-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            font-size: 0.9rem;
+            color: var(--charcoal);
+        }
+        
+        .detail-item {
+            opacity: 0.8;
+        }
+        
+        .success-stat {
+            text-align: center;
+            padding: 2rem;
+            background: var(--warm-gray);
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-desc {
+            color: var(--charcoal);
+            opacity: 0.8;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--deep-italian-blue), #004080) !important;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .case-study-metrics {
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="it" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="La guida completa per le PMI italiane che vogliono abbracciare l'Intelligenza Artificiale e trasformare il loro business senza perdere l'anima artigianale. Strategie, casi studio e strumenti pratici per il successo.">
     <meta name="keywords" content="intelligenza artificiale, PMI italiane, trasformazione digitale, AI, automazione, business, innovazione">
     <meta name="author" content="Oltre il Divario Digitale">
@@ -33,9 +33,38 @@
     <link rel="canonical" href="https://oltreildivariodigitale.com/">
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     <link rel="preload" href="assets/css/main.css" as="style">
     <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <!-- Critical inline CSS for above-the-fold content -->
+    <style>
+        :root {
+            --deep-italian-blue: #003366;
+            --warm-gold: #FFD700;
+            --pure-white: #FFFFFF;
+            --charcoal: #2C3E50;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--deep-italian-blue), #004080);
+            color: var(--pure-white);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+    </style>
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -131,9 +160,16 @@
                         e trasformare il loro business senza perdere l'anima artigianale.
                     </p>
                     <div class="hero-actions animate-slide-up">
-                        <a href="#chapters" class="btn btn-primary btn-lg">Inizia il Tuo Viaggio</a>
-                        <a href="pages/resources.html" class="btn btn-secondary btn-lg">Scarica Anteprima</a>
+                        <a href="#chapters" class="btn btn-primary btn-lg" role="button" aria-describedby="chapters-description">
+                            <span>Inizia il Tuo Viaggio</span>
+                            <span class="btn-icon" aria-hidden="true">→</span>
+                        </a>
+                        <a href="pages/resources.html" class="btn btn-secondary btn-lg" role="button">
+                            <span>Scarica Anteprima</span>
+                            <span class="btn-icon" aria-hidden="true">⬇</span>
+                        </a>
                     </div>
+                    <p id="chapters-description" class="sr-only">Esplora i 7 capitoli che ti guideranno nella trasformazione digitale</p>
                 </div>
             </div>
         </section>
@@ -149,22 +185,22 @@
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-3 gap-8">
-                    <div class="card text-center">
-                        <div class="card-icon mx-auto">🎯</div>
-                        <h3 class="card-title">Strategia Personalizzata</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card text-center" role="article" aria-labelledby="strategia-title">
+                        <div class="card-icon mx-auto" aria-hidden="true">🎯</div>
+                        <h3 id="strategia-title" class="card-title">Strategia Personalizzata</h3>
                         <p>Non esistono soluzioni universali. Ogni PMI italiana ha la sua storia, la sua cultura, le sue sfide uniche. Scopri come creare una strategia IA su misura.</p>
                     </div>
                     
-                    <div class="card text-center">
-                        <div class="card-icon mx-auto">💰</div>
-                        <h3 class="card-title">ROI Concreto</h3>
-                        <p>Casi studio reali di PMI italiane che hanno aumentato la produttività del 40%, ridotto i costi del 30% e migliorato la qualità del servizio.</p>
+                    <div class="card text-center" role="article" aria-labelledby="roi-title">
+                        <div class="card-icon mx-auto" aria-hidden="true">💰</div>
+                        <h3 id="roi-title" class="card-title">ROI Concreto</h3>
+                        <p>Casi studio reali di PMI italiane che hanno <strong>aumentato la produttività del 40%</strong>, <strong>ridotto i costi del 30%</strong> e migliorato la qualità del servizio.</p>
                     </div>
                     
-                    <div class="card text-center">
-                        <div class="card-icon mx-auto">👥</div>
-                        <h3 class="card-title">Fattore Umano</h3>
+                    <div class="card text-center" role="article" aria-labelledby="umano-title">
+                        <div class="card-icon mx-auto" aria-hidden="true">👥</div>
+                        <h3 id="umano-title" class="card-title">Fattore Umano</h3>
                         <p>L'IA non sostituisce le persone, le potenzia. Scopri come gestire il cambiamento culturale e formare il team per il successo.</p>
                     </div>
                 </div>
@@ -358,7 +394,7 @@
             <div class="container">
                 <h2 id="testimonials-title" class="text-center mb-12">Cosa Dicono i Lettori</h2>
                 
-                <div class="grid grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="quote-card">
                         <p class="quote-text">
                             "Questo libro ha rivoluzionato il mio approccio all'innovazione. In 6 mesi abbiamo implementato 
@@ -393,32 +429,32 @@
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-3 gap-8">
-                    <div class="card text-center">
-                        <div class="card-icon mx-auto">📊</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card text-center" role="article">
+                        <div class="card-icon mx-auto" aria-hidden="true">📊</div>
                         <h3 class="card-title">Calcolatore ROI</h3>
                         <p class="mb-6">
                             Calcola il ritorno sull'investimento dell'IA per la tua specifica situazione aziendale.
                         </p>
-                        <a href="pages/tools/roi-calculator.html" class="btn btn-primary">Prova Subito</a>
+                        <a href="pages/tools/roi-calculator.html" class="btn btn-primary" role="button">Prova Subito</a>
                     </div>
                     
-                    <div class="card text-center">
-                        <div class="card-icon mx-auto">✅</div>
+                    <div class="card text-center" role="article">
+                        <div class="card-icon mx-auto" aria-hidden="true">✅</div>
                         <h3 class="card-title">Test di Maturità</h3>
                         <p class="mb-6">
                             Valuta il livello di preparazione digitale della tua azienda in 10 minuti.
                         </p>
-                        <a href="pages/tools/maturity-assessment.html" class="btn btn-primary">Inizia Test</a>
+                        <a href="pages/tools/maturity-assessment.html" class="btn btn-primary" role="button">Inizia Test</a>
                     </div>
                     
-                    <div class="card text-center">
-                        <div class="card-icon mx-auto">🎯</div>
+                    <div class="card text-center" role="article">
+                        <div class="card-icon mx-auto" aria-hidden="true">🎯</div>
                         <h3 class="card-title">Piano IA Personalizzato</h3>
                         <p class="mb-6">
                             Ricevi una roadmap di implementazione su misura per la tua azienda.
                         </p>
-                        <a href="pages/tools/ai-readiness.html" class="btn btn-primary">Crea Piano</a>
+                        <a href="pages/tools/ai-readiness.html" class="btn btn-primary" role="button">Crea Piano</a>
                     </div>
                 </div>
             </div>
@@ -432,12 +468,16 @@
                     Ricevi aggiornamenti esclusivi, nuovi casi studio e strumenti pratici per accelerare 
                     la tua trasformazione digitale.
                 </p>
-                <form class="max-w-md mx-auto flex gap-4" aria-label="Iscrizione newsletter">
-                    <input type="email" class="form-control flex-1" placeholder="La tua email" required 
-                           aria-label="Indirizzo email">
-                    <button type="submit" class="btn btn-primary">Iscriviti</button>
+                <form class="newsletter-form max-w-md mx-auto flex gap-4" aria-label="Iscrizione newsletter" novalidate>
+                    <label for="newsletter-email" class="sr-only">Indirizzo email per newsletter</label>
+                    <input type="email" id="newsletter-email" name="email" class="form-control flex-1" 
+                           placeholder="La tua email" required 
+                           aria-describedby="email-error newsletter-description"
+                           autocomplete="email">
+                    <button type="submit" class="btn btn-primary" aria-describedby="newsletter-description">Iscriviti</button>
+                    <div id="email-error" class="error-message sr-only" role="alert"></div>
                 </form>
-                <p class="text-sm mt-4 opacity-80">
+                <p id="newsletter-description" class="text-sm mt-4 opacity-80">
                     Niente spam, solo contenuti di valore. Cancellati quando vuoi.
                 </p>
             </div>
@@ -503,7 +543,31 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/main.min.js"></script>
+    <script src="assets/js/main.min.js" defer></script>
+    
+    <!-- Intersection Observer for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple intersection observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all cards and sections
+            document.querySelectorAll('.card, .animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
     
     <!-- Analytics (to be configured) -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>

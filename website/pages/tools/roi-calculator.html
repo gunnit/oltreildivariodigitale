@@ -1,1 +1,717 @@
-<!-- ROI Calculator Tool -->
+<!DOCTYPE html>
+<html lang="it" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Calcolatore ROI per implementazione IA nelle PMI italiane. Calcola il ritorno sull'investimento dell'Intelligenza Artificiale per la tua azienda.">
+    <meta name="keywords" content="ROI calculator, intelligenza artificiale, PMI, ritorno investimento, IA, business">
+    <meta name="author" content="Oltre il Divario Digitale">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oltreildivariodigitale.com/pages/tools/roi-calculator.html">
+    <meta property="og:title" content="Calcolatore ROI IA - Oltre il Divario Digitale">
+    <meta property="og:description" content="Calcola il ritorno sull'investimento dell'Intelligenza Artificiale per la tua PMI italiana.">
+    <meta property="og:image" content="https://oltreildivariodigitale.com/assets/images/og-image-roi-calculator.jpg">
+    <meta property="og:locale" content="it_IT">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://oltreildivariodigitale.com/pages/tools/roi-calculator.html">
+    <meta property="twitter:title" content="Calcolatore ROI IA - Oltre il Divario Digitale">
+    <meta property="twitter:description" content="Calcola il ritorno sull'investimento dell'Intelligenza Artificiale per la tua PMI italiana.">
+    <meta property="twitter:image" content="https://oltreildivariodigitale.com/assets/images/twitter-image-roi-calculator.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oltreildivariodigitale.com/pages/tools/roi-calculator.html">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="../../assets/css/main.css" as="style">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    
+    <!-- Tool-specific styles -->
+    <style>
+        .calculator-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .calculator-form {
+            background: var(--pure-white);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,51,102,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--deep-italian-blue);
+            box-shadow: 0 0 0 3px rgba(0,51,102,0.1);
+        }
+        
+        .form-input[type="range"] {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .range-output {
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+            margin-left: 1rem;
+        }
+        
+        .results-container {
+            background: linear-gradient(135deg, var(--deep-italian-blue), #004080);
+            color: var(--pure-white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .result-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--warm-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .recommendations {
+            background: var(--warm-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .recommendation-item {
+            padding: 1rem;
+            background: var(--pure-white);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--warm-gold);
+        }
+        
+        .recommendation-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+        
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .step.active {
+            background: var(--deep-italian-blue);
+            color: var(--pure-white);
+        }
+        
+        .step.completed {
+            background: var(--sage-green);
+            color: var(--pure-white);
+        }
+        
+        @media (max-width: 768px) {
+            .calculator-form {
+                padding: 1.5rem;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    
+    <title>Calcolatore ROI IA - Oltre il Divario Digitale</title>
+</head>
+<body class="page-tool">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only sr-only-focusable">Salta al contenuto principale</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Navigazione principale">
+                <a href="../../index.html" class="nav-logo" aria-label="Torna alla homepage">
+                    Oltre il Divario Digitale
+                </a>
+                
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri menu di navigazione">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar">
+                    <li role="none"><a href="../../index.html" role="menuitem">Home</a></li>
+                    <li role="none"><a href="../prefazione.html" role="menuitem">Prefazione</a></li>
+                    <li role="none"><a href="../glossario.html" role="menuitem">Glossario</a></li>
+                    <li role="none">
+                        <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">Capitoli</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../chapters/capitolo-1.html" role="menuitem">Cap. 1: Il Grande Paradosso</a></li>
+                            <li><a href="../chapters/capitolo-2.html" role="menuitem">Cap. 2: Fondamenti dell'IA</a></li>
+                            <li><a href="../chapters/capitolo-3.html" role="menuitem">Cap. 3: Strategia su Misura</a></li>
+                            <li><a href="../chapters/capitolo-4.html" role="menuitem">Cap. 4: Casi di Successo</a></li>
+                            <li><a href="../chapters/capitolo-5.html" role="menuitem">Cap. 5: Leadership</a></li>
+                            <li><a href="../chapters/capitolo-6.html" role="menuitem">Cap. 6: Governance ed Etica</a></li>
+                            <li><a href="../chapters/capitolo-7.html" role="menuitem">Cap. 7: Futuro dell'IA</a></li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">Strumenti</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="roi-calculator.html" class="active" role="menuitem">Calcolatore ROI</a></li>
+                            <li><a href="maturity-assessment.html" role="menuitem">Test di Maturità</a></li>
+                            <li><a href="ai-readiness.html" role="menuitem">Test Preparazione IA</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="../case-studies.html" role="menuitem">Casi Studio</a></li>
+                    <li role="none"><a href="../resources.html" role="menuitem">Risorse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container py-16">
+            <div class="calculator-container">
+                <header class="text-center mb-12">
+                    <h1 class="text-4xl font-playfair font-bold mb-4">Calcolatore ROI per l'IA</h1>
+                    <p class="text-xl text-gray-600">Calcola il ritorno sull'investimento dell'Intelligenza Artificiale per la tua PMI italiana</p>
+                </header>
+
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">1</div>
+                    <div class="step" data-step="2">2</div>
+                    <div class="step" data-step="3">3</div>
+                </div>
+
+                <!-- Calculator Form -->
+                <form class="calculator-form" id="roi-calculator" novalidate>
+                    <!-- Step 1: Company Information -->
+                    <div class="form-step" data-step="1">
+                        <div class="form-section">
+                            <h2 class="text-2xl font-playfair mb-4">Informazioni Azienda</h2>
+                            
+                            <div class="form-group">
+                                <label for="employees" class="form-label">Numero di dipendenti</label>
+                                <input type="number" id="employees" name="employees" class="form-input" min="1" max="500" value="25" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="revenue" class="form-label">Fatturato annuo (€)</label>
+                                <input type="number" id="revenue" name="revenue" class="form-input" min="100000" max="50000000" value="2000000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sector" class="form-label">Settore</label>
+                                <select id="sector" name="sector" class="form-input" required>
+                                    <option value="">Seleziona il settore</option>
+                                    <option value="manufacturing">Manifatturiero</option>
+                                    <option value="retail">Retail/Commercio</option>
+                                    <option value="services">Servizi</option>
+                                    <option value="logistics">Logistica</option>
+                                    <option value="food">Alimentare</option>
+                                    <option value="textile">Tessile</option>
+                                    <option value="construction">Edilizia</option>
+                                    <option value="other">Altro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Current Challenges -->
+                    <div class="form-step" data-step="2" style="display: none;">
+                        <div class="form-section">
+                            <h2 class="text-2xl font-playfair mb-4">Situazione Attuale</h2>
+                            
+                            <div class="form-group">
+                                <label for="manual-hours" class="form-label">Ore settimanali di lavoro manuale ripetitivo</label>
+                                <input type="range" id="manual-hours" name="manual-hours" class="form-input" min="0" max="200" value="40">
+                                <span class="range-output" id="manual-hours-output">40 ore</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="error-rate" class="form-label">Percentuale di errori nei processi manuali (%)</label>
+                                <input type="range" id="error-rate" name="error-rate" class="form-input" min="0" max="20" value="5" step="0.5">
+                                <span class="range-output" id="error-rate-output">5%</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="downtime-hours" class="form-label">Ore di fermo macchina al mese</label>
+                                <input type="range" id="downtime-hours" name="downtime-hours" class="form-input" min="0" max="100" value="20">
+                                <span class="range-output" id="downtime-hours-output">20 ore</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customer-response" class="form-label">Tempo medio di risposta al cliente (ore)</label>
+                                <input type="range" id="customer-response" name="customer-response" class="form-input" min="1" max="48" value="24">
+                                <span class="range-output" id="customer-response-output">24 ore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: AI Implementation -->
+                    <div class="form-step" data-step="3" style="display: none;">
+                        <div class="form-section">
+                            <h2 class="text-2xl font-playfair mb-4">Implementazione IA</h2>
+                            
+                            <div class="form-group">
+                                <label for="ai-investment" class="form-label">Investimento iniziale previsto (€)</label>
+                                <input type="number" id="ai-investment" name="ai-investment" class="form-input" min="5000" max="500000" value="50000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="implementation-time" class="form-label">Tempo di implementazione (mesi)</label>
+                                <input type="range" id="implementation-time" name="implementation-time" class="form-input" min="3" max="24" value="6">
+                                <span class="range-output" id="implementation-time-output">6 mesi</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="automation-level" class="form-label">Livello di automazione previsto (%)</label>
+                                <input type="range" id="automation-level" name="automation-level" class="form-input" min="10" max="80" value="40">
+                                <span class="range-output" id="automation-level-output">40%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="form-navigation" style="text-align: center; margin-top: 2rem;">
+                        <button type="button" id="prev-btn" class="btn btn-secondary" style="display: none;">Precedente</button>
+                        <button type="button" id="next-btn" class="btn btn-primary">Avanti</button>
+                        <button type="submit" id="calculate-btn" class="btn btn-primary" style="display: none;">Calcola ROI</button>
+                    </div>
+                </form>
+
+                <!-- Results -->
+                <div class="results-container" id="results" style="display: none;">
+                    <h2 class="text-3xl font-playfair text-center mb-4">I Tuoi Risultati ROI</h2>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-value" id="roi-percentage">0%</div>
+                            <div class="result-label">ROI a 3 anni</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-value" id="payback-period">0</div>
+                            <div class="result-label">Mesi per il payback</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-value" id="annual-savings">€0</div>
+                            <div class="result-label">Risparmi annui</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-value" id="productivity-gain">0%</div>
+                            <div class="result-label">Aumento produttività</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="recommendations" id="recommendations" style="display: none;">
+                    <h3 class="text-2xl font-playfair mb-4">Raccomandazioni Personalizzate</h3>
+                    <div id="recommendation-list"></div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="../chapters/capitolo-3.html" class="btn btn-primary">
+                            Scopri Come Implementare
+                        </a>
+                        <a href="maturity-assessment.html" class="btn btn-secondary">
+                            Test di Maturità Digitale
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="mb-6">Oltre il Divario Digitale</h4>
+                    <p class="mb-4">
+                        La guida completa per le PMI italiane verso l'Intelligenza Artificiale.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="LinkedIn" class="text-gold">LinkedIn</a>
+                        <a href="#" aria-label="Twitter" class="text-gold">Twitter</a>
+                        <a href="#" aria-label="YouTube" class="text-gold">YouTube</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Capitoli</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../chapters/capitolo-1.html">Il Grande Paradosso</a></li>
+                        <li><a href="../chapters/capitolo-2.html">Fondamenti dell'IA</a></li>
+                        <li><a href="../chapters/capitolo-3.html">Strategia su Misura</a></li>
+                        <li><a href="../chapters/capitolo-4.html">Casi di Successo</a></li>
+                        <li><a href="../chapters/capitolo-5.html">Leadership</a></li>
+                        <li><a href="../chapters/capitolo-6.html">Governance</a></li>
+                        <li><a href="../chapters/capitolo-7.html">Futuro dell'IA</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Strumenti</h4>
+                    <ul class="space-y-2">
+                        <li><a href="roi-calculator.html">Calcolatore ROI</a></li>
+                        <li><a href="maturity-assessment.html">Test di Maturità</a></li>
+                        <li><a href="ai-readiness.html">Test Preparazione IA</a></li>
+                        <li><a href="../resources.html">Template Scaricabili</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Risorse</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../case-studies.html">Casi Studio</a></li>
+                        <li><a href="../resources.html">Download</a></li>
+                        <li><a href="../prefazione.html">Prefazione</a></li>
+                        <li><a href="../glossario.html">Glossario</a></li>
+                        <li><a href="#" rel="nofollow">Contatti</a></li>
+                        <li><a href="#" rel="nofollow">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Oltre il Divario Digitale. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.min.js" defer></script>
+    
+    <!-- ROI Calculator Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('roi-calculator');
+            const steps = document.querySelectorAll('.form-step');
+            const stepIndicators = document.querySelectorAll('.step');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const calculateBtn = document.getElementById('calculate-btn');
+            const results = document.getElementById('results');
+            const recommendations = document.getElementById('recommendations');
+            
+            let currentStep = 1;
+            const totalSteps = 3;
+            
+            // Initialize range outputs
+            initializeRangeOutputs();
+            
+            // Navigation
+            nextBtn.addEventListener('click', nextStep);
+            prevBtn.addEventListener('click', prevStep);
+            form.addEventListener('submit', calculateROI);
+            
+            function initializeRangeOutputs() {
+                const ranges = document.querySelectorAll('input[type="range"]');
+                ranges.forEach(range => {
+                    const output = document.getElementById(range.id + '-output');
+                    if (output) {
+                        updateRangeOutput(range, output);
+                        range.addEventListener('input', () => updateRangeOutput(range, output));
+                    }
+                });
+            }
+            
+            function updateRangeOutput(range, output) {
+                let value = range.value;
+                let suffix = '';
+                
+                switch(range.id) {
+                    case 'manual-hours':
+                        suffix = ' ore';
+                        break;
+                    case 'error-rate':
+                    case 'automation-level':
+                        suffix = '%';
+                        break;
+                    case 'downtime-hours':
+                        suffix = ' ore';
+                        break;
+                    case 'customer-response':
+                        suffix = ' ore';
+                        break;
+                    case 'implementation-time':
+                        suffix = ' mesi';
+                        break;
+                }
+                
+                output.textContent = value + suffix;
+            }
+            
+            function nextStep() {
+                if (validateCurrentStep()) {
+                    if (currentStep < totalSteps) {
+                        currentStep++;
+                        updateStepDisplay();
+                    }
+                }
+            }
+            
+            function prevStep() {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStepDisplay();
+                }
+            }
+            
+            function updateStepDisplay() {
+                // Hide all steps
+                steps.forEach(step => step.style.display = 'none');
+                
+                // Show current step
+                const currentStepElement = document.querySelector(`[data-step="${currentStep}"]`);
+                if (currentStepElement) {
+                    currentStepElement.style.display = 'block';
+                }
+                
+                // Update step indicators
+                stepIndicators.forEach((indicator, index) => {
+                    indicator.classList.remove('active', 'completed');
+                    if (index + 1 < currentStep) {
+                        indicator.classList.add('completed');
+                    } else if (index + 1 === currentStep) {
+                        indicator.classList.add('active');
+                    }
+                });
+                
+                // Update navigation buttons
+                prevBtn.style.display = currentStep > 1 ? 'inline-block' : 'none';
+                nextBtn.style.display = currentStep < totalSteps ? 'inline-block' : 'none';
+                calculateBtn.style.display = currentStep === totalSteps ? 'inline-block' : 'none';
+            }
+            
+            function validateCurrentStep() {
+                const currentStepElement = document.querySelector(`[data-step="${currentStep}"]`);
+                const requiredFields = currentStepElement.querySelectorAll('input[required], select[required]');
+                
+                for (let field of requiredFields) {
+                    if (!field.value.trim()) {
+                        field.focus();
+                        field.style.borderColor = '#e74c3c';
+                        setTimeout(() => field.style.borderColor = '', 3000);
+                        return false;
+                    }
+                }
+                return true;
+            }
+            
+            function calculateROI(e) {
+                e.preventDefault();
+                
+                if (!validateCurrentStep()) return;
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                
+                // Convert to numbers
+                const employees = parseInt(data.employees);
+                const revenue = parseInt(data.revenue);
+                const manualHours = parseInt(data['manual-hours']);
+                const errorRate = parseFloat(data['error-rate']);
+                const downtimeHours = parseInt(data['downtime-hours']);
+                const customerResponse = parseInt(data['customer-response']);
+                const aiInvestment = parseInt(data['ai-investment']);
+                const implementationTime = parseInt(data['implementation-time']);
+                const automationLevel = parseInt(data['automation-level']);
+                
+                // Calculate savings
+                const hourlyWage = 25; // Average hourly wage for PMI
+                const annualWorkingHours = 1800;
+                
+                // Labor savings from automation
+                const laborSavings = (manualHours * 52 * hourlyWage * automationLevel / 100);
+                
+                // Error reduction savings
+                const errorCostPerYear = revenue * (errorRate / 100) * 0.05; // 5% of revenue lost to errors
+                const errorSavings = errorCostPerYear * (automationLevel / 100);
+                
+                // Downtime reduction savings
+                const downtimeCostPerHour = revenue / (employees * annualWorkingHours);
+                const downtimeSavings = downtimeHours * 12 * downtimeCostPerHour * (automationLevel / 100);
+                
+                // Customer response improvement (productivity gain)
+                const responseSavings = revenue * 0.02 * (1 - customerResponse / 48); // 2% revenue boost for faster response
+                
+                const totalAnnualSavings = laborSavings + errorSavings + downtimeSavings + responseSavings;
+                const threeYearSavings = totalAnnualSavings * 3;
+                const roi = ((threeYearSavings - aiInvestment) / aiInvestment) * 100;
+                const paybackPeriod = aiInvestment / (totalAnnualSavings / 12);
+                const productivityGain = (automationLevel * 0.5) + (errorRate * 2); // Simplified calculation
+                
+                // Display results
+                document.getElementById('roi-percentage').textContent = Math.round(roi) + '%';
+                document.getElementById('payback-period').textContent = Math.round(paybackPeriod);
+                document.getElementById('annual-savings').textContent = '€' + Math.round(totalAnnualSavings).toLocaleString();
+                document.getElementById('productivity-gain').textContent = Math.round(productivityGain) + '%';
+                
+                // Generate recommendations
+                generateRecommendations(data, {
+                    roi,
+                    paybackPeriod,
+                    totalAnnualSavings,
+                    productivityGain
+                });
+                
+                // Show results
+                results.style.display = 'block';
+                recommendations.style.display = 'block';
+                
+                // Scroll to results
+                results.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            function generateRecommendations(data, calculations) {
+                const recommendationList = document.getElementById('recommendation-list');
+                const recommendations = [];
+                
+                if (calculations.roi > 200) {
+                    recommendations.push({
+                        title: '🚀 ROI Eccellente',
+                        content: 'Il tuo ROI previsto è superiore al 200%! Questa è un\'opportunità eccellente per l\'investimento in IA.'
+                    });
+                } else if (calculations.roi > 100) {
+                    recommendations.push({
+                        title: '✅ ROI Positivo',
+                        content: 'Il ROI è positivo e promettente. Procedi con l\'implementazione seguendo una roadmap strutturata.'
+                    });
+                } else {
+                    recommendations.push({
+                        title: '⚠️ ROI da Migliorare',
+                        content: 'Considera di iniziare con progetti pilota più piccoli o di aumentare il livello di automazione.'
+                    });
+                }
+                
+                if (calculations.paybackPeriod < 12) {
+                    recommendations.push({
+                        title: '⚡ Payback Rapido',
+                        content: 'Il tempo di recupero dell\'investimento è inferiore a un anno. Ottimo per il cash flow aziendale.'
+                    });
+                }
+                
+                if (data.sector === 'manufacturing') {
+                    recommendations.push({
+                        title: '🏭 Focus Manifatturiero',
+                        content: 'Nel settore manifatturiero, concentrati su manutenzione predittiva e controllo qualità automatico.'
+                    });
+                } else if (data.sector === 'retail') {
+                    recommendations.push({
+                        title: '🛍️ Strategia Retail',
+                        content: 'Per il retail, implementa sistemi di raccomandazione clienti e gestione automatica dell\'inventario.'
+                    });
+                }
+                
+                recommendations.push({
+                    title: '📈 Prossimi Passi',
+                    content: 'Leggi il Capitolo 3 per sviluppare una strategia di implementazione su misura per la tua azienda.'
+                });
+                
+                recommendationList.innerHTML = recommendations.map(rec => 
+                    `<div class="recommendation-item">
+                        <h4>${rec.title}</h4>
+                        <p>${rec.content}</p>
+                    </div>`
+                ).join('');
+            }
+        });
+    </script>
+</body>
+</html>
