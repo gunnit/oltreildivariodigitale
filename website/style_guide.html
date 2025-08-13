@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide - Oltre il Divario Digitale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --deep-italian-blue: #003366;
+            --warm-gold: #FFD700;
+            --pure-white: #FFFFFF;
+            
+            /* Secondary Colors */
+            --sage-green: #87A96B;
+            --warm-gray: #F8F9FA;
+            --charcoal: #2C3E50;
+            --alert-red: #E74C3C;
+            
+            /* Gradients */
+            --hero-gradient: linear-gradient(135deg, #003366 0%, #004080 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-code: 'Fira Code', monospace;
+            
+            /* Spacing */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            
+            /* Shadows */
+            --shadow-card: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.15);
+            --shadow-button: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--pure-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Typography */
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-lg);
+            color: var(--deep-italian-blue);
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: var(--space-md);
+            color: var(--deep-italian-blue);
+        }
+
+        h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--space-md);
+            color: var(--deep-italian-blue);
+        }
+
+        h4 {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--space-sm);
+            color: var(--deep-italian-blue);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+            max-width: 70ch;
+        }
+
+        .text-large {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .text-small {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        /* Header Navigation */
+        .header {
+            background: var(--pure-white);
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-card);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) 0;
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xl);
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--deep-italian-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--hero-gradient);
+            color: var(--pure-white);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--pure-white);
+            font-size: 3.5rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-2xl);
+            max-width: 60ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-button);
+        }
+
+        .btn-primary {
+            background: var(--gold-gradient);
+            color: var(--charcoal);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--deep-italian-blue);
+            color: var(--pure-white);
+        }
+
+        .btn-secondary:hover {
+            background: #004080;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-card);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-2xl) 0;
+        }
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: var(--space-md);
+            color: var(--deep-italian-blue);
+        }
+
+        /* Quote Card */
+        .quote-card {
+            background: var(--warm-gray);
+            border-left: 4px solid var(--warm-gold);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            margin: var(--space-xl) 0;
+        }
+
+        .quote-card p {
+            font-style: italic;
+            margin-bottom: var(--space-md);
+        }
+
+        .quote-card .attribution {
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+        }
+
+        /* Quiz Component */
+        .quiz-container {
+            background: #f0f8ff;
+            border-radius: 12px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+            border: 2px solid #e6f3ff;
+        }
+
+        .quiz-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-lg);
+        }
+
+        .quiz-progress {
+            background: #e6f3ff;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: var(--space-lg);
+        }
+
+        .quiz-progress-fill {
+            background: var(--deep-italian-blue);
+            height: 100%;
+            width: 60%;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-question {
+            margin-bottom: var(--space-lg);
+        }
+
+        .quiz-options {
+            list-style: none;
+        }
+
+        .quiz-option {
+            margin-bottom: var(--space-sm);
+        }
+
+        .quiz-option label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: var(--space-sm);
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-option label:hover {
+            background: rgba(0, 51, 102, 0.1);
+        }
+
+        .quiz-option input {
+            margin-right: var(--space-sm);
+        }
+
+        /* Calculator Tool */
+        .calculator-tool {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-card);
+            margin: var(--space-xl) 0;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e5e5;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--deep-italian-blue);
+        }
+
+        /* Results Display */
+        .results-card {
+            background: var(--sage-green);
+            color: var(--pure-white);
+            border-radius: 12px;
+            padding: var(--space-xl);
+            text-align: center;
+            margin: var(--space-lg) 0;
+        }
+
+        .results-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: var(--space-lg);
+            border-radius: 8px;
+            font-family: var(--font-code);
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin: var(--space-lg) 0;
+            position: relative;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid #333;
+        }
+
+        .code-language {
+            color: #569cd6;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .copy-button {
+            background: none;
+            border: 1px solid #666;
+            color: #d4d4d4;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            padding: var(--space-md);
+            border-radius: 8px;
+            margin: var(--space-lg) 0;
+            border-left: 4px solid;
+        }
+
+        .callout-tip {
+            background: #f0f9ff;
+            border-left-color: var(--sage-green);
+        }
+
+        .callout-warning {
+            background: #fffbf0;
+            border-left-color: var(--warm-gold);
+        }
+
+        .callout-danger {
+            background: #fef2f2;
+            border-left-color: var(--alert-red);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-sm);
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+        }
+
+        /* Utility Classes */
+        .mt-lg { margin-top: var(--space-lg); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        .text-center { text-align: center; }
+        .text-blue { color: var(--deep-italian-blue); }
+        .bg-gray { background-color: var(--warm-gray); }
+        
+        /* Demo sections for style guide */
+        .demo-section {
+            margin: var(--space-3xl) 0;
+            padding: var(--space-2xl) 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="nav-logo">Oltre il Divario Digitale</a>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#chapters">Capitoli</a></li>
+                    <li><a href="#tools">Strumenti</a></li>
+                    <li><a href="#resources">Risorse</a></li>
+                    <li><a href="#about">Autore</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Oltre il Divario Digitale</h1>
+            <p class="text-large">La guida completa per le PMI italiane che vogliono abbracciare l'Intelligenza Artificiale e trasformare il loro business senza perdere l'anima artigianale.</p>
+            <a href="#" class="btn btn-primary">Inizia il Tuo Viaggio</a>
+            <a href="#" class="btn btn-secondary">Scarica Anteprima</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Typography Demo -->
+        <section class="demo-section">
+            <h2>Tipografia e Gerarchia</h2>
+            <h1>Heading 1 - Titolo Principale</h1>
+            <h2>Heading 2 - Titolo Capitolo</h2>
+            <h3>Heading 3 - Sezione</h3>
+            <h4>Heading 4 - Sottosezione</h4>
+            
+            <p class="text-large">Testo introduttivo large - Utilizzato per paragrafi introduttivi e testo importante che necessita di maggiore enfasi visiva.</p>
+            
+            <p>Testo body regolare - Questo è il testo standard utilizzato per il contenuto principale del libro. Ha un'altezza di linea di 1.6 per garantire una lettura confortevole e una lunghezza massima di 70 caratteri per riga.</p>
+            
+            <p class="text-small">Testo small - Utilizzato per metadati, didascalie e informazioni secondarie.</p>
+        </section>
+
+        <!-- Cards Demo -->
+        <section class="demo-section">
+            <h2>Componenti Card</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h4>Capitolo 1: Il Grande Paradosso Italiano</h4>
+                    <p>Scopri come l'Intelligenza Artificiale può dividere più del Nord e Sud Italia, e come le PMI possono superare questo divario.</p>
+                    <a href="#" class="btn btn-secondary">Leggi Capitolo</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Capitolo 2: Fondamenti dell'IA</h4>
+                    <p>La rivincita di Davide: come le PMI italiane possono battere i giganti tedeschi e cinesi con l'Intelligenza Artificiale.</p>
+                    <a href="#" class="btn btn-secondary">Leggi Capitolo</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h4>Capitolo 3: Strategia su Misura</h4>
+                    <p>Il metodo che funziona con le PMI italiane: costruisci una strategia di IA personalizzata per la tua azienda.</p>
+                    <a href="#" class="btn btn-secondary">Leggi Capitolo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Card Demo -->
+        <section class="demo-section">
+            <h2>Citazioni e Testimonianze</h2>
+            <div class="quote-card">
+                <p>"Questo libro ha trasformato completamente il mio approccio all'innovazione. In 6 mesi abbiamo implementato soluzioni di IA che hanno aumentato la nostra produttività del 40%."</p>
+                <div class="attribution">— Marco Rossi, CEO di Manifattura Italiana SRL</div>
+            </div>
+        </section>
+
+        <!-- Quiz Component Demo -->
+        <section class="demo-section">
+            <h2>Quiz Interattivi</h2>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h4>Test di Maturità Digitale</h4>
+                    <span class="text-small">Domanda 3 di 5</span>
+                </div>
+                
+                <div class="quiz-progress">
+                    <div class="quiz-progress-fill"></div>
+                </div>
+                
+                <div class="quiz-question">
+                    <p><strong>Qual è il principale ostacolo che impedisce alla tua azienda di adottare tecnologie di Intelligenza Artificiale?</strong></p>
+                </div>
+                
+                <ul class="quiz-options">
+                    <li class="quiz-option">
+                        <label>
+                            <input type="radio" name="q3" value="cost">
+                            Costi troppo elevati di implementazione
+                        </label>
+                    </li>
+                    <li class="quiz-option">
+                        <label>
+                            <input type="radio" name="q3" value="knowledge">
+                            Mancanza di conoscenze tecniche nel team
+                        </label>
+                    </li>
+                    <li class="quiz-option">
+                        <label>
+                            <input type="radio" name="q3" value="time">
+                            Mancanza di tempo per la pianificazione
+                        </label>
+                    </li>
+                    <li class="quiz-option">
+                        <label>
+                            <input type="radio" name="q3" value="culture">
+                            Resistenza culturale al cambiamento
+                        </label>
+                    </li>
+                </ul>
+                
+                <div class="mt-lg">
+                    <a href="#" class="btn btn-primary">Prossima Domanda</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Tool Demo -->
+        <section class="demo-section">
+            <h2>Calcolatore ROI</h2>
+            <div class="calculator-tool">
+                <h4>Calcola il ROI dell'Intelligenza Artificiale per la Tua Azienda</h4>
+                <p class="mb-lg">Inserisci i dati della tua azienda per stimare il ritorno sull'investimento dell'implementazione di soluzioni IA.</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+                    <div>
+                        <div class="form-group">
+                            <label>Fatturato Annuale (€)</label>
+                            <input type="number" placeholder="1.000.000" value="2500000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Numero Dipendenti</label>
+                            <input type="number" placeholder="50" value="75">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Settore di Attività</label>
+                            <select>
+                                <option>Manifatturiero</option>
+                                <option>Servizi</option>
+                                <option>Commercio</option>
+                                <option>Logistica</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Budget Disponibile per IA (€)</label>
+                            <input type="number" placeholder="100.000" value="150000">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="results-card">
+                            <div class="results-number">187%</div>
+                            <h4>ROI Stimato (2 anni)</h4>
+                            <p>Basato sui dati inseriti, la tua azienda potrebbe ottenere un ritorno sull'investimento del 187% in 2 anni.</p>
+                        </div>
+                        
+                        <div style="margin-top: var(--space-lg);">
+                            <a href="#" class="btn btn-primary">Scarica Report Dettagliato</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example Demo -->
+        <section class="demo-section">
+            <h2>Esempi di Codice</h2>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-language">Python</span>
+                    <button class="copy-button">Copia</button>
+                </div>
+                <pre><code># Esempio di automazione per analisi vendite
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Carica dati vendite
+data = pd.read_csv('vendite_2024.csv')
+
+# Crea modello predittivo semplice
+model = LinearRegression()
+X = data[['mese', 'marketing_budget', 'stagionalita']]
+y = data['vendite']
+
+model.fit(X, y)
+
+# Predizione vendite prossimo trimestre
+next_quarter = [[10, 15000, 0.8], [11, 18000, 1.2], [12, 25000, 1.5]]
+predictions = model.predict(next_quarter)
+
+print(f"Vendite previste: {predictions}")
+</code></pre>
+            </div>
+        </section>
+
+        <!-- Callout Boxes Demo -->
+        <section class="demo-section">
+            <h2>Box Informativi</h2>
+            
+            <div class="callout callout-tip">
+                <h4>💡 Suggerimento</h4>
+                <p>Inizia sempre con un progetto pilota piccolo ma significativo. Questo ti permetterà di dimostrare il valore dell'IA senza rischiare investimenti eccessivi.</p>
+            </div>
+            
+            <div class="callout callout-warning">
+                <h4>⚠️ Attenzione</h4>
+                <p>Non sottovalutare l'importanza della formazione del personale. La tecnologia è solo il 30% del successo, il rimanente 70% dipende dalle persone.</p>
+            </div>
+            
+            <div class="callout callout-danger">
+                <h4>🚨 Importante</h4>
+                <p>Assicurati sempre di rispettare la normativa GDPR quando implementi soluzioni che trattano dati personali. La conformità non è opzionale.</p>
+            </div>
+        </section>
+
+        <!-- Button Variations -->
+        <section class="demo-section">
+            <h2>Pulsanti e Call-to-Action</h2>
+            <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+                <a href="#" class="btn btn-primary">Pulsante Primario</a>
+                <a href="#" class="btn btn-secondary">Pulsante Secondario</a>
+                <a href="#" style="color: var(--deep-italian-blue); text-decoration: underline;">Link di testo</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Demo -->
+    <footer style="background: var(--charcoal); color: var(--pure-white); padding: var(--space-2xl) 0; margin-top: var(--space-3xl);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-xl);">
+                <div>
+                    <h4 style="color: var(--warm-gold); margin-bottom: var(--space-md);">Oltre il Divario Digitale</h4>
+                    <p>La guida completa per le PMI italiane verso l'Intelligenza Artificiale.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--warm-gold); margin-bottom: var(--space-md);">Capitoli</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Il Grande Paradosso</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Fondamenti dell'IA</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Strategia su Misura</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Casi di Successo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--warm-gold); margin-bottom: var(--space-md);">Risorse</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Calcolatori ROI</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Quiz di Valutazione</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Template Scaricabili</a></li>
+                        <li style="margin-bottom: var(--space-xs);"><a href="#" style="color: var(--pure-white); text-decoration: none;">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #555; margin-top: var(--space-xl); padding-top: var(--space-lg); text-align: center;">
+                <p>&copy; 2024 Oltre il Divario Digitale. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple demo interactions
+        document.querySelectorAll('.quiz-option input').forEach(input => {
+            input.addEventListener('change', function() {
+                document.querySelectorAll('.quiz-option label').forEach(label => {
+                    label.style.backgroundColor = '';
+                });
+                this.parentElement.style.backgroundColor = 'rgba(0, 51, 102, 0.1)';
+            });
+        });
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const code = this.closest('.code-block').querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    this.textContent = 'Copiato!';
+                    setTimeout(() => {
+                        this.textContent = 'Copia';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
