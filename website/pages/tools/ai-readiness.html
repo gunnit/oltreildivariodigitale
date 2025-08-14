@@ -1,1 +1,1195 @@
-<!-- AI Readiness Tool -->
+<!DOCTYPE html>
+<html lang="it" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Test di Preparazione IA per PMI italiane. Scopri se la tua azienda è pronta per implementare l'Intelligenza Artificiale e ottieni una roadmap personalizzata.">
+    <meta name="keywords" content="AI readiness, preparazione intelligenza artificiale, PMI, assessment, roadmap IA">
+    <meta name="author" content="Oltre il Divario Digitale">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oltreildivariodigitale.com/pages/tools/ai-readiness.html">
+    <meta property="og:title" content="Test Preparazione IA - Oltre il Divario Digitale">
+    <meta property="og:description" content="Scopri se la tua PMI italiana è pronta per l'Intelligenza Artificiale e ottieni una roadmap personalizzata.">
+    <meta property="og:image" content="https://oltreildivariodigitale.com/assets/images/og-image-ai-readiness.jpg">
+    <meta property="og:locale" content="it_IT">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://oltreildivariodigitale.com/pages/tools/ai-readiness.html">
+    <meta property="twitter:title" content="Test Preparazione IA - Oltre il Divario Digitale">
+    <meta property="twitter:description" content="Scopri se la tua PMI italiana è pronta per l'Intelligenza Artificiale e ottieni una roadmap personalizzata.">
+    <meta property="twitter:image" content="https://oltreildivariodigitale.com/assets/images/twitter-image-ai-readiness.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oltreildivariodigitale.com/pages/tools/ai-readiness.html">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="../../assets/css/main.css" as="style">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    
+    <!-- AI Readiness specific styles -->
+    <style>
+        .readiness-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .readiness-header {
+            background: linear-gradient(135deg, var(--deep-italian-blue) 0%, #1e40af 50%, #7c3aed 100%);
+            color: var(--pure-white);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .readiness-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .readiness-header .content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .ai-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .assessment-intro {
+            background: var(--pure-white);
+            border-radius: 16px;
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        
+        .intro-card {
+            text-align: center;
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+        }
+        
+        .intro-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .phase-container {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-card-hover);
+            margin-bottom: var(--space-xl);
+            border: 1px solid transparent;
+            transition: all 0.4s ease;
+        }
+        
+        .phase-container.active {
+            border-color: var(--deep-italian-blue);
+            transform: scale(1.01);
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .phase-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gold-gradient);
+            color: var(--charcoal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .phase-info h2 {
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .phase-subtitle {
+            color: var(--sage-green);
+            font-weight: 500;
+        }
+        
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .scenario-card {
+            border: 3px solid #e5e7eb;
+            border-radius: 16px;
+            padding: var(--space-xl);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--pure-white);
+            position: relative;
+        }
+        
+        .scenario-card:hover {
+            border-color: var(--deep-italian-blue);
+            background: linear-gradient(135deg, rgba(0,51,102,0.02), rgba(0,51,102,0.05));
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .scenario-card.selected {
+            border-color: var(--deep-italian-blue);
+            background: linear-gradient(135deg, rgba(0,51,102,0.05), rgba(0,51,102,0.1));
+            box-shadow: 0 0 0 4px rgba(0,51,102,0.1);
+        }
+        
+        .scenario-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: var(--gold-gradient);
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .scenario-card.selected::before {
+            opacity: 1;
+        }
+        
+        .scenario-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .scenario-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-md);
+            text-align: center;
+        }
+        
+        .scenario-description {
+            color: var(--charcoal);
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .scenario-features {
+            list-style: none;
+            margin-top: var(--space-md);
+        }
+        
+        .scenario-features li {
+            padding: var(--space-xs) 0;
+            font-size: 0.9rem;
+            color: var(--sage-green);
+        }
+        
+        .scenario-features li::before {
+            content: '✓';
+            color: var(--sage-green);
+            font-weight: bold;
+            margin-right: var(--space-sm);
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+        
+        .roadmap-container {
+            background: linear-gradient(135deg, var(--warm-gray) 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .roadmap-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .readiness-score {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-md);
+        }
+        
+        .readiness-level {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--sage-green);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .timeline {
+            position: relative;
+            margin: var(--space-2xl) 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--deep-italian-blue);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-xl);
+            padding-left: 80px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 18px;
+            top: 8px;
+            width: 24px;
+            height: 24px;
+            background: var(--warm-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--charcoal);
+        }
+        
+        .timeline-content {
+            background: var(--pure-white);
+            padding: var(--space-lg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .timeline-duration {
+            font-size: 0.875rem;
+            color: var(--sage-green);
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .priority-high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .priority-medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .priority-low {
+            background: #ecfdf5;
+            color: #16a34a;
+        }
+        
+        .investment-summary {
+            background: var(--pure-white);
+            border-radius: 16px;
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-card);
+            margin-top: var(--space-xl);
+        }
+        
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+        
+        .investment-item {
+            text-align: center;
+        }
+        
+        .investment-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .investment-label {
+            font-size: 0.875rem;
+            color: var(--sage-green);
+            font-weight: 500;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .readiness-container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .phase-container {
+                padding: var(--space-lg);
+            }
+            
+            .phase-header {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-md);
+            }
+            
+            .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+            }
+            
+            .readiness-score {
+                font-size: 3rem;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-marker {
+                left: 8px;
+            }
+        }
+    </style>
+    
+    <title>Test Preparazione IA - Oltre il Divario Digitale</title>
+</head>
+<body class="page-tool">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only sr-only-focusable">Salta al contenuto principale</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Navigazione principale">
+                <a href="../../index.html" class="nav-logo" aria-label="Torna alla homepage">
+                    Oltre il Divario Digitale
+                </a>
+                
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri menu di navigazione">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar">
+                    <li role="none"><a href="../../index.html" role="menuitem">Home</a></li>
+                    <li role="none"><a href="../prefazione.html" role="menuitem">Prefazione</a></li>
+                    <li role="none"><a href="../glossario.html" role="menuitem">Glossario</a></li>
+                    <li role="none">
+                        <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">Capitoli</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../chapters/capitolo-1.html" role="menuitem">Cap. 1: Il Grande Paradosso</a></li>
+                            <li><a href="../chapters/capitolo-2.html" role="menuitem">Cap. 2: Fondamenti dell'IA</a></li>
+                            <li><a href="../chapters/capitolo-3.html" role="menuitem">Cap. 3: Strategia su Misura</a></li>
+                            <li><a href="../chapters/capitolo-4.html" role="menuitem">Cap. 4: Casi di Successo</a></li>
+                            <li><a href="../chapters/capitolo-5.html" role="menuitem">Cap. 5: Leadership</a></li>
+                            <li><a href="../chapters/capitolo-6.html" role="menuitem">Cap. 6: Governance ed Etica</a></li>
+                            <li><a href="../chapters/capitolo-7.html" role="menuitem">Cap. 7: Futuro dell'IA</a></li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">Strumenti</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="roi-calculator.html" role="menuitem">Calcolatore ROI</a></li>
+                            <li><a href="maturity-assessment.html" role="menuitem">Test di Maturità</a></li>
+                            <li><a href="ai-readiness.html" class="active" role="menuitem">Test Preparazione IA</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="../case-studies.html" role="menuitem">Casi Studio</a></li>
+                    <li role="none"><a href="../resources.html" role="menuitem">Risorse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container py-16">
+            <div class="readiness-container">
+                
+                <!-- Header -->
+                <div class="readiness-header">
+                    <div class="content">
+                        <div class="ai-icon">🤖</div>
+                        <h1 class="text-4xl font-playfair font-bold mb-4">Test di Preparazione all'IA</h1>
+                        <p class="text-xl">Scopri se la tua PMI è pronta per l'Intelligenza Artificiale</p>
+                        <p class="text-lg mt-4 opacity-90">Ottieni una roadmap personalizzata in 3 fasi per implementare l'IA nella tua azienda</p>
+                    </div>
+                </div>
+
+                <!-- Introduction -->
+                <div class="assessment-intro">
+                    <h2 class="text-2xl font-playfair text-center mb-4">Perché questo test è diverso?</h2>
+                    <p class="text-center text-lg mb-6 max-w-3xl mx-auto">
+                        Non ti chiediamo solo il tuo livello attuale. Ti guidiamo attraverso scenari realistici per capire 
+                        <strong>quale approccio all'IA funzionerà meglio</strong> per la tua specifica situazione aziendale.
+                    </p>
+                    
+                    <div class="intro-grid">
+                        <div class="intro-card">
+                            <div class="intro-icon">🎯</div>
+                            <h3 class="font-semibold mb-2">Scenari Reali</h3>
+                            <p class="text-sm">Situazioni concrete che le PMI italiane affrontano ogni giorno</p>
+                        </div>
+                        <div class="intro-card">
+                            <div class="intro-icon">🗺️</div>
+                            <h3 class="font-semibold mb-2">Roadmap su Misura</h3>
+                            <p class="text-sm">Piano di implementazione personalizzato con tempistiche e budget</p>
+                        </div>
+                        <div class="intro-card">
+                            <div class="intro-icon">💰</div>
+                            <h3 class="font-semibold mb-2">ROI Predittivo</h3>
+                            <p class="text-sm">Stima dei ritorni economici basata su dati reali di PMI simili</p>
+                        </div>
+                        <div class="intro-card">
+                            <div class="intro-icon">🔧</div>
+                            <h3 class="font-semibold mb-2">Azioni Concrete</h3>
+                            <p class="text-sm">Primi passi pratici da compiere nei prossimi 30 giorni</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assessment Phases -->
+                <div id="assessmentContainer">
+                    <!-- Phase 1: Business Context -->
+                    <div class="phase-container active" id="phase1">
+                        <div class="phase-header">
+                            <div class="phase-number">1</div>
+                            <div class="phase-info">
+                                <h2>Contesto Aziendale</h2>
+                                <p class="phase-subtitle">Quale scenario descrive meglio la tua situazione attuale?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-grid" id="businessScenarios">
+                            <div class="scenario-card" data-scenario="efficiency">
+                                <div class="scenario-icon">⚡</div>
+                                <h3 class="scenario-title">Efficienza Operativa</h3>
+                                <p class="scenario-description">
+                                    Voglio automatizzare processi ripetitivi e ridurre errori umani per aumentare la produttività del team.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Riduzione costi operativi</li>
+                                    <li>Automazione workflow</li>
+                                    <li>Meno errori manuali</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scenario-card" data-scenario="insight">
+                                <div class="scenario-icon">📊</div>
+                                <h3 class="scenario-title">Business Intelligence</h3>
+                                <p class="scenario-description">
+                                    Voglio sfruttare i dati aziendali per prendere decisioni migliori e identificare nuove opportunità di business.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Analisi predittive</li>
+                                    <li>Decisioni data-driven</li>
+                                    <li>Identificazione trend</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scenario-card" data-scenario="customer">
+                                <div class="scenario-icon">👥</div>
+                                <h3 class="scenario-title">Esperienza Cliente</h3>
+                                <p class="scenario-description">
+                                    Voglio migliorare l'esperienza dei clienti con servizi personalizzati e supporto automatizzato.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Personalizzazione servizi</li>
+                                    <li>Chatbot intelligenti</li>
+                                    <li>Supporto 24/7</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scenario-card" data-scenario="innovation">
+                                <div class="scenario-icon">🚀</div>
+                                <h3 class="scenario-title">Innovazione Prodotto</h3>
+                                <p class="scenario-description">
+                                    Voglio integrare l'IA nei miei prodotti o servizi per creare nuove proposte di valore competitive.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Prodotti intelligenti</li>
+                                    <li>Vantaggio competitivo</li>
+                                    <li>Nuovi mercati</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation-buttons">
+                            <div></div>
+                            <button class="btn btn-primary" id="phase1Next" disabled>Continua → Fase 2</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Phase 2: Resource Assessment -->
+                    <div class="phase-container hidden" id="phase2">
+                        <div class="phase-header">
+                            <div class="phase-number">2</div>
+                            <div class="phase-info">
+                                <h2>Risorse Disponibili</h2>
+                                <p class="phase-subtitle">Qual è la tua situazione in termini di risorse e competenze?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-grid" id="resourceScenarios">
+                            <div class="scenario-card" data-scenario="limited">
+                                <div class="scenario-icon">🎯</div>
+                                <h3 class="scenario-title">Risorse Limitate</h3>
+                                <p class="scenario-description">
+                                    Budget contenuto (€5-25k), team piccolo, preferisco soluzioni pronte all'uso con supporto esterno.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Investimento graduale</li>
+                                    <li>Soluzioni plug-and-play</li>
+                                    <li>Supporto consulenti</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scenario-card" data-scenario="moderate">
+                                <div class="scenario-icon">⚖️</div>
+                                <h3 class="scenario-title">Risorse Moderate</h3>
+                                <p class="scenario-description">
+                                    Budget medio (€25-100k), qualche competenza tecnica interna, posso dedicare tempo al progetto.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Mix interno/esterno</li>
+                                    <li>Customizzazioni moderate</li>
+                                    <li>Team dedicato part-time</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scenario-card" data-scenario="substantial">
+                                <div class="scenario-icon">💪</div>
+                                <h3 class="scenario-title">Risorse Sostanziali</h3>
+                                <p class="scenario-description">
+                                    Budget significativo (€100k+), team tecnico competente, voglio soluzioni su misura e innovative.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Sviluppo custom</li>
+                                    <li>Team interno dedicato</li>
+                                    <li>Progetti ambiziosi</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation-buttons">
+                            <button class="btn btn-secondary" id="phase2Back">← Fase 1</button>
+                            <button class="btn btn-primary" id="phase2Next" disabled>Continua → Fase 3</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Phase 3: Timeline & Approach -->
+                    <div class="phase-container hidden" id="phase3">
+                        <div class="phase-header">
+                            <div class="phase-number">3</div>
+                            <div class="phase-info">
+                                <h2>Timeline e Approccio</h2>
+                                <p class="phase-subtitle">Quando e come vuoi implementare l'IA?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-grid" id="timelineScenarios">
+                            <div class="scenario-card" data-scenario="immediate">
+                                <div class="scenario-icon">⚡</div>
+                                <h3 class="scenario-title">Implementazione Rapida</h3>
+                                <p class="scenario-description">
+                                    Voglio risultati entro 3-6 mesi. Priorità a soluzioni che generano valore immediato e tangibile.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Quick wins garantiti</li>
+                                    <li>ROI immediato</li>
+                                    <li>Minimal risk</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scenario-card" data-scenario="progressive">
+                                <div class="scenario-icon">📈</div>
+                                <h3 class="scenario-title">Crescita Progressiva</h3>
+                                <p class="scenario-description">
+                                    Piano di implementazione graduale in 6-18 mesi, costruendo competenze e risultati step by step.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Approccio bilanciato</li>
+                                    <li>Crescita competenze</li>
+                                    <li>Scaling controllato</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="scenario-card" data-scenario="strategic">
+                                <div class="scenario-icon">🏗️</div>
+                                <h3 class="scenario-title">Trasformazione Strategica</h3>
+                                <p class="scenario-description">
+                                    Progetto di trasformazione a lungo termine (18+ mesi) per rivoluzionare il business model.
+                                </p>
+                                <ul class="scenario-features">
+                                    <li>Visione a lungo termine</li>
+                                    <li>Competitive advantage</li>
+                                    <li>Transformation completa</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation-buttons">
+                            <button class="btn btn-secondary" id="phase3Back">← Fase 2</button>
+                            <button class="btn btn-primary" id="generateRoadmap" disabled>Genera Roadmap Personalizzata</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Container -->
+                <div id="resultsContainer" class="hidden">
+                    <div class="roadmap-container">
+                        <div class="roadmap-header">
+                            <div class="readiness-score" id="readinessScore">85%</div>
+                            <div class="readiness-level" id="readinessLevel">AI-Ready: Implementazione Consigliata</div>
+                            <p class="text-lg" id="readinessDescription">
+                                La tua azienda è pronta per implementare soluzioni di IA con alta probabilità di successo.
+                            </p>
+                        </div>
+                        
+                        <div class="investment-summary">
+                            <h3 class="text-xl font-playfair text-center mb-4">Investimento Stimato</h3>
+                            <div class="investment-grid" id="investmentGrid">
+                                <!-- Investment details will be populated -->
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-playfair text-center mb-6">La Tua Roadmap Personalizzata</h3>
+                        <div class="timeline" id="roadmapTimeline">
+                            <!-- Timeline items will be populated -->
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <a href="../chapters/capitolo-2.html" class="btn btn-primary btn-lg">
+                                Inizia con i Fondamenti dell'IA
+                            </a>
+                            <a href="roi-calculator.html" class="btn btn-secondary btn-lg">
+                                Calcola il ROI Dettagliato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="mb-6">Oltre il Divario Digitale</h4>
+                    <p class="mb-4">
+                        La guida completa per le PMI italiane verso l'Intelligenza Artificiale.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="LinkedIn" class="text-gold">LinkedIn</a>
+                        <a href="#" aria-label="Twitter" class="text-gold">Twitter</a>
+                        <a href="#" aria-label="YouTube" class="text-gold">YouTube</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Capitoli</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../chapters/capitolo-1.html">Il Grande Paradosso</a></li>
+                        <li><a href="../chapters/capitolo-2.html">Fondamenti dell'IA</a></li>
+                        <li><a href="../chapters/capitolo-3.html">Strategia su Misura</a></li>
+                        <li><a href="../chapters/capitolo-4.html">Casi di Successo</a></li>
+                        <li><a href="../chapters/capitolo-5.html">Leadership</a></li>
+                        <li><a href="../chapters/capitolo-6.html">Governance</a></li>
+                        <li><a href="../chapters/capitolo-7.html">Futuro dell'IA</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Strumenti</h4>
+                    <ul class="space-y-2">
+                        <li><a href="roi-calculator.html">Calcolatore ROI</a></li>
+                        <li><a href="maturity-assessment.html">Test di Maturità</a></li>
+                        <li><a href="ai-readiness.html">Test Preparazione IA</a></li>
+                        <li><a href="../resources.html">Template Scaricabili</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Risorse</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../case-studies.html">Casi Studio</a></li>
+                        <li><a href="../resources.html">Download</a></li>
+                        <li><a href="../prefazione.html">Prefazione</a></li>
+                        <li><a href="../glossario.html">Glossario</a></li>
+                        <li><a href="#" rel="nofollow">Contatti</a></li>
+                        <li><a href="#" rel="nofollow">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Oltre il Divario Digitale. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.min.js" defer></script>
+    
+    <!-- AI Readiness Assessment Logic -->
+    <script>
+        class AIReadinessAssessment {
+            constructor() {
+                this.responses = {
+                    business: null,
+                    resources: null,
+                    timeline: null
+                };
+                this.currentPhase = 1;
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                // Phase 1 scenarios
+                document.querySelectorAll('#businessScenarios .scenario-card').forEach(card => {
+                    card.addEventListener('click', () => this.selectScenario('business', card));
+                });
+
+                // Phase 2 scenarios
+                document.querySelectorAll('#resourceScenarios .scenario-card').forEach(card => {
+                    card.addEventListener('click', () => this.selectScenario('resources', card));
+                });
+
+                // Phase 3 scenarios
+                document.querySelectorAll('#timelineScenarios .scenario-card').forEach(card => {
+                    card.addEventListener('click', () => this.selectScenario('timeline', card));
+                });
+
+                // Navigation buttons
+                document.getElementById('phase1Next').addEventListener('click', () => this.nextPhase());
+                document.getElementById('phase2Back').addEventListener('click', () => this.prevPhase());
+                document.getElementById('phase2Next').addEventListener('click', () => this.nextPhase());
+                document.getElementById('phase3Back').addEventListener('click', () => this.prevPhase());
+                document.getElementById('generateRoadmap').addEventListener('click', () => this.generateRoadmap());
+            }
+
+            selectScenario(type, cardElement) {
+                // Remove selection from siblings
+                cardElement.parentElement.querySelectorAll('.scenario-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+
+                // Select current card
+                cardElement.classList.add('selected');
+                this.responses[type] = cardElement.dataset.scenario;
+
+                // Enable next button for current phase
+                const nextButton = document.getElementById(`phase${this.currentPhase}Next`) || 
+                                 document.getElementById('generateRoadmap');
+                if (nextButton) {
+                    nextButton.disabled = false;
+                }
+            }
+
+            nextPhase() {
+                if (this.currentPhase < 3) {
+                    document.getElementById(`phase${this.currentPhase}`).classList.add('hidden');
+                    this.currentPhase++;
+                    document.getElementById(`phase${this.currentPhase}`).classList.remove('hidden');
+                    document.getElementById(`phase${this.currentPhase}`).classList.add('active');
+                }
+            }
+
+            prevPhase() {
+                if (this.currentPhase > 1) {
+                    document.getElementById(`phase${this.currentPhase}`).classList.add('hidden');
+                    document.getElementById(`phase${this.currentPhase}`).classList.remove('active');
+                    this.currentPhase--;
+                    document.getElementById(`phase${this.currentPhase}`).classList.remove('hidden');
+                    document.getElementById(`phase${this.currentPhase}`).classList.add('active');
+                }
+            }
+
+            generateRoadmap() {
+                // Hide assessment, show results
+                document.getElementById('assessmentContainer').classList.add('hidden');
+                document.getElementById('resultsContainer').classList.remove('hidden');
+
+                // Generate roadmap based on responses
+                const profile = this.analyzeProfile();
+                this.displayResults(profile);
+
+                // Scroll to results
+                document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            analyzeProfile() {
+                const { business, resources, timeline } = this.responses;
+
+                // Calculate readiness score
+                let score = 60; // Base score
+
+                // Business scenario adjustments
+                if (business === 'efficiency') score += 15;
+                if (business === 'insight') score += 20;
+                if (business === 'customer') score += 10;
+                if (business === 'innovation') score += 25;
+
+                // Resource scenario adjustments
+                if (resources === 'limited') score += 5;
+                if (resources === 'moderate') score += 15;
+                if (resources === 'substantial') score += 25;
+
+                // Timeline scenario adjustments
+                if (timeline === 'immediate') score += 10;
+                if (timeline === 'progressive') score += 15;
+                if (timeline === 'strategic') score += 20;
+
+                // Determine readiness level
+                let level, description;
+                if (score >= 85) {
+                    level = 'AI-Ready: Implementazione Consigliata';
+                    description = 'La tua azienda è pronta per implementare soluzioni di IA con alta probabilità di successo.';
+                } else if (score >= 70) {
+                    level = 'AI-Promising: Preparazione Avanzata';
+                    description = 'Ottima base per l\'IA. Con alcune preparazioni specifiche, potrai implementare soluzioni efficaci.';
+                } else if (score >= 55) {
+                    level = 'AI-Developing: Costruisci le Fondamenta';
+                    description = 'Buone opportunità per l\'IA. Concentrati prima su digitalizzazione e competenze di base.';
+                } else {
+                    level = 'AI-Exploring: Inizia il Percorso';
+                    description = 'L\'IA rappresenta un\'opportunità futura. Inizia con la digitalizzazione dei processi base.';
+                }
+
+                return {
+                    score,
+                    level,
+                    description,
+                    business,
+                    resources,
+                    timeline,
+                    roadmap: this.generateRoadmapSteps(business, resources, timeline),
+                    investment: this.calculateInvestment(resources, timeline)
+                };
+            }
+
+            generateRoadmapSteps(business, resources, timeline) {
+                const baseSteps = {
+                    efficiency: [
+                        {
+                            phase: 1,
+                            title: 'Audit Processi Attuali',
+                            duration: '2-4 settimane',
+                            priority: 'high',
+                            description: 'Mappatura completa dei processi manuali e identificazione delle opportunità di automazione.',
+                            activities: ['Analisi workflow esistenti', 'Identificazione bottleneck', 'Quantificazione inefficienze']
+                        },
+                        {
+                            phase: 2,
+                            title: 'Implementazione RPA',
+                            duration: '6-12 settimane',
+                            priority: 'high',
+                            description: 'Automazione dei processi ripetitivi con strumenti di Robotic Process Automation.',
+                            activities: ['Setup tool RPA', 'Automazione processi prioritari', 'Training team']
+                        },
+                        {
+                            phase: 3,
+                            title: 'AI Predittiva',
+                            duration: '8-16 settimane',
+                            priority: 'medium',
+                            description: 'Implementazione di algoritmi predittivi per ottimizzazione avanzata.',
+                            activities: ['Raccolta dati storici', 'Sviluppo modelli predittivi', 'Integrazione sistemi']
+                        }
+                    ],
+                    insight: [
+                        {
+                            phase: 1,
+                            title: 'Data Infrastructure',
+                            duration: '4-8 settimane',
+                            priority: 'high',
+                            description: 'Creazione di infrastruttura dati solida per analytics avanzate.',
+                            activities: ['Data warehouse setup', 'ETL processes', 'Data quality assurance']
+                        },
+                        {
+                            phase: 2,
+                            title: 'Business Intelligence',
+                            duration: '6-10 settimane',
+                            priority: 'high',
+                            description: 'Dashboard e reportistica automatizzata per decision making.',
+                            activities: ['KPI definition', 'Dashboard development', 'User training']
+                        },
+                        {
+                            phase: 3,
+                            title: 'Predictive Analytics',
+                            duration: '12-20 settimane',
+                            priority: 'medium',
+                            description: 'Modelli di machine learning per previsioni business.',
+                            activities: ['Modelling', 'A/B testing', 'Production deployment']
+                        }
+                    ],
+                    customer: [
+                        {
+                            phase: 1,
+                            title: 'Customer Data Platform',
+                            duration: '4-6 settimane',
+                            priority: 'high',
+                            description: 'Unificazione dati clienti per view a 360 gradi.',
+                            activities: ['Data integration', 'Customer profiling', 'Segmentation']
+                        },
+                        {
+                            phase: 2,
+                            title: 'Chatbot e Automazione',
+                            duration: '6-12 settimane',
+                            priority: 'high',
+                            description: 'Implementazione assistenti virtuali per supporto clienti.',
+                            activities: ['NLP setup', 'Conversation design', 'Integration CRM']
+                        },
+                        {
+                            phase: 3,
+                            title: 'Personalizzazione Avanzata',
+                            duration: '10-16 settimane',
+                            priority: 'medium',
+                            description: 'Raccomandazioni personalizzate e experience optimization.',
+                            activities: ['Recommendation engine', 'A/B testing', 'Performance optimization']
+                        }
+                    ],
+                    innovation: [
+                        {
+                            phase: 1,
+                            title: 'Innovation Lab Setup',
+                            duration: '6-8 settimane',
+                            priority: 'high',
+                            description: 'Creazione centro di innovazione interno per sperimentazione IA.',
+                            activities: ['Team building', 'Tool selection', 'Proof of concept framework']
+                        },
+                        {
+                            phase: 2,
+                            title: 'Product AI Integration',
+                            duration: '12-20 settimane',
+                            priority: 'high',
+                            description: 'Integrazione IA nei prodotti/servizi core per competitive advantage.',
+                            activities: ['Market research', 'MVP development', 'Customer validation']
+                        },
+                        {
+                            phase: 3,
+                            title: 'AI-Native Products',
+                            duration: '16-24 settimane',
+                            priority: 'low',
+                            description: 'Sviluppo di nuovi prodotti/servizi nativamente basati su IA.',
+                            activities: ['New product development', 'Go-to-market strategy', 'Scale operations']
+                        }
+                    ]
+                };
+
+                let steps = baseSteps[business] || baseSteps.efficiency;
+
+                // Adjust timeline based on resources and timeline preference
+                if (resources === 'limited') {
+                    steps = steps.map(step => ({
+                        ...step,
+                        duration: this.extendDuration(step.duration, 1.5)
+                    }));
+                } else if (resources === 'substantial') {
+                    steps = steps.map(step => ({
+                        ...step,
+                        duration: this.reduceDuration(step.duration, 0.75)
+                    }));
+                }
+
+                if (timeline === 'immediate') {
+                    steps = steps.slice(0, 2); // Focus on first 2 phases for quick results
+                } else if (timeline === 'strategic') {
+                    // Add additional advanced phases
+                    steps.push({
+                        phase: 4,
+                        title: 'AI Center of Excellence',
+                        duration: '12-24 settimane',
+                        priority: 'low',
+                        description: 'Establishment di centro di eccellenza IA per innovation continua.',
+                        activities: ['Advanced R&D', 'Industry partnerships', 'Knowledge sharing']
+                    });
+                }
+
+                return steps;
+            }
+
+            extendDuration(duration, multiplier) {
+                return duration.replace(/(\d+)/g, (match) => Math.ceil(parseInt(match) * multiplier));
+            }
+
+            reduceDuration(duration, multiplier) {
+                return duration.replace(/(\d+)/g, (match) => Math.ceil(parseInt(match) * multiplier));
+            }
+
+            calculateInvestment(resources, timeline) {
+                let baseInvestment = {
+                    limited: { min: 15000, max: 45000 },
+                    moderate: { min: 45000, max: 120000 },
+                    substantial: { min: 120000, max: 500000 }
+                };
+
+                let investment = baseInvestment[resources];
+
+                // Adjust for timeline
+                if (timeline === 'immediate') {
+                    investment.min *= 1.2;
+                    investment.max *= 1.2;
+                } else if (timeline === 'strategic') {
+                    investment.min *= 1.5;
+                    investment.max *= 2;
+                }
+
+                return {
+                    initial: investment.min,
+                    total: investment.max,
+                    monthly: Math.round(investment.max / 24), // Spread over 2 years
+                    roi_months: timeline === 'immediate' ? 8 : timeline === 'progressive' ? 12 : 18
+                };
+            }
+
+            displayResults(profile) {
+                // Update readiness display
+                document.getElementById('readinessScore').textContent = profile.score + '%';
+                document.getElementById('readinessLevel').textContent = profile.level;
+                document.getElementById('readinessDescription').textContent = profile.description;
+
+                // Update investment summary
+                const investmentGrid = document.getElementById('investmentGrid');
+                investmentGrid.innerHTML = `
+                    <div class="investment-item">
+                        <div class="investment-value">€${(profile.investment.initial / 1000).toFixed(0)}k</div>
+                        <div class="investment-label">Investimento Iniziale</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-value">€${(profile.investment.total / 1000).toFixed(0)}k</div>
+                        <div class="investment-label">Investimento Totale</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-value">${profile.investment.roi_months}</div>
+                        <div class="investment-label">Mesi per ROI</div>
+                    </div>
+                    <div class="investment-item">
+                        <div class="investment-value">€${(profile.investment.monthly / 1000).toFixed(1)}k</div>
+                        <div class="investment-label">Budget Mensile</div>
+                    </div>
+                `;
+
+                // Generate timeline
+                const timeline = document.getElementById('roadmapTimeline');
+                timeline.innerHTML = profile.roadmap.map(step => `
+                    <div class="timeline-item">
+                        <div class="timeline-marker">${step.phase}</div>
+                        <div class="timeline-content">
+                            <div class="priority-badge priority-${step.priority}">
+                                Priorità ${step.priority === 'high' ? 'Alta' : step.priority === 'medium' ? 'Media' : 'Bassa'}
+                            </div>
+                            <div class="timeline-title">${step.title}</div>
+                            <div class="timeline-duration">Durata: ${step.duration}</div>
+                            <p class="timeline-description">${step.description}</p>
+                            <ul class="scenario-features">
+                                ${step.activities.map(activity => `<li>${activity}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Initialize assessment when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            window.aiReadinessAssessment = new AIReadinessAssessment();
+        });
+    </script>
+</body>
+</html>

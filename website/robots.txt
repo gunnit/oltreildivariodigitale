@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Block admin/development files
+Disallow: /assets/css/main.css.map
+Disallow: /assets/js/main.js.map
+Disallow: /*.docx$
+Disallow: /templates/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://oltreildivariodigitale.com/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1

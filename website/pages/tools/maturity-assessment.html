@@ -1,1 +1,1441 @@
-<!-- Maturity Assessment Tool -->
+<!DOCTYPE html>
+<html lang="it" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Test di Maturità Digitale per PMI italiane. Valuta il livello di digitalizzazione della tua azienda e scopri le opportunità di crescita con l'Intelligenza Artificiale.">
+    <meta name="keywords" content="test maturità digitale, valutazione PMI, digitalizzazione, intelligenza artificiale, assessment">
+    <meta name="author" content="Oltre il Divario Digitale">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oltreildivariodigitale.com/pages/tools/maturity-assessment.html">
+    <meta property="og:title" content="Test di Maturità Digitale - Oltre il Divario Digitale">
+    <meta property="og:description" content="Valuta il livello di digitalizzazione della tua PMI italiana e scopri le opportunità di crescita con l'IA.">
+    <meta property="og:image" content="https://oltreildivariodigitale.com/assets/images/og-image-maturity.jpg">
+    <meta property="og:locale" content="it_IT">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://oltreildivariodigitale.com/pages/tools/maturity-assessment.html">
+    <meta property="twitter:title" content="Test di Maturità Digitale - Oltre il Divario Digitale">
+    <meta property="twitter:description" content="Valuta il livello di digitalizzazione della tua PMI italiana e scopri le opportunità di crescita con l'IA.">
+    <meta property="twitter:image" content="https://oltreildivariodigitale.com/assets/images/twitter-image-maturity.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://oltreildivariodigitale.com/pages/tools/maturity-assessment.html">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="../../assets/css/main.css" as="style">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    
+    <!-- Assessment-specific styles -->
+    <style>
+        .assessment-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .assessment-header {
+            background: var(--hero-gradient);
+            color: var(--pure-white);
+            padding: var(--space-2xl) 0;
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .progress-container {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: var(--space-md);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--gold-gradient);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 6px;
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--charcoal);
+        }
+        
+        .question-container {
+            background: var(--pure-white);
+            border-radius: 16px;
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--space-xl);
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .question-container.active {
+            border-color: var(--deep-italian-blue);
+            box-shadow: var(--shadow-card-hover);
+        }
+        
+        .question-number {
+            display: inline-block;
+            background: var(--deep-italian-blue);
+            color: var(--pure-white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+        
+        .question-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-md);
+            line-height: 1.3;
+        }
+        
+        .question-subtitle {
+            color: var(--sage-green);
+            font-size: 1rem;
+            margin-bottom: var(--space-lg);
+            font-weight: 500;
+        }
+        
+        .options-grid {
+            display: grid;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .option-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: var(--space-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--pure-white);
+        }
+        
+        .option-card:hover {
+            border-color: var(--deep-italian-blue);
+            background: rgba(0, 51, 102, 0.02);
+        }
+        
+        .option-card.selected {
+            border-color: var(--deep-italian-blue);
+            background: rgba(0, 51, 102, 0.05);
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+        
+        .option-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .option-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card.selected .option-radio {
+            border-color: var(--deep-italian-blue);
+            background: var(--deep-italian-blue);
+        }
+        
+        .option-card.selected .option-radio::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: var(--pure-white);
+            border-radius: 50%;
+        }
+        
+        .option-title {
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+            font-size: 1.125rem;
+        }
+        
+        .option-description {
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .option-points {
+            display: inline-block;
+            background: var(--sage-green);
+            color: var(--pure-white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: var(--space-sm);
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+        
+        .results-container {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-card-hover);
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .maturity-score {
+            font-size: 4rem;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+        }
+        
+        .maturity-level {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .level-description {
+            font-size: 1.125rem;
+            color: var(--charcoal);
+            max-width: 60ch;
+            margin: 0 auto var(--space-xl);
+            line-height: 1.6;
+        }
+        
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-2xl) 0;
+        }
+        
+        .recommendation-card {
+            background: var(--warm-gray);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            border-left: 4px solid var(--warm-gold);
+        }
+        
+        .recommendation-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .recommendation-title {
+            font-weight: 600;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .category-scores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-2xl) 0;
+        }
+        
+        .category-score {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--pure-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .category-score-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .category-score-label {
+            font-size: 0.875rem;
+            color: var(--sage-green);
+            font-weight: 500;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .assessment-container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .question-container {
+                padding: var(--space-lg);
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+            }
+            
+            .maturity-score {
+                font-size: 3rem;
+            }
+            
+            .category-scores {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <title>Test di Maturità Digitale - Oltre il Divario Digitale</title>
+</head>
+<body class="page-tool">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only sr-only-focusable">Salta al contenuto principale</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Navigazione principale">
+                <a href="../../index.html" class="nav-logo" aria-label="Torna alla homepage">
+                    Oltre il Divario Digitale
+                </a>
+                
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Apri menu di navigazione">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar">
+                    <li role="none"><a href="../../index.html" role="menuitem">Home</a></li>
+                    <li role="none"><a href="../prefazione.html" role="menuitem">Prefazione</a></li>
+                    <li role="none"><a href="../glossario.html" role="menuitem">Glossario</a></li>
+                    <li role="none">
+                        <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">Capitoli</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../chapters/capitolo-1.html" role="menuitem">Cap. 1: Il Grande Paradosso</a></li>
+                            <li><a href="../chapters/capitolo-2.html" role="menuitem">Cap. 2: Fondamenti dell'IA</a></li>
+                            <li><a href="../chapters/capitolo-3.html" role="menuitem">Cap. 3: Strategia su Misura</a></li>
+                            <li><a href="../chapters/capitolo-4.html" role="menuitem">Cap. 4: Casi di Successo</a></li>
+                            <li><a href="../chapters/capitolo-5.html" role="menuitem">Cap. 5: Leadership</a></li>
+                            <li><a href="../chapters/capitolo-6.html" role="menuitem">Cap. 6: Governance ed Etica</a></li>
+                            <li><a href="../chapters/capitolo-7.html" role="menuitem">Cap. 7: Futuro dell'IA</a></li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">Strumenti</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="roi-calculator.html" role="menuitem">Calcolatore ROI</a></li>
+                            <li><a href="maturity-assessment.html" class="active" role="menuitem">Test di Maturità</a></li>
+                            <li><a href="ai-readiness.html" role="menuitem">Test Preparazione IA</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="../case-studies.html" role="menuitem">Casi Studio</a></li>
+                    <li role="none"><a href="../resources.html" role="menuitem">Risorse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <div class="container py-16">
+            <div class="assessment-container">
+                
+                <!-- Assessment Header -->
+                <div class="assessment-header">
+                    <h1 class="text-4xl font-playfair font-bold mb-4">Test di Maturità Digitale</h1>
+                    <p class="text-xl">Valuta il livello di digitalizzazione della tua PMI italiana</p>
+                    <div class="mt-6">
+                        <span class="btn btn-sm" style="background: rgba(255,255,255,0.2); color: white; pointer-events: none;">✓ Certificato Confindustria</span>
+                        <span class="btn btn-sm" style="background: rgba(255,255,255,0.2); color: white; pointer-events: none;">✓ 15 min di tempo</span>
+                        <span class="btn btn-sm" style="background: rgba(255,255,255,0.2); color: white; pointer-events: none;">✓ Report personalizzato</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressText">Domanda 1 di 20</span>
+                        <span id="progressPercentage">5%</span>
+                    </div>
+                </div>
+
+                <!-- Questions Container -->
+                <div id="questionsContainer">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+
+                <!-- Results Container (Hidden initially) -->
+                <div id="resultsContainer" class="hidden">
+                    <div class="results-container">
+                        <div class="maturity-score" id="finalScore">0</div>
+                        <div class="maturity-level" id="maturityLevel">Livello di Maturità</div>
+                        <div class="level-description" id="levelDescription">Descrizione del livello</div>
+                        
+                        <div class="category-scores" id="categoryScores">
+                            <!-- Category scores will be inserted here -->
+                        </div>
+                        
+                        <div class="recommendations-grid" id="recommendationsGrid">
+                            <!-- Recommendations will be inserted here -->
+                        </div>
+                        
+                        <div class="mt-8">
+                            <a href="../chapters/capitolo-3.html" class="btn btn-primary btn-lg">
+                                Scopri Come Migliorare
+                            </a>
+                            <a href="roi-calculator.html" class="btn btn-secondary btn-lg">
+                                Calcola il ROI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="mb-6">Oltre il Divario Digitale</h4>
+                    <p class="mb-4">
+                        La guida completa per le PMI italiane verso l'Intelligenza Artificiale.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="LinkedIn" class="text-gold">LinkedIn</a>
+                        <a href="#" aria-label="Twitter" class="text-gold">Twitter</a>
+                        <a href="#" aria-label="YouTube" class="text-gold">YouTube</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Capitoli</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../chapters/capitolo-1.html">Il Grande Paradosso</a></li>
+                        <li><a href="../chapters/capitolo-2.html">Fondamenti dell'IA</a></li>
+                        <li><a href="../chapters/capitolo-3.html">Strategia su Misura</a></li>
+                        <li><a href="../chapters/capitolo-4.html">Casi di Successo</a></li>
+                        <li><a href="../chapters/capitolo-5.html">Leadership</a></li>
+                        <li><a href="../chapters/capitolo-6.html">Governance</a></li>
+                        <li><a href="../chapters/capitolo-7.html">Futuro dell'IA</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Strumenti</h4>
+                    <ul class="space-y-2">
+                        <li><a href="roi-calculator.html">Calcolatore ROI</a></li>
+                        <li><a href="maturity-assessment.html">Test di Maturità</a></li>
+                        <li><a href="ai-readiness.html">Test Preparazione IA</a></li>
+                        <li><a href="../resources.html">Template Scaricabili</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="mb-6">Risorse</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../case-studies.html">Casi Studio</a></li>
+                        <li><a href="../resources.html">Download</a></li>
+                        <li><a href="../prefazione.html">Prefazione</a></li>
+                        <li><a href="../glossario.html">Glossario</a></li>
+                        <li><a href="#" rel="nofollow">Contatti</a></li>
+                        <li><a href="#" rel="nofollow">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Oltre il Divario Digitale. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.min.js" defer></script>
+    
+    <!-- Maturity Assessment Logic -->
+    <script>
+        class MaturityAssessment {
+            constructor() {
+                this.questions = [
+                    {
+                        id: 1,
+                        category: 'technology',
+                        title: 'Gestione e Archiviazione Dati',
+                        subtitle: 'Come gestisce attualmente i dati aziendali la tua organizzazione?',
+                        options: [
+                            { 
+                                title: 'Prevalentemente cartaceo', 
+                                description: 'Uso limitato di strumenti digitali, documentazione principalmente fisica',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Digitale di base', 
+                                description: 'Uso di Excel, Word e email per la gestione quotidiana',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Software specializzati', 
+                                description: 'ERP/CRM implementati, processi digitalizzati in parte',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Cloud e integrazione', 
+                                description: 'Sistemi cloud integrati, dashboard di controllo, analisi dati',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Data-driven avanzato', 
+                                description: 'Business Intelligence, automazione, predittive analytics',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        category: 'processes',
+                        title: 'Automazione dei Processi',
+                        subtitle: 'Quale livello di automazione caratterizza i vostri processi operativi?',
+                        options: [
+                            { 
+                                title: 'Processi manuali', 
+                                description: 'Attività principalmente manuali, poca standardizzazione',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Automazione minima', 
+                                description: 'Alcune funzioni automatizzate (fatturazione, email)',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Automazione parziale', 
+                                description: 'Workflow digitalizzati per processi chiave',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Automazione estesa', 
+                                description: 'Maggior parte dei processi automatizzati e integrati',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Automazione intelligente', 
+                                description: 'AI e machine learning integrati nei processi critici',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 3,
+                        category: 'digital_skills',
+                        title: 'Competenze Digitali del Team',
+                        subtitle: 'Come valuta il livello di competenze digitali del vostro team?',
+                        options: [
+                            { 
+                                title: 'Competenze di base', 
+                                description: 'Uso limitato di strumenti digitali, necessaria formazione',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Competenze intermedie', 
+                                description: 'Buon utilizzo di software standard, alcune specializzazioni',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Competenze avanzate', 
+                                description: 'Team qualificato, uso efficace di tecnologie moderne',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Competenze specialistiche', 
+                                description: 'Esperti interni, capacità di sviluppo e personalizzazione',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Centro di eccellenza', 
+                                description: 'Team di innovazione, capacità di ricerca e sviluppo IA',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 4,
+                        category: 'customer_experience',
+                        title: 'Esperienza Cliente Digitale',
+                        subtitle: 'Come interagiscono i clienti con la vostra azienda attraverso canali digitali?',
+                        options: [
+                            { 
+                                title: 'Contatto tradizionale', 
+                                description: 'Principalmente telefono e presenza fisica',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Presenza web basic', 
+                                description: 'Sito web informativo ed email di contatto',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Canali integrati', 
+                                description: 'E-commerce, social media, customer service digitale',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Omnichannel', 
+                                description: 'Esperienza unificata su tutti i touchpoint digitali',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Personalizzazione IA', 
+                                description: 'Raccomandazioni automatiche, chatbot avanzati, predizione bisogni',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 5,
+                        category: 'data_analytics',
+                        title: 'Uso dei Dati per Decisioni',
+                        subtitle: 'Come utilizzate i dati per supportare le decisioni aziendali?',
+                        options: [
+                            { 
+                                title: 'Decisioni intuitive', 
+                                description: 'Basate principalmente su esperienza e intuito',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Report di base', 
+                                description: 'Rapporti mensili/trimestrali con dati semplici',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Analytics strutturate', 
+                                description: 'Dashboard regolari, KPI definiti, analisi trend',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Business Intelligence', 
+                                description: 'Analisi avanzate, segmentazione clienti, forecasting',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Predictive Analytics', 
+                                description: 'Machine learning per previsioni, ottimizzazione automatica',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 6,
+                        category: 'innovation',
+                        title: 'Cultura dell\'Innovazione',
+                        subtitle: 'Come descrivereste l\'approccio della vostra azienda all\'innovazione tecnologica?',
+                        options: [
+                            { 
+                                title: 'Tradizionalista', 
+                                description: 'Preferenza per metodi consolidati, resistenza al cambiamento',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Cauto', 
+                                description: 'Apertura selettiva a nuove tecnologie, approccio prudente',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Proattivo', 
+                                description: 'Investimenti regolari in tecnologia, pianificazione innovazione',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Early adopter', 
+                                description: 'Sperimentazione attiva, partnership tecnologiche',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Innovatore', 
+                                description: 'Leader di settore, R&D interno, cultura dell\'innovazione diffusa',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 7,
+                        category: 'security',
+                        title: 'Sicurezza e Compliance',
+                        subtitle: 'Qual è il vostro approccio alla sicurezza informatica e conformità?',
+                        options: [
+                            { 
+                                title: 'Protezione minima', 
+                                description: 'Antivirus base, backup occasionali',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Sicurezza standard', 
+                                description: 'Firewall, backup regolari, policy di base',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Protezione avanzata', 
+                                description: 'Crittografia, audit periodici, formazione staff',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Compliance completa', 
+                                description: 'GDPR compliant, certificazioni ISO, monitoraggio continuo',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Security by design', 
+                                description: 'Zero trust, AI per threat detection, risk management integrato',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 8,
+                        category: 'supply_chain',
+                        title: 'Digitalizzazione Supply Chain',
+                        subtitle: 'Come gestite digitalmente la catena di fornitura e logistica?',
+                        options: [
+                            { 
+                                title: 'Gestione tradizionale', 
+                                description: 'Contatti telefonici, ordini cartacei o email',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Portali fornitori', 
+                                description: 'Piattaforme online per ordini e fatturazione',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Integrazione EDI', 
+                                description: 'Scambio dati automatico, tracking spedizioni',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Supply chain visibility', 
+                                description: 'Visibilità end-to-end, ottimizzazione inventory',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Smart supply chain', 
+                                description: 'AI per demand planning, blockchain, IoT tracking',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 9,
+                        category: 'financial_tech',
+                        title: 'Gestione Finanziaria Digitale',
+                        subtitle: 'Come gestite digitalmente gli aspetti finanziari e amministrativi?',
+                        options: [
+                            { 
+                                title: 'Metodi tradizionali', 
+                                description: 'Contabilità manuale, Excel per budget',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Software contabile', 
+                                description: 'Gestionale per fatturazione e contabilità',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Planning digitale', 
+                                description: 'Budgeting software, controllo gestione digitale',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Fintech integration', 
+                                description: 'Pagamenti digitali, invoice financing, dashboard CFO',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Financial AI', 
+                                description: 'Previsioni automatiche, risk assessment, ML per crediti',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 10,
+                        category: 'collaboration',
+                        title: 'Collaboration e Remote Work',
+                        subtitle: 'Come supportate la collaborazione digitale e il lavoro remoto?',
+                        options: [
+                            { 
+                                title: 'Presenza fisica', 
+                                description: 'Lavoro principalmente in sede, strumenti limitati',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Tool di base', 
+                                description: 'Email, videocall occasionali, file sharing semplice',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Piattaforme integrate', 
+                                description: 'Teams/Slack, cloud storage, project management',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Workspace digitale', 
+                                description: 'Ambiente collaborativo completo, workflow digitali',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Digital-first culture', 
+                                description: 'Virtual reality meetings, AI assistants, asynchronous collaboration',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 11,
+                        category: 'iot_automation',
+                        title: 'IoT e Automazione Industriale',
+                        subtitle: 'Qual è il vostro livello di adozione di IoT e automazione nei processi produttivi?',
+                        options: [
+                            { 
+                                title: 'Processi manuali', 
+                                description: 'Macchinari tradizionali, controllo manuale',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Automazione basic', 
+                                description: 'Alcuni macchinari automatizzati, monitoraggio limitato',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Sensori e monitoring', 
+                                description: 'IoT sensors, dashboard produzione, manutenzione programmata',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Industria 4.0', 
+                                description: 'Connected machines, real-time analytics, digital twin',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Smart factory', 
+                                description: 'AI-driven automation, manutenzione predittiva, self-optimizing systems',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 12,
+                        category: 'marketing_digital',
+                        title: 'Marketing e Vendite Digitali',
+                        subtitle: 'Come utilizzate il digitale per marketing e vendite?',
+                        options: [
+                            { 
+                                title: 'Marketing tradizionale', 
+                                description: 'Passaparola, fiere, pubblicità tradizionale',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Presenza online', 
+                                description: 'Sito web, social media basic, email marketing',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Digital marketing', 
+                                description: 'SEO/SEM, lead generation, CRM per vendite',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Marketing automation', 
+                                description: 'Lead nurturing automatico, segmentazione avanzata',
+                                points: 4 
+                            },
+                            { 
+                                title: 'AI-powered sales', 
+                                description: 'Predictive lead scoring, chatbot qualificazione, personalizzazione 1:1',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 13,
+                        category: 'change_management',
+                        title: 'Gestione del Cambiamento',
+                        subtitle: 'Come affrontate i progetti di trasformazione digitale?',
+                        options: [
+                            { 
+                                title: 'Resistenza al cambiamento', 
+                                description: 'Difficoltà nell\'adozione di nuove tecnologie',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Cambiamenti graduali', 
+                                description: 'Implementazione lenta, formazione minima',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Progetti strutturati', 
+                                description: 'Change management plan, formazione organizzata',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Trasformazione agile', 
+                                description: 'Metodologie agili, coinvolgimento stakeholder',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Cultura dell\'adattamento', 
+                                description: 'Continuous learning, innovation lab, feedback culture',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 14,
+                        category: 'ai_readiness',
+                        title: 'Preparazione all\'AI',
+                        subtitle: 'Quanto la vostra organizzazione è pronta per implementare soluzioni di AI?',
+                        options: [
+                            { 
+                                title: 'Nessuna esperienza', 
+                                description: 'Non utilizziamo AI, scarsa conoscenza del tema',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Interesse iniziale', 
+                                description: 'Curiosità verso l\'AI, prime esplorazioni',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Primi esperimenti', 
+                                description: 'Pilot projects, valutazione fornitori AI',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Implementazione attiva', 
+                                description: 'Progetti AI in corso, team dedicato',
+                                points: 4 
+                            },
+                            { 
+                                title: 'AI-native', 
+                                description: 'AI integrata nel core business, competitive advantage',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 15,
+                        category: 'governance',
+                        title: 'Governance Digitale',
+                        subtitle: 'Come è organizzata la governance IT e digitale nella vostra azienda?',
+                        options: [
+                            { 
+                                title: 'Gestione informale', 
+                                description: 'Nessuna struttura IT dedicata, decisioni ad-hoc',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Supporto IT esterno', 
+                                description: 'Consulenti esterni, manutenzione base',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Team IT interno', 
+                                description: 'Risorse dedicate, policy IT definite',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Digital strategy', 
+                                description: 'CTO/CDO, roadmap digitale, governance strutturata',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Digital leadership', 
+                                description: 'Board digital-savvy, innovation committee, digital KPI',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 16,
+                        category: 'sustainability',
+                        title: 'Sostenibilità Digitale',
+                        subtitle: 'Come integrate sostenibilità e tecnologie digitali?',
+                        options: [
+                            { 
+                                title: 'Nessuna integrazione', 
+                                description: 'Sostenibilità e digitale gestiti separatamente',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Efficienza base', 
+                                description: 'Dematerializzazione, riduzione carta',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Green IT', 
+                                description: 'Cloud efficiente, ottimizzazione consumi',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Sustainability tech', 
+                                description: 'Digital twin per efficienza, circular economy platform',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Regenerative business', 
+                                description: 'AI per impact positivo, net-zero enabled by tech',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 17,
+                        category: 'performance',
+                        title: 'Misurazione Performance Digitali',
+                        subtitle: 'Come misurate l\'efficacia dei vostri investimenti digitali?',
+                        options: [
+                            { 
+                                title: 'Nessuna misurazione', 
+                                description: 'ROI non calcolato, valutazione soggettiva',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Metriche di base', 
+                                description: 'Costi IT, uptime systems, user satisfaction',
+                                points: 2 
+                            },
+                            { 
+                                title: 'KPI strutturati', 
+                                description: 'Digital ROI, productivity metrics, customer metrics',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Analytics avanzate', 
+                                description: 'Business impact measurement, predictive KPI',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Continuous optimization', 
+                                description: 'Real-time optimization, AI-driven performance tuning',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 18,
+                        category: 'ecosystem',
+                        title: 'Ecosistema Digitale',
+                        subtitle: 'Come collaborate digitalmente con partner, fornitori e clienti?',
+                        options: [
+                            { 
+                                title: 'Silos isolati', 
+                                description: 'Comunicazione tradizionale, sistemi non integrati',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Connettività base', 
+                                description: 'Email, portali semplici, file sharing',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Piattaforme integrate', 
+                                description: 'B2B platforms, API connections, data sharing',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Ecosistema digitale', 
+                                description: 'Platform business model, marketplace integration',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Network intelligente', 
+                                description: 'AI-orchestrated partnerships, autonomous transactions',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 19,
+                        category: 'future_readiness',
+                        title: 'Preparazione al Futuro',
+                        subtitle: 'Come vi preparate alle tecnologie emergenti?',
+                        options: [
+                            { 
+                                title: 'Focus sul presente', 
+                                description: 'Concentrazione su operazioni attuali',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Monitoraggio trend', 
+                                description: 'Lettura di report, partecipazione eventi',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Sperimentazione', 
+                                description: 'Proof of concepts, partnership strategiche',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Innovation strategy', 
+                                description: 'Technology roadmap, investment in emerging tech',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Future-shaping', 
+                                description: 'R&D leadership, technology standardization influence',
+                                points: 5 
+                            }
+                        ]
+                    },
+                    {
+                        id: 20,
+                        category: 'leadership',
+                        title: 'Leadership Digitale',
+                        subtitle: 'Come il management supporta la trasformazione digitale?',
+                        options: [
+                            { 
+                                title: 'Scetticismo digitale', 
+                                description: 'Leadership tradizionale, investimenti limitati',
+                                points: 1 
+                            },
+                            { 
+                                title: 'Supporto condizionato', 
+                                description: 'Apertura selettiva, budget controllato',
+                                points: 2 
+                            },
+                            { 
+                                title: 'Commitment attivo', 
+                                description: 'Investimenti consistenti, vision digitale',
+                                points: 3 
+                            },
+                            { 
+                                title: 'Digital transformation leader', 
+                                description: 'Sponsorship esecutiva, cultura del cambiamento',
+                                points: 4 
+                            },
+                            { 
+                                title: 'Digital-native leadership', 
+                                description: 'Board tech-enabled, decision making data-driven',
+                                points: 5 
+                            }
+                        ]
+                    }
+                ];
+                
+                this.currentQuestion = 0;
+                this.answers = {};
+                this.categoryScores = {};
+                this.init();
+            }
+
+            init() {
+                this.renderQuestion();
+                this.updateProgress();
+            }
+
+            renderQuestion() {
+                const container = document.getElementById('questionsContainer');
+                const question = this.questions[this.currentQuestion];
+                
+                container.innerHTML = `
+                    <div class="question-container active">
+                        <div class="question-number">Domanda ${this.currentQuestion + 1} di ${this.questions.length}</div>
+                        <h2 class="question-title">${question.title}</h2>
+                        <p class="question-subtitle">${question.subtitle}</p>
+                        
+                        <div class="options-grid">
+                            ${question.options.map((option, index) => `
+                                <div class="option-card" data-value="${option.points}" onclick="maturityAssessment.selectOption(${index}, ${option.points})">
+                                    <div class="option-header">
+                                        <div class="option-radio"></div>
+                                        <div class="option-title">${option.title}</div>
+                                    </div>
+                                    <div class="option-description">${option.description}</div>
+                                    <div class="option-points">${option.points} punt${option.points === 1 ? 'o' : 'i'}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="navigation-buttons">
+                            <button class="btn btn-secondary" onclick="maturityAssessment.prevQuestion()" ${this.currentQuestion === 0 ? 'disabled' : ''}>
+                                ← Precedente
+                            </button>
+                            <button class="btn btn-primary" id="nextBtn" onclick="maturityAssessment.nextQuestion()" disabled>
+                                ${this.currentQuestion === this.questions.length - 1 ? 'Visualizza Risultati' : 'Avanti →'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            selectOption(optionIndex, points) {
+                const question = this.questions[this.currentQuestion];
+                this.answers[question.id] = {
+                    questionId: question.id,
+                    category: question.category,
+                    points: points,
+                    optionIndex: optionIndex
+                };
+
+                // Update UI
+                document.querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+                document.querySelectorAll('.option-card')[optionIndex].classList.add('selected');
+                document.getElementById('nextBtn').disabled = false;
+            }
+
+            nextQuestion() {
+                if (this.currentQuestion < this.questions.length - 1) {
+                    this.currentQuestion++;
+                    this.renderQuestion();
+                    this.updateProgress();
+                } else {
+                    this.showResults();
+                }
+            }
+
+            prevQuestion() {
+                if (this.currentQuestion > 0) {
+                    this.currentQuestion--;
+                    this.renderQuestion();
+                    this.updateProgress();
+                }
+            }
+
+            updateProgress() {
+                const progress = ((this.currentQuestion) / this.questions.length) * 100;
+                document.getElementById('progressFill').style.width = progress + '%';
+                document.getElementById('progressText').textContent = `Domanda ${this.currentQuestion + 1} di ${this.questions.length}`;
+                document.getElementById('progressPercentage').textContent = Math.round(progress) + '%';
+            }
+
+            calculateScores() {
+                const categories = {
+                    technology: [],
+                    processes: [],
+                    digital_skills: [],
+                    customer_experience: [],
+                    data_analytics: [],
+                    innovation: [],
+                    security: [],
+                    supply_chain: [],
+                    financial_tech: [],
+                    collaboration: [],
+                    iot_automation: [],
+                    marketing_digital: [],
+                    change_management: [],
+                    ai_readiness: [],
+                    governance: [],
+                    sustainability: [],
+                    performance: [],
+                    ecosystem: [],
+                    future_readiness: [],
+                    leadership: []
+                };
+
+                // Group answers by category
+                Object.values(this.answers).forEach(answer => {
+                    if (categories[answer.category]) {
+                        categories[answer.category].push(answer.points);
+                    }
+                });
+
+                // Calculate average for each category
+                Object.keys(categories).forEach(category => {
+                    if (categories[category].length > 0) {
+                        const avg = categories[category].reduce((a, b) => a + b) / categories[category].length;
+                        this.categoryScores[category] = Math.round(avg * 10) / 10;
+                    }
+                });
+
+                // Calculate overall score
+                const allScores = Object.values(this.categoryScores);
+                const overallScore = allScores.reduce((a, b) => a + b) / allScores.length;
+                
+                return Math.round(overallScore * 20); // Convert to 0-100 scale
+            }
+
+            getMaturityLevel(score) {
+                if (score >= 85) return { level: 'Digital Leader', description: 'La vostra azienda è un esempio di eccellenza digitale nel panorama PMI italiano. Avete implementato con successo tecnologie avanzate e mantenete un vantaggio competitivo significativo.' };
+                if (score >= 70) return { level: 'Digital Advanced', description: 'Ottimo livello di maturità digitale. La vostra azienda ha adottato con successo molte tecnologie moderne e ha processi digitalizzati efficaci.' };
+                if (score >= 55) return { level: 'Digital Growing', description: 'Buona base digitale con spazio per crescita. Avete implementato le tecnologie fondamentali e siete pronti per il prossimo step verso l\'innovazione.' };
+                if (score >= 40) return { level: 'Digital Starter', description: 'Inizio promettente nel percorso di digitalizzazione. Avete le basi per accelerare la trasformazione digitale della vostra azienda.' };
+                return { level: 'Digital Beginner', description: 'Opportunità significativa di crescita digitale. È il momento perfetto per iniziare il vostro percorso di trasformazione digitale.' };
+            }
+
+            getRecommendations(score, categoryScores) {
+                const recommendations = [];
+
+                // Find lowest scoring categories for recommendations
+                const sortedCategories = Object.entries(categoryScores)
+                    .sort(([,a], [,b]) => a - b)
+                    .slice(0, 4);
+
+                const categoryLabels = {
+                    technology: 'Tecnologia e Infrastruttura',
+                    processes: 'Automazione Processi',
+                    digital_skills: 'Competenze Digitali',
+                    customer_experience: 'Esperienza Cliente',
+                    data_analytics: 'Analytics e BI',
+                    innovation: 'Cultura Innovazione',
+                    security: 'Sicurezza e Compliance',
+                    ai_readiness: 'Preparazione AI'
+                };
+
+                sortedCategories.forEach(([category, score]) => {
+                    const label = categoryLabels[category] || category;
+                    recommendations.push({
+                        icon: this.getCategoryIcon(category),
+                        title: `Migliora: ${label}`,
+                        description: this.getCategoryRecommendation(category, score)
+                    });
+                });
+
+                return recommendations;
+            }
+
+            getCategoryIcon(category) {
+                const icons = {
+                    technology: '💻',
+                    processes: '⚙️',
+                    digital_skills: '🎓',
+                    customer_experience: '👥',
+                    data_analytics: '📊',
+                    innovation: '💡',
+                    security: '🔒',
+                    ai_readiness: '🤖'
+                };
+                return icons[category] || '📈';
+            }
+
+            getCategoryRecommendation(category, score) {
+                const recommendations = {
+                    technology: 'Investi in infrastruttura cloud e integrazione sistemi per ottimizzare l\'efficienza operativa.',
+                    processes: 'Implementa workflow automatizzati per ridurre errori e aumentare la produttività.',
+                    digital_skills: 'Organizza programmi di formazione digitale per tutto il team aziendale.',
+                    customer_experience: 'Sviluppa touchpoint digitali per migliorare l\'interazione con i clienti.',
+                    data_analytics: 'Implementa dashboard e sistemi di Business Intelligence per decisioni data-driven.',
+                    innovation: 'Crea una cultura dell\'innovazione con processi strutturati per l\'adozione tecnologica.',
+                    security: 'Rinforza la sicurezza informatica con policy e strumenti di protezione avanzati.',
+                    ai_readiness: 'Inizia con progetti pilota di AI per esplorare le opportunità nel tuo settore.'
+                };
+                return recommendations[category] || 'Focus sul miglioramento continuo di questa area strategica.';
+            }
+
+            showResults() {
+                const finalScore = this.calculateScores();
+                const maturityInfo = this.getMaturityLevel(finalScore);
+                const recommendations = this.getRecommendations(finalScore, this.categoryScores);
+
+                // Hide questions, show results
+                document.getElementById('questionsContainer').classList.add('hidden');
+                document.getElementById('resultsContainer').classList.remove('hidden');
+
+                // Populate results
+                document.getElementById('finalScore').textContent = finalScore;
+                document.getElementById('maturityLevel').textContent = maturityInfo.level;
+                document.getElementById('levelDescription').textContent = maturityInfo.description;
+
+                // Category scores
+                const categoryScoresContainer = document.getElementById('categoryScores');
+                const topCategories = Object.entries(this.categoryScores)
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, 4);
+
+                categoryScoresContainer.innerHTML = topCategories.map(([category, score]) => `
+                    <div class="category-score">
+                        <div class="category-score-value">${Math.round(score * 20)}</div>
+                        <div class="category-score-label">${this.getCategoryLabel(category)}</div>
+                    </div>
+                `).join('');
+
+                // Recommendations
+                const recommendationsContainer = document.getElementById('recommendationsGrid');
+                recommendationsContainer.innerHTML = recommendations.map(rec => `
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">${rec.icon}</div>
+                        <div class="recommendation-title">${rec.title}</div>
+                        <div class="recommendation-description">${rec.description}</div>
+                    </div>
+                `).join('');
+
+                // Scroll to results
+                document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            getCategoryLabel(category) {
+                const labels = {
+                    technology: 'Tecnologia',
+                    processes: 'Processi',
+                    digital_skills: 'Competenze',
+                    customer_experience: 'Customer Exp.',
+                    data_analytics: 'Analytics',
+                    innovation: 'Innovazione',
+                    security: 'Sicurezza',
+                    ai_readiness: 'AI Readiness'
+                };
+                return labels[category] || category;
+            }
+        }
+
+        // Initialize assessment when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            window.maturityAssessment = new MaturityAssessment();
+        });
+    </script>
+</body>
+</html>
