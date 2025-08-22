@@ -1919,11 +1919,13 @@ html {
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
     transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 9999;
+    z-index: 999999;
     border-top: 3px solid var(--warm-gold);
+    display: none;
 }
 
 .cookie-banner.show {
+    display: block !important;
     transform: translateY(0);
 }
 
@@ -2023,7 +2025,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
+    z-index: 9999999;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;

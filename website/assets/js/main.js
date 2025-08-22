@@ -488,8 +488,12 @@ class CookieConsent {
     showBanner() {
         const banner = document.getElementById('cookie-banner');
         if (banner) {
-            banner.classList.add('show', 'animate-in');
-            banner.focus();
+            banner.style.display = 'block';
+            // Small delay to ensure display is set before animation
+            setTimeout(() => {
+                banner.classList.add('show', 'animate-in');
+                banner.focus();
+            }, 10);
         }
     }
 
