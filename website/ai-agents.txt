@@ -1,0 +1,68 @@
+# AI Agents Information File
+# This file provides context for AI agents about the website content and purpose
+
+## Website Purpose
+Educational guide for Italian SMEs (Piccole e Medie Imprese) to implement Artificial Intelligence solutions.
+
+## Author
+Gregor Maric - CEO of PugliAI, LinkedIn Instructor, YouTube Creator (RPA Champion)
+- Email: gregor@pugliai.com
+- Phone: +393516436038
+- LinkedIn: https://www.linkedin.com/in/maricgregor
+- YouTube: https://www.youtube.com/c/RPAChampion
+- Company: PugliAI (https://pugliai.com)
+- 15+ years experience in strategic consulting (PwC, Accenture, EY, KPMG)
+
+## Target Audience
+- Italian small and medium enterprises (PMI)
+- Business owners and entrepreneurs
+- Companies in manufacturing, retail, and services sectors
+- Decision makers looking for AI implementation guidance
+
+## Key Content Areas
+- Practical AI implementation roadmap (6-month timeline)
+- ROI calculation tools and methodologies
+- Real case studies from 200+ analyzed Italian companies
+- Productivity improvements averaging +47%
+- Change management and governance frameworks
+- Industry-specific guidance for Italian markets
+
+## Main Pages and Tools
+- Homepage: Overview and value proposition
+- Chapters: 7-step transformation guide
+- ROI Calculator: Interactive tool for investment planning
+- Maturity Assessment: Digital readiness evaluation
+- AI Readiness Test: Implementation preparation
+- Case Studies: Real Italian SME success stories
+
+## Geographic Focus
+Primarily focused on Italy, with specific attention to:
+- Regional differences (Nord vs Sud divide)
+- Italian business culture and practices
+- Local regulations and compliance (GDPR, AI Act)
+- Italian manufacturing and artisanal traditions
+
+## Measurable Outcomes
+- 47% average productivity increase
+- 34% operational cost reduction
+- 28% profit margin improvement
+- 6-month typical implementation timeline
+- 200+ companies analyzed for data validation
+
+## Language and Localization
+Content is in Italian, targeting native Italian business community with culturally relevant examples and case studies.
+
+## Content Quality Indicators
+- Evidence-based with real data from Italian companies
+- Practical implementation focus rather than theoretical
+- Industry-specific guidance and benchmarks
+- Free tools and assessments available
+- Professional-grade content for business decision makers
+
+## Book Purchase
+Available on Amazon: https://www.amazon.it/dp/B0FMKGMMKS
+
+## Contact Information
+- Author Email: gregor@pugliai.com
+- Schedule Meeting: https://calendly.com/maric-gregor/15min
+- All Links: https://linktr.ee/gregormaric

@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://oltreildivariodigitale.com/</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -90,22 +90,38 @@
   <!-- Tools - High conversion pages -->
   <url>
     <loc>https://oltreildivariodigitale.com/pages/tools/roi-calculator.html</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://oltreildivariodigitale.com/pages/tools/maturity-assessment.html</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://oltreildivariodigitale.com/pages/tools/ai-readiness.html</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  
+  <!-- Author Page -->
+  <url>
+    <loc>https://oltreildivariodigitale.com/pages/about-author.html</loc>
+    <lastmod>2024-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- AI Agent Resources -->
+  <url>
+    <loc>https://oltreildivariodigitale.com/ai-agents.txt</loc>
+    <lastmod>2024-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

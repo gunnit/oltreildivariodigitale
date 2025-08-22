@@ -17,6 +17,25 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
+# AI Agents and Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 # Sitemap location
 Sitemap: https://oltreildivariodigitale.com/sitemap.xml
 
