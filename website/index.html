@@ -77,13 +77,14 @@
             line-height: 1.6;
         }
         .hero {
-            background: linear-gradient(135deg, var(--deep-italian-blue), #004080);
+            background: linear-gradient(135deg, var(--deep-italian-blue) 0%, #1e3a8a 40%, #0f172a 100%);
             color: var(--pure-white);
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: var(--section-padding) 0;
         }
         .hero::before {
             content: '';
@@ -92,23 +93,65 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('assets/images/bridge.png') no-repeat,
-                        url('assets/images/mapofitalydigital.png') no-repeat;
-            background-position: 90% 20%, 10% 80%;
-            background-size: 200px auto, 150px auto;
-            opacity: 0.1;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                url('assets/images/bridge.png') no-repeat,
+                url('assets/images/mapofitalydigital.png') no-repeat;
+            background-position: 
+                20% 80%,
+                80% 20%,
+                90% 20%, 
+                10% 80%;
+            background-size: 
+                600px 600px,
+                400px 400px,
+                200px auto, 
+                150px auto;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
             pointer-events: none;
         }
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: clamp(3rem, 6vw, 6rem);
             align-items: center;
             position: relative;
             z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .hero-content {
             text-align: left;
+            padding-right: 2rem;
+        }
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.04em;
+        }
+        .hero-content .text-xl {
+            font-size: clamp(1.125rem, 2.5vw, 1.4rem);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
         }
         .hero-book {
             display: flex;
@@ -125,16 +168,24 @@
             margin-bottom: 2rem;
         }
         .book-cover-main {
-            width: 280px;
+            width: clamp(240px, 25vw, 320px);
             height: auto;
-            border-radius: 12px;
-            transform: perspective(800px) rotateY(-15deg) rotateX(5deg);
-            transition: transform 0.3s ease;
+            border-radius: 16px;
+            transform: perspective(1200px) rotateY(-15deg) rotateX(5deg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 3;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.25),
+                0 12px 24px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         .book-cover-main:hover {
-            transform: perspective(800px) rotateY(-10deg) rotateX(2deg) scale(1.05);
+            transform: perspective(1200px) rotateY(-8deg) rotateX(2deg) scale(1.08) translateY(-10px);
+            box-shadow: 
+                0 35px 70px rgba(0, 0, 0, 0.3),
+                0 15px 30px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         .book-shadow {
             position: absolute;
@@ -196,6 +247,86 @@
             background: rgba(0, 180, 216, 0.2);
             border: 1px solid #00b4d8;
             color: #00b4d8;
+        }
+        
+        /* Enhanced Hero CTAs */
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-cta-primary,
+        .hero-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2rem;
+            border-radius: 16px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        .hero-cta-primary {
+            background: linear-gradient(135deg, var(--warm-gold) 0%, #ff8c00 100%);
+            color: var(--deep-italian-blue);
+            border: 2px solid transparent;
+            box-shadow: 
+                0 8px 32px rgba(255, 215, 0, 0.3),
+                0 4px 16px rgba(255, 215, 0, 0.2);
+        }
+        
+        .hero-cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .hero-cta-primary:hover::before {
+            left: 100%;
+        }
+        
+        .hero-cta-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 12px 40px rgba(255, 215, 0, 0.4),
+                0 6px 20px rgba(255, 215, 0, 0.25);
+        }
+        
+        .hero-cta-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--pure-white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .hero-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.15);
+        }
+        
+        .cta-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-cta-primary:hover .cta-icon,
+        .hero-cta-secondary:hover .cta-icon {
+            transform: translateX(4px);
         }
         .book-stats {
             display: flex;
@@ -899,13 +1030,11 @@
                             in 6 mesi, con investimenti sostenibili e risultati misurabili dal primo giorno.
                         </p>
                         <div class="hero-actions animate-slide-up">
-                            <a href="#chapters" class="btn btn-primary btn-lg" role="button" aria-describedby="chapters-description">
-                                <span>Inizia il Tuo Viaggio</span>
-                                <span class="btn-icon" aria-hidden="true">→</span>
+                            <a href="#chapters" class="hero-cta-primary" role="button" aria-describedby="chapters-description">
+                                <span class="cta-text">Inizia il Tuo Viaggio</span>
                             </a>
-                            <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="btn btn-secondary btn-lg" role="button" target="_blank" rel="noopener">
-                                <span>Acquista su Amazon</span>
-                                <span class="btn-icon" aria-hidden="true">📚</span>
+                            <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="hero-cta-secondary" role="button" target="_blank" rel="noopener">
+                                <span class="cta-text">Acquista su Amazon</span>
                             </a>
                         </div>
                         <p id="chapters-description" class="sr-only">Esplora i 7 capitoli che ti guideranno nella trasformazione digitale</p>
@@ -921,15 +1050,12 @@
                             
                             <div class="book-badges">
                                 <div class="badge badge-primary">
-                                    <span class="badge-icon">🏆</span>
                                     <span>Bestseller IA</span>
                                 </div>
                                 <div class="badge badge-secondary">
-                                    <span class="badge-icon">🇮🇹</span>
                                     <span>Made in Italy</span>
                                 </div>
                                 <div class="badge badge-accent">
-                                    <span class="badge-icon">📊</span>
                                     <span>ROI Garantito</span>
                                 </div>
                             </div>
@@ -959,7 +1085,6 @@
             <div class="container">
                 <div class="intro-header">
                     <div class="intro-badge">
-                        <span class="badge-icon">🇮🇹</span>
                         <span>Il Vantaggio Competitivo Italiano</span>
                     </div>
                     <h2 id="intro-title">Perché le PMI Italiane Stanno Vincendo con l'IA</h2>
@@ -1037,11 +1162,9 @@
                 <div class="intro-cta">
                     <a href="pages/tools/roi-calculator.html" class="cta-primary">
                         <span>Calcola il Tuo ROI IA</span>
-                        <span class="cta-icon">📊</span>
                     </a>
                     <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="cta-secondary" target="_blank" rel="noopener">
                         <span>Acquista su Amazon</span>
-                        <span class="cta-icon">📚</span>
                     </a>
                 </div>
             </div>
@@ -1069,7 +1192,6 @@
             <div class="container">
                 <div class="section-header">
                     <div class="section-badge">
-                        <span class="badge-icon">📚</span>
                         <span>La Tua Roadmap IA</span>
                     </div>
                     <h2 id="chapters-title">Il Percorso di Trasformazione in 7 Step</h2>
@@ -1151,25 +1273,57 @@
                         </div>
                     </article>
                     
-                    <article class="card" itemscope itemtype="https://schema.org/Chapter">
-                        <div class="card-header">
-                            <span class="text-sm text-blue font-semibold">CAPITOLO 2</span>
-                            <h3 class="card-title" itemprop="name">Fondamenti dell'IA e Automazione</h3>
-                            <p class="card-subtitle">La rivincita di Davide contro Golia</p>
-                        </div>
-                        <div class="card-body">
-                            <p itemprop="description">
-                                Come le PMI italiane possono battere i colossi tedeschi e cinesi utilizzando 
-                                l'Intelligenza Artificiale come arma competitiva strategica.
-                            </p>
-                            <ul class="text-sm text-gray mt-4">
-                                <li>• I tre tipi di IA per il business</li>
-                                <li>• Framework di misurazione ROI</li>
-                                <li>• Casi studio manifatturiero</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="pages/chapters/capitolo-2.html" class="btn btn-outline">Leggi Capitolo</a>
+                    <article class="chapter-card-modern" itemscope itemtype="https://schema.org/Chapter" data-chapter="2">
+                        <div class="chapter-number-modern">02</div>
+                        <div class="chapter-content-modern">
+                            <div class="chapter-header-modern">
+                                <div class="chapter-meta-modern">
+                                    <span class="chapter-badge-modern strategia">Strategia</span>
+                                    <span class="reading-time-modern">20 min lettura</span>
+                                </div>
+                                <h3 class="chapter-title-modern" itemprop="name">Fondamenti dell'IA e Automazione</h3>
+                                <p class="chapter-subtitle-modern">La rivincita di Davide contro Golia</p>
+                            </div>
+                            
+                            <div class="chapter-body-modern">
+                                <p class="chapter-description-modern" itemprop="description">
+                                    Come le PMI italiane possono battere i colossi tedeschi e cinesi utilizzando 
+                                    l'Intelligenza Artificiale come arma competitiva strategica.
+                                </p>
+                                
+                                <div class="chapter-highlights-modern">
+                                    <div class="highlight-item-modern">
+                                        <span>I tre tipi di IA per il business</span>
+                                    </div>
+                                    <div class="highlight-item-modern">
+                                        <span>Framework di misurazione ROI</span>
+                                    </div>
+                                    <div class="highlight-item-modern">
+                                        <span>Casi studio manifatturiero</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="chapter-stats-modern">
+                                    <div class="stat-item-modern">
+                                        <span class="stat-number-modern">4</span>
+                                        <span class="stat-label-modern">Casi Studio</span>
+                                    </div>
+                                    <div class="stat-item-modern">
+                                        <span class="stat-number-modern">7</span>
+                                        <span class="stat-label-modern">Framework</span>
+                                    </div>
+                                    <div class="stat-item-modern">
+                                        <span class="stat-number-modern">15</span>
+                                        <span class="stat-label-modern">Tools</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chapter-footer-modern">
+                                <a href="pages/chapters/capitolo-2.html" class="chapter-cta-modern">
+                                    <span>Scopri la Strategia</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
                     
@@ -1185,9 +1339,9 @@
                                 aziendale italiana e massimizzi i risultati di business.
                             </p>
                             <ul class="text-sm text-gray mt-4">
-                                <li>• Framework strategico italiano</li>
-                                <li>• Roadmap implementazione</li>
-                                <li>• Gestione budget e risorse</li>
+                                <li>Framework strategico italiano</li>
+                                <li>Roadmap implementazione</li>
+                                <li>Gestione budget e risorse</li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -1207,9 +1361,9 @@
                                 di PMI che hanno rivoluzionato il loro business con l'IA.
                             </p>
                             <ul class="text-sm text-gray mt-4">
-                                <li>• 15+ casi studio dettagliati</li>
-                                <li>• ROI e tempi di implementazione</li>
-                                <li>• Lezioni apprese e errori evitati</li>
+                                <li>15+ casi studio dettagliati</li>
+                                <li>ROI e tempi di implementazione</li>
+                                <li>Lezioni apprese e errori evitati</li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -1229,9 +1383,9 @@
                                 formare il team e mantenere la cultura aziendale italiana.
                             </p>
                             <ul class="text-sm text-gray mt-4">
-                                <li>• Gestione resistenza al cambiamento</li>
-                                <li>• Formazione e competenze</li>
-                                <li>• Cultura aziendale italiana</li>
+                                <li>Gestione resistenza al cambiamento</li>
+                                <li>Formazione e competenze</li>
+                                <li>Cultura aziendale italiana</li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -1251,9 +1405,9 @@
                                 e mantenere la conformità GDPR nell'era dell'IA.
                             </p>
                             <ul class="text-sm text-gray mt-4">
-                                <li>• Compliance AI Act europeo</li>
-                                <li>• Framework di governance</li>
-                                <li>• Checklist conformità</li>
+                                <li>Compliance AI Act europeo</li>
+                                <li>Framework di governance</li>
+                                <li>Checklist conformità</li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -1273,9 +1427,9 @@
                                 automazione avanzata e preparazione per il futuro dell'IA.
                             </p>
                             <ul class="text-sm text-gray mt-4">
-                                <li>• Agenti intelligenti autonomi</li>
-                                <li>• Ecosistemi aziendali automatizzati</li>
-                                <li>• Roadmap tecnologica futura</li>
+                                <li>Agenti intelligenti autonomi</li>
+                                <li>Ecosistemi aziendali automatizzati</li>
+                                <li>Roadmap tecnologica futura</li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -1286,38 +1440,6 @@
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="py-16 bg-gray" aria-labelledby="testimonials-title">
-            <div class="container">
-                <h2 id="testimonials-title" class="text-center mb-12">Cosa Dicono i Lettori</h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="quote-card">
-                        <p class="quote-text">
-                            "Grazie alla roadmap del libro, abbiamo implementato manutenzione predittiva con soli €45.000. 
-                            Risultato: <strong>-68% fermi macchina, +€230.000 di fatturato annuo</strong>. 
-                            L'investimento si è ripagato in 7 mesi."
-                        </p>
-                        <div class="quote-attribution">
-                            — Marco Rossi, CEO MeccanicaPrecisa SRL, Bergamo<br>
-                            <small>Settore: Stampi per automotive • 42 dipendenti</small>
-                        </div>
-                    </div>
-                    
-                    <div class="quote-card">
-                        <p class="quote-text">
-                            "Il sistema di raccomandazioni IA ha aumentato il nostro scontrino medio del 31% in 4 mesi. 
-                            <strong>Investimento: €28.000. Ritorno primo anno: €125.000</strong>. 
-                            I clienti sono più soddisfatti e noi più profittevoli."
-                        </p>
-                        <div class="quote-attribution">
-                            — Laura Bianchi, Titolare Boutique Eleganza, Firenze<br>
-                            <small>Settore: Retail moda • 3 punti vendita</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Interactive Tools Preview -->
         <section class="py-16" aria-labelledby="tools-title">
@@ -1360,28 +1482,6 @@
             </div>
         </section>
 
-        <!-- Newsletter Signup -->
-        <section class="py-12 bg-blue text-white" aria-labelledby="newsletter-title">
-            <div class="container text-center">
-                <h2 id="newsletter-title" class="mb-4">Rimani Aggiornato</h2>
-                <p class="text-xl mb-8 max-w-prose mx-auto">
-                    Ricevi aggiornamenti esclusivi, nuovi casi studio e strumenti pratici per accelerare 
-                    la tua trasformazione digitale.
-                </p>
-                <form class="newsletter-form max-w-md mx-auto flex gap-4" aria-label="Iscrizione newsletter" novalidate>
-                    <label for="newsletter-email" class="sr-only">Indirizzo email per newsletter</label>
-                    <input type="email" id="newsletter-email" name="email" class="form-control flex-1" 
-                           placeholder="La tua email" required 
-                           aria-describedby="email-error newsletter-description"
-                           autocomplete="email">
-                    <button type="submit" class="btn btn-primary" aria-describedby="newsletter-description">Iscriviti</button>
-                    <div id="email-error" class="error-message sr-only" role="alert"></div>
-                </form>
-                <p id="newsletter-description" class="text-sm mt-4 opacity-80">
-                    Niente spam, solo contenuti di valore. Cancellati quando vuoi.
-                </p>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
