@@ -54,15 +54,658 @@
         .hero {
             background: linear-gradient(135deg, var(--deep-italian-blue), #004080);
             color: var(--pure-white);
-            min-height: 60vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/bridge.png') no-repeat,
+                        url('assets/images/mapofitalydigital.png') no-repeat;
+            background-position: 90% 20%, 10% 80%;
+            background-size: 200px auto, 150px auto;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content {
+            text-align: left;
+        }
+        .hero-book {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .book-showcase {
             text-align: center;
+            position: relative;
+        }
+        .book-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .book-cover-main {
+            width: 280px;
+            height: auto;
+            border-radius: 12px;
+            transform: perspective(800px) rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 3;
+        }
+        .book-cover-main:hover {
+            transform: perspective(800px) rotateY(-10deg) rotateX(2deg) scale(1.05);
+        }
+        .book-shadow {
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            right: 40px;
+            bottom: -20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            filter: blur(20px);
+            transform: perspective(800px) rotateY(-15deg) rotateX(5deg);
+            z-index: 1;
+        }
+        .book-highlight {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--warm-gold), #FFA500);
+            border-radius: 15px;
+            opacity: 0.3;
+            filter: blur(15px);
+            z-index: 2;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+        }
+        .book-badges {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+        .badge-primary {
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid var(--warm-gold);
+            color: var(--warm-gold);
+        }
+        .badge-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        .badge-accent {
+            background: rgba(0, 180, 216, 0.2);
+            border: 1px solid #00b4d8;
+            color: #00b4d8;
+        }
+        .book-stats {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--warm-gold);
+        }
+        .stat-label {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 0.25rem;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
+        }
+        /* Introduction Section Styles */
+        .intro-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/images/mapofitalydigital.png') no-repeat center right;
+            background-size: 300px auto;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .intro-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .intro-badge, .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 51, 102, 0.1);
+            border: 1px solid rgba(0, 51, 102, 0.2);
+            color: var(--deep-italian-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .intro-header h2, .section-header h2 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+        
+        .intro-subtitle, .section-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .value-props {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .value-prop {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-prop::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--deep-italian-blue), var(--warm-gold));
+        }
+        
+        .value-prop:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .value-prop-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .value-prop-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .value-prop-icon.strategia {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            color: #1d4ed8;
+        }
+        
+        .value-prop-icon.roi {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            color: #059669;
+        }
+        
+        .value-prop-icon.umano {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #d97706;
+        }
+        
+        .value-prop-stats {
+            text-align: center;
+        }
+        
+        .stat-big {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            display: block;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+        
+        .value-prop-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .value-prop-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-prop-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .feature-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .intro-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-primary, .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-primary {
+            background: var(--deep-italian-blue);
+            color: white;
+            border: 2px solid var(--deep-italian-blue);
+        }
+        
+        .cta-primary:hover {
+            background: transparent;
+            color: var(--deep-italian-blue);
+            transform: translateY(-2px);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--deep-italian-blue);
+            border: 2px solid var(--deep-italian-blue);
+        }
+        
+        .cta-secondary:hover {
+            background: var(--deep-italian-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Chapters Section Styles */
+        .chapters-section {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .chapters-progress {
+            position: relative;
+            margin: 3rem 0 4rem 0;
+            padding: 0 2rem;
+        }
+        
+        .progress-line {
+            height: 3px;
+            background: linear-gradient(90deg, var(--deep-italian-blue), var(--warm-gold));
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: -10px;
+            left: 2rem;
+            right: 2rem;
+        }
+        
+        .progress-step {
+            background: white;
+            color: var(--deep-italian-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 2px solid var(--deep-italian-blue);
+            white-space: nowrap;
+        }
+        
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .chapter-card {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .chapter-card.featured {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 2px solid var(--deep-italian-blue);
+        }
+        
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--deep-italian-blue), var(--warm-gold));
+        }
+        
+        .chapter-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .chapter-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--deep-italian-blue);
+            opacity: 0.1;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+        }
+        
+        .chapter-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .chapter-badge.diagnosi {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .reading-time {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        
+        .chapter-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .chapter-subtitle {
+            font-size: 1rem;
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+        
+        .chapter-highlights {
+            display: grid;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+        
+        .highlight-icon {
+            font-size: 1.2rem;
+        }
+        
+        .chapter-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 51, 102, 0.05);
+            border-radius: 15px;
+        }
+        
+        .chapter-stats .stat-item {
+            text-align: center;
+        }
+        
+        .chapter-stats .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-italian-blue);
+        }
+        
+        .chapter-stats .stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        
+        .chapter-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--deep-italian-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .chapter-cta:hover {
+            background: var(--warm-gold);
+            color: var(--deep-italian-blue);
+            transform: translateX(5px);
+        }
+        
+        .cta-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .chapter-cta:hover .cta-arrow {
+            transform: translateX(3px);
+        }
+        
+        @media (max-width: 1024px) {
+            .value-prop {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .chapter-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            
+            .chapter-number {
+                writing-mode: initial;
+                text-orientation: initial;
+                text-align: center;
+                font-size: 3rem;
+            }
+            
+            .progress-steps {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .progress-step {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .book-cover-main {
+                width: 200px;
+                transform: none;
+            }
+            .book-cover-main:hover {
+                transform: scale(1.05);
+            }
+            .book-shadow {
+                display: none;
+            }
+            .book-stats {
+                gap: 1rem;
+            }
+            .book-badges {
+                justify-content: center;
+            }
+            
+            .intro-header h2, .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .value-prop {
+                padding: 1.5rem;
+            }
+            
+            .chapter-stats {
+                gap: 1rem;
+            }
+            
+            .intro-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
     
@@ -153,57 +796,158 @@
         <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container">
-                <div class="hero-content">
-                    <h1 id="hero-title" class="animate-fade-in">Oltre il Divario Digitale</h1>
-                    <p class="text-xl animate-slide-up">
-                        La <strong>prima guida pratica</strong> che mostra alle PMI italiane come implementare l'<strong>Intelligenza Artificiale</strong> 
-                        in 6 mesi, con investimenti sostenibili e risultati misurabili dal primo giorno.
-                    </p>
-                    <div class="hero-actions animate-slide-up">
-                        <a href="#chapters" class="btn btn-primary btn-lg" role="button" aria-describedby="chapters-description">
-                            <span>Inizia il Tuo Viaggio</span>
-                            <span class="btn-icon" aria-hidden="true">→</span>
-                        </a>
-                        <a href="pages/resources.html" class="btn btn-secondary btn-lg" role="button">
-                            <span>Scarica Anteprima</span>
-                            <span class="btn-icon" aria-hidden="true">⬇</span>
-                        </a>
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1 id="hero-title" class="animate-fade-in">Oltre il Divario Digitale</h1>
+                        <p class="text-xl animate-slide-up">
+                            La <strong>prima guida pratica</strong> che mostra alle PMI italiane come implementare l'<strong>Intelligenza Artificiale</strong> 
+                            in 6 mesi, con investimenti sostenibili e risultati misurabili dal primo giorno.
+                        </p>
+                        <div class="hero-actions animate-slide-up">
+                            <a href="#chapters" class="btn btn-primary btn-lg" role="button" aria-describedby="chapters-description">
+                                <span>Inizia il Tuo Viaggio</span>
+                                <span class="btn-icon" aria-hidden="true">→</span>
+                            </a>
+                            <a href="pages/resources.html" class="btn btn-secondary btn-lg" role="button">
+                                <span>Scarica Anteprima</span>
+                                <span class="btn-icon" aria-hidden="true">⬇</span>
+                            </a>
+                        </div>
+                        <p id="chapters-description" class="sr-only">Esplora i 7 capitoli che ti guideranno nella trasformazione digitale</p>
                     </div>
-                    <p id="chapters-description" class="sr-only">Esplora i 7 capitoli che ti guideranno nella trasformazione digitale</p>
+                    
+                    <div class="hero-book">
+                        <div class="book-showcase">
+                            <div class="book-container">
+                                <img src="assets/images/bookcover.jpg" alt="Copertina di Oltre il Divario Digitale - La guida IA per PMI italiane" class="book-cover-main">
+                                <div class="book-shadow"></div>
+                                <div class="book-highlight"></div>
+                            </div>
+                            
+                            <div class="book-badges">
+                                <div class="badge badge-primary">
+                                    <span class="badge-icon">🏆</span>
+                                    <span>Bestseller IA</span>
+                                </div>
+                                <div class="badge badge-secondary">
+                                    <span class="badge-icon">🇮🇹</span>
+                                    <span>Made in Italy</span>
+                                </div>
+                                <div class="badge badge-accent">
+                                    <span class="badge-icon">📊</span>
+                                    <span>ROI Garantito</span>
+                                </div>
+                            </div>
+                            
+                            <div class="book-stats">
+                                <div class="stat">
+                                    <span class="stat-number">200+</span>
+                                    <span class="stat-label">PMI analizzate</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">+47%</span>
+                                    <span class="stat-label">Produttività media</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">6</span>
+                                    <span class="stat-label">Mesi implementazione</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Introduction Section -->
-        <section class="py-16" aria-labelledby="intro-title">
+        <section class="intro-section" aria-labelledby="intro-title">
             <div class="container">
-                <div class="text-center mb-12">
-                    <h2 id="intro-title" class="mb-6">Perché le <a href="pages/case-studies.html" title="Casi studio PMI italiane con IA">PMI Italiane</a> Stanno Vincendo con l'<a href="pages/chapters/capitolo-2.html" title="Fondamenti dell'Intelligenza Artificiale">IA</a></h2>
-                    <p class="text-xl text-center mx-auto max-w-prose">
-                        Mentre i giganti tedeschi e cinesi investono miliardi in tecnologia, le <strong><a href="pages/case-studies.html" title="Esempi reali di trasformazione digitale">PMI italiane</a></strong> più smart 
-                        stanno battendo la concorrenza con <strong>soluzioni <a href="pages/chapters/capitolo-3.html" title="Strategia IA personalizzata">IA precise, economiche e immediate</a></strong>. 
-                        Scopri come anche tu puoi unirti a loro.
+                <div class="intro-header">
+                    <div class="intro-badge">
+                        <span class="badge-icon">🇮🇹</span>
+                        <span>Il Vantaggio Competitivo Italiano</span>
+                    </div>
+                    <h2 id="intro-title">Perché le PMI Italiane Stanno Vincendo con l'IA</h2>
+                    <p class="intro-subtitle">
+                        Mentre i giganti tedeschi e cinesi investono miliardi in tecnologia, le <strong>PMI italiane più smart</strong> 
+                        stanno battendo la concorrenza con <strong>soluzioni IA precise, economiche e immediate</strong>. 
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="card text-center" role="article" aria-labelledby="strategia-title">
-                        <div class="card-icon mx-auto" aria-hidden="true">🎯</div>
-                        <h3 id="strategia-title" class="card-title">Strategia Personalizzata</h3>
-                        <p>Metodologie testate su <strong>oltre 200 <a href="pages/case-studies.html" title="Casi studio settori PMI">PMI italiane</a></strong> per identificare le <a href="pages/tools/ai-readiness.html" title="Test opportunità IA">opportunità IA</a> più redditizie nel tuo settore specifico, dal <a href="pages/chapters/capitolo-4.html#manifatturiero" title="Casi studio manifatturiero">manifatturiero</a> al retail.</p>
+                <div class="value-props">
+                    <div class="value-prop" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-prop-visual">
+                            <div class="value-prop-icon strategia">
+                                <span>🎯</span>
+                            </div>
+                            <div class="value-prop-stats">
+                                <span class="stat-big">200+</span>
+                                <span class="stat-label">PMI Analizzate</span>
+                            </div>
+                        </div>
+                        <div class="value-prop-content">
+                            <h3>Strategia Personalizzata</h3>
+                            <p>Metodologie testate su <strong>oltre 200 PMI italiane</strong> per identificare le opportunità IA più redditizie nel tuo settore specifico, dal manifatturiero al retail.</p>
+                            <div class="value-prop-features">
+                                <span class="feature-tag">✓ Analisi settoriale</span>
+                                <span class="feature-tag">✓ Roadmap personalizzata</span>
+                                <span class="feature-tag">✓ Quick wins identificati</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="card text-center" role="article" aria-labelledby="roi-title">
-                        <div class="card-icon mx-auto" aria-hidden="true">💰</div>
-                        <h3 id="roi-title" class="card-title">ROI Concreto</h3>
-                        <p><strong>Dati verificati</strong> da PMI italiane: +47% produttività media, -34% costi operativi, +28% margini di profitto. Include analisi dettagliate degli investimenti e tempi di ritorno.</p>
+                    <div class="value-prop" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-prop-visual">
+                            <div class="value-prop-icon roi">
+                                <span>💰</span>
+                            </div>
+                            <div class="value-prop-stats">
+                                <span class="stat-big">+47%</span>
+                                <span class="stat-label">Produttività Media</span>
+                            </div>
+                        </div>
+                        <div class="value-prop-content">
+                            <h3>ROI Concreto e Misurato</h3>
+                            <p><strong>Dati verificati</strong> da PMI italiane: +47% produttività media, -34% costi operativi, +28% margini di profitto. Include analisi dettagliate degli investimenti.</p>
+                            <div class="value-prop-features">
+                                <span class="feature-tag">✓ ROI Calculator integrato</span>
+                                <span class="feature-tag">✓ KPI misurabili</span>
+                                <span class="feature-tag">✓ Benchmark settoriali</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="card text-center" role="article" aria-labelledby="umano-title">
-                        <div class="card-icon mx-auto" aria-hidden="true">👥</div>
-                        <h3 id="umano-title" class="card-title">Fattore Umano</h3>
-                        <p>Framework testato per <strong>coinvolgere il team senza resistenze</strong>: dai operai ai manager, tutti diventano protagonisti della trasformazione digitale, non vittime.</p>
+                    <div class="value-prop" data-aos="fade-up" data-aos-delay="300">
+                        <div class="value-prop-visual">
+                            <div class="value-prop-icon umano">
+                                <span>👥</span>
+                            </div>
+                            <div class="value-prop-stats">
+                                <span class="stat-big">95%</span>
+                                <span class="stat-label">Adozione Team</span>
+                            </div>
+                        </div>
+                        <div class="value-prop-content">
+                            <h3>Fattore Umano Italiano</h3>
+                            <p>Framework testato per <strong>coinvolgere il team senza resistenze</strong>: dai operai ai manager, tutti diventano protagonisti della trasformazione digitale.</p>
+                            <div class="value-prop-features">
+                                <span class="feature-tag">✓ Change management</span>
+                                <span class="feature-tag">✓ Formazione inclusa</span>
+                                <span class="feature-tag">✓ Supporto continuo</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                
+                <div class="intro-cta">
+                    <a href="pages/tools/roi-calculator.html" class="cta-primary">
+                        <span>Calcola il Tuo ROI IA</span>
+                        <span class="cta-icon">📊</span>
+                    </a>
+                    <a href="pages/case-studies.html" class="cta-secondary">
+                        <span>Vedi Casi Studio</span>
+                        <span class="cta-icon">→</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -223,35 +967,89 @@
         </section>
 
         <!-- Chapters Overview -->
-        <section class="py-16" id="chapters" aria-labelledby="chapters-title">
+        <section class="chapters-section" id="chapters" aria-labelledby="chapters-title">
             <div class="container">
-                <div class="text-center mb-12">
-                    <h2 id="chapters-title" class="mb-6">Il Percorso di Trasformazione</h2>
-                    <p class="text-lg text-center max-w-prose mx-auto">
-                        Sette capitoli che ti guideranno dalla consapevolezza del problema alla completa implementazione dell'IA nella tua azienda.
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">📚</span>
+                        <span>La Tua Roadmap IA</span>
+                    </div>
+                    <h2 id="chapters-title">Il Percorso di Trasformazione in 7 Step</h2>
+                    <p class="section-subtitle">
+                        Dalla diagnosi all'implementazione completa: ogni capitolo ti fornisce strumenti concreti, 
+                        casi studio reali e checklist operative per trasformare la tua PMI con l'IA.
                     </p>
                 </div>
                 
-                <div class="cards-grid">
-                    <article class="card" itemscope itemtype="https://schema.org/Chapter">
-                        <div class="card-header">
-                            <span class="text-sm text-blue font-semibold">CAPITOLO 1</span>
-                            <h3 class="card-title" itemprop="name">Il Grande Paradosso Italiano</h3>
-                            <p class="card-subtitle">Quando l'IA divide più del Nord e Sud</p>
-                        </div>
-                        <div class="card-body">
-                            <p itemprop="description">
-                                Analisi del divario digitale nelle PMI italiane e come l'IA può essere la chiave 
-                                per superare i giganti internazionali mantenendo l'identità artigianale.
-                            </p>
-                            <ul class="text-sm text-gray mt-4">
-                                <li>• Diagnostica della maturità digitale</li>
-                                <li>• Roadmap di trasformazione 24 settimane</li>
-                                <li>• Analisi ROI e investimenti</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="pages/chapters/capitolo-1.html" class="btn btn-outline">Leggi Capitolo</a>
+                <div class="chapters-progress">
+                    <div class="progress-line"></div>
+                    <div class="progress-steps">
+                        <div class="progress-step">Diagnosi</div>
+                        <div class="progress-step">Strategia</div>
+                        <div class="progress-step">Implementazione</div>
+                        <div class="progress-step">Ottimizzazione</div>
+                        <div class="progress-step">Scale-up</div>
+                        <div class="progress-step">Governance</div>
+                        <div class="progress-step">Futuro</div>
+                    </div>
+                </div>
+                
+                <div class="chapters-grid">
+                    <article class="chapter-card featured" itemscope itemtype="https://schema.org/Chapter" data-chapter="1">
+                        <div class="chapter-number">01</div>
+                        <div class="chapter-content">
+                            <div class="chapter-header">
+                                <div class="chapter-meta">
+                                    <span class="chapter-badge diagnosi">Diagnosi</span>
+                                    <span class="reading-time">15 min lettura</span>
+                                </div>
+                                <h3 class="chapter-title" itemprop="name">Il Grande Paradosso Italiano</h3>
+                                <p class="chapter-subtitle">Quando l'IA divide più del Nord e Sud</p>
+                            </div>
+                            
+                            <div class="chapter-body">
+                                <p class="chapter-description" itemprop="description">
+                                    Analisi del divario digitale nelle PMI italiane e come l'IA può essere la chiave 
+                                    per superare i giganti internazionali mantenendo l'identità artigianale.
+                                </p>
+                                
+                                <div class="chapter-highlights">
+                                    <div class="highlight-item">
+                                        <span class="highlight-icon">🔍</span>
+                                        <span>Diagnostica della maturità digitale</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-icon">🗺️</span>
+                                        <span>Roadmap di trasformazione 24 settimane</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-icon">💡</span>
+                                        <span>Analisi ROI e investimenti</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="chapter-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">3</span>
+                                        <span class="stat-label">Casi Studio</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">5</span>
+                                        <span class="stat-label">Templates</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">12</span>
+                                        <span class="stat-label">Checklist</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chapter-footer">
+                                <a href="pages/chapters/capitolo-1.html" class="chapter-cta">
+                                    <span>Inizia la Diagnosi</span>
+                                    <span class="cta-arrow">→</span>
+                                </a>
+                            </div>
                         </div>
                     </article>
                     

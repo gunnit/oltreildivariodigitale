@@ -99,82 +99,633 @@
         <div class="container py-16">
             <header class="text-center mb-12">
                 <h1 class="text-4xl font-playfair font-bold mb-4">Glossario e Terminologia</h1>
-                <p class="text-xl text-gray-600">I termini chiave per navigare nel mondo dell'Intelligenza Artificiale.</p>
+                <p class="text-xl text-gray-600 mb-8">I termini chiave per navigare nel mondo dell'Intelligenza Artificiale.</p>
+                
+                <!-- Search and Filter Controls -->
+                <div class="max-w-2xl mx-auto mb-8">
+                    <div class="relative">
+                        <input 
+                            type="search" 
+                            id="glossary-search" 
+                            placeholder="🔍 Cerca termine..." 
+                            class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg"
+                            autocomplete="off"
+                        >
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-400">🔍</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Category Filter -->
+                    <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                        <button class="filter-btn active" data-category="all">Tutti</button>
+                        <button class="filter-btn" data-category="ia">IA & Tecnologia</button>
+                        <button class="filter-btn" data-category="business">Business</button>
+                        <button class="filter-btn" data-category="normativo">Normativo</button>
+                        <button class="filter-btn" data-category="tecnico">Tecnico</button>
+                    </div>
+                </div>
+                
+                <!-- Alphabetical Navigation -->
+                <div class="alphabet-nav mb-8">
+                    <div class="flex flex-wrap justify-center gap-1">
+                        <button class="alphabet-btn" data-letter="all">Tutti</button>
+                        <button class="alphabet-btn" data-letter="A">A</button>
+                        <button class="alphabet-btn" data-letter="B">B</button>
+                        <button class="alphabet-btn" data-letter="C">C</button>
+                        <button class="alphabet-btn" data-letter="D">D</button>
+                        <button class="alphabet-btn" data-letter="E">E</button>
+                        <button class="alphabet-btn" data-letter="F">F</button>
+                        <button class="alphabet-btn" data-letter="G">G</button>
+                        <button class="alphabet-btn" data-letter="I">I</button>
+                        <button class="alphabet-btn" data-letter="K">K</button>
+                        <button class="alphabet-btn" data-letter="L">L</button>
+                        <button class="alphabet-btn" data-letter="M">M</button>
+                        <button class="alphabet-btn" data-letter="N">N</button>
+                        <button class="alphabet-btn" data-letter="O">O</button>
+                        <button class="alphabet-btn" data-letter="P">P</button>
+                        <button class="alphabet-btn" data-letter="Q">Q</button>
+                        <button class="alphabet-btn" data-letter="R">R</button>
+                        <button class="alphabet-btn" data-letter="S">S</button>
+                        <button class="alphabet-btn" data-letter="T">T</button>
+                        <button class="alphabet-btn" data-letter="U">U</button>
+                        <button class="alphabet-btn" data-letter="V">V</button>
+                    </div>
+                </div>
+                
+                <!-- Results Counter -->
+                <div id="results-counter" class="text-center text-gray-600 mb-6">
+                    <span id="visible-count">0</span> termini visualizzati
+                </div>
             </header>
 
-            <div class="prose max-w-prose mx-auto">
+            <!-- Glossary Terms Grid -->
+            <div class="glossary-grid" id="glossary-terms">
                 
-                <section id="termini-ia">
-                    <h2 class="font-playfair border-b pb-2 mb-6">Termini di Intelligenza Artificiale</h2>
-                    <dl>
-                        <dt>IA (Intelligenza Artificiale) / AI (Artificial Intelligence)</dt>
-                        <dd>Sistema informatico capace di svolgere compiti che normalmente richiederebbero intelligenza umana, come riconoscimento di pattern, apprendimento e decisioni.</dd>
-                        
-                        <dt>API (Application Programming Interface)</dt>
-                        <dd>Interfaccia che permette a diverse applicazioni software di comunicare tra loro e scambiare dati.</dd>
-                        
-                        <dt>CDP (Customer Data Platform)</dt>
-                        <dd>Piattaforma unificata che raccoglie e organizza i dati dei clienti da tutte le fonti aziendali.</dd>
-                        
-                        <dt>GPAI (General Purpose AI)</dt>
-                        <dd>Sistemi AI progettati per svolgere una vasta gamma di compiti, come ChatGPT o Claude, a differenza di AI specializzate per compiti specifici.</dd>
-                        
-                        <dt>RegTech</dt>
-                        <dd>Tecnologie progettate per semplificare e automatizzare la conformità normativa e la gestione del rischio.</dd>
-                        
-                        <dt>RPA (Robotic Process Automation)</dt>
-                        <dd>Automazione di processi aziendali ripetitivi attraverso "robot software" che imitano le azioni umane.</dd>
-                    </dl>
-                </section>
-                
-                <hr class="my-12">
+                <!-- IA & Technology Terms -->
+                <div class="term-card" data-category="ia" data-letter="A">
+                    <div class="term-header">
+                        <h3 class="term-title">API</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Application Programming Interface</p>
+                        <p class="term-definition">Interfaccia che permette a diverse applicazioni software di comunicare tra loro e scambiare dati.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#crm" class="tag">CRM</a>, <a href="#erp" class="tag">ERP</a>
+                        </div>
+                    </div>
+                </div>
 
-                <section id="termini-business">
-                    <h2 class="font-playfair border-b pb-2 mb-6">Termini di Business e Performance</h2>
-                    <dl>
-                        <dt>ESG (Environmental, Social, Governance)</dt>
-                        <dd>Criteri utilizzati per misurare la sostenibilità e l'impatto etico degli investimenti aziendali.</dd>
-                        
-                        <dt>KPI (Key Performance Indicator)</dt>
-                        <dd>Metriche quantificabili utilizzate per misurare l'efficacia nel raggiungimento di obiettivi aziendali.</dd>
-                        
-                        <dt>ROI (Return on Investment)</dt>
-                        <dd>Percentuale che misura la redditività di un investimento, calcolata come (Guadagno - Investimento) / Investimento × 100.</dd>
-                    </dl>
-                </section>
+                <div class="term-card" data-category="ia" data-letter="C">
+                    <div class="term-header">
+                        <h3 class="term-title">CDP</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Customer Data Platform</p>
+                        <p class="term-definition">Piattaforma unificata che raccoglie e organizza i dati dei clienti da tutte le fonti aziendali.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#crm" class="tag">CRM</a>, <a href="#ia" class="tag">IA</a>
+                        </div>
+                    </div>
+                </div>
 
-                <hr class="my-12">
+                <div class="term-card" data-category="tecnico" data-letter="C">
+                    <div class="term-header">
+                        <h3 class="term-title">CRM</h3>
+                        <span class="term-category">Tecnico</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Customer Relationship Management</p>
+                        <p class="term-definition">Sistema per gestire relazioni e interazioni con clienti e potenziali clienti.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#cdp" class="tag">CDP</a>, <a href="#erp" class="tag">ERP</a>
+                        </div>
+                    </div>
+                </div>
 
-                <section id="acronimi-normativi">
-                    <h2 class="font-playfair border-b pb-2 mb-6">Acronimi Istituzionali e Normativi</h2>
-                    <dl>
-                        <dt>EU AI Act</dt>
-                        <dd>Regolamento europeo sull'intelligenza artificiale, entrato in vigore il 2 agosto 2024 con applicazione graduale: pratiche vietate dopo 6 mesi, obblighi per sistemi ad alto rischio e GPAI dopo 36 mesi.</dd>
-                        
-                        <dt>PNRR (Piano Nazionale di Ripresa e Resilienza)</dt>
-                        <dd>Piano italiano che include € 191,5 miliardi totali (di cui € 68,9 miliardi a fondo perduto e € 122,6 miliardi in prestiti), con circa € 30,5 miliardi dedicati alla digitalizzazione.</dd>
-                    </dl>
-                </section>
+                <div class="term-card" data-category="ia" data-letter="E">
+                    <div class="term-header">
+                        <h3 class="term-title">Edge AI</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Intelligenza artificiale che elabora i dati localmente su dispositivi, senza necessità di connessione cloud.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ia" class="tag">IA</a>, <a href="#ml" class="tag">Machine Learning</a>
+                        </div>
+                    </div>
+                </div>
 
-                <hr class="my-12">
+                <div class="term-card" data-category="tecnico" data-letter="E">
+                    <div class="term-header">
+                        <h3 class="term-title">ERP</h3>
+                        <span class="term-category">Tecnico</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Enterprise Resource Planning</p>
+                        <p class="term-definition">Software integrato per la gestione dei processi aziendali principali in tempo reale.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#crm" class="tag">CRM</a>, <a href="#api" class="tag">API</a>
+                        </div>
+                    </div>
+                </div>
 
-                <section id="termini-tecnici">
-                    <h2 class="font-playfair border-b pb-2 mb-6">Termini Tecnici Operativi</h2>
-                    <dl>
-                        <dt>CRM (Customer Relationship Management)</dt>
-                        <dd>Sistema per gestire relazioni e interazioni con clienti e potenziali clienti.</dd>
-                        
-                        <dt>ERP (Enterprise Resource Planning)</dt>
-                        <dd>Software integrato per la gestione dei processi aziendali principali in tempo reale.</dd>
-                        
-                        <dt>Edge AI</dt>
-                        <dd>Intelligenza artificiale che elabora i dati localmente su dispositivi, senza necessità di connessione cloud.</dd>
-                        
-                        <dt>Machine Learning</dt>
-                        <dd>Sottocampo dell'AI dove i sistemi imparano e migliorano automaticamente dall'esperienza senza essere programmati esplicitamente.</dd>
-                    </dl>
-                </section>
+                <div class="term-card" data-category="business" data-letter="E">
+                    <div class="term-header">
+                        <h3 class="term-title">ESG</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Environmental, Social, Governance</p>
+                        <p class="term-definition">Criteri utilizzati per misurare la sostenibilità e l'impatto etico degli investimenti aziendali.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#kpi" class="tag">KPI</a>, <a href="#roi" class="tag">ROI</a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="term-card" data-category="normativo" data-letter="E">
+                    <div class="term-header">
+                        <h3 class="term-title">EU AI Act</h3>
+                        <span class="term-category">Normativo</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Regolamento europeo sull'intelligenza artificiale, entrato in vigore il 2 agosto 2024 con applicazione graduale: pratiche vietate dopo 6 mesi, obblighi per sistemi ad alto rischio e GPAI dopo 36 mesi.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#gpai" class="tag">GPAI</a>, <a href="#regtech" class="tag">RegTech</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="G">
+                    <div class="term-header">
+                        <h3 class="term-title">GPAI</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">General Purpose AI</p>
+                        <p class="term-definition">Sistemi AI progettati per svolgere una vasta gamma di compiti, come ChatGPT o Claude, a differenza di AI specializzate per compiti specifici.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ia" class="tag">IA</a>, <a href="#ml" class="tag">Machine Learning</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="I">
+                    <div class="term-header">
+                        <h3 class="term-title">IA</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Intelligenza Artificiale / AI (Artificial Intelligence)</p>
+                        <p class="term-definition">Sistema informatico capace di svolgere compiti che normalmente richiederebbero intelligenza umana, come riconoscimento di pattern, apprendimento e decisioni.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ml" class="tag">Machine Learning</a>, <a href="#gpai" class="tag">GPAI</a>, <a href="#edge-ai" class="tag">Edge AI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="business" data-letter="K">
+                    <div class="term-header">
+                        <h3 class="term-title">KPI</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Key Performance Indicator</p>
+                        <p class="term-definition">Metriche quantificabili utilizzate per misurare l'efficacia nel raggiungimento di obiettivi aziendali.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#roi" class="tag">ROI</a>, <a href="#esg" class="tag">ESG</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="M">
+                    <div class="term-header">
+                        <h3 class="term-title">Machine Learning</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Sottocampo dell'AI dove i sistemi imparano e migliorano automaticamente dall'esperienza senza essere programmati esplicitamente.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ia" class="tag">IA</a>, <a href="#gpai" class="tag">GPAI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="normativo" data-letter="P">
+                    <div class="term-header">
+                        <h3 class="term-title">PNRR</h3>
+                        <span class="term-category">Normativo</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Piano Nazionale di Ripresa e Resilienza</p>
+                        <p class="term-definition">Piano italiano che include € 191,5 miliardi totali (di cui € 68,9 miliardi a fondo perduto e € 122,6 miliardi in prestiti), con circa € 30,5 miliardi dedicati alla digitalizzazione.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#eu-ai-act" class="tag">EU AI Act</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="R">
+                    <div class="term-header">
+                        <h3 class="term-title">RegTech</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Tecnologie progettate per semplificare e automatizzare la conformità normativa e la gestione del rischio.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#eu-ai-act" class="tag">EU AI Act</a>, <a href="#ia" class="tag">IA</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="business" data-letter="R">
+                    <div class="term-header">
+                        <h3 class="term-title">ROI</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Return on Investment</p>
+                        <p class="term-definition">Percentuale che misura la redditività di un investimento, calcolata come (Guadagno - Investimento) / Investimento × 100.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#kpi" class="tag">KPI</a>, <a href="../tools/roi-calculator.html" class="tag">Calcolatore ROI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="R">
+                    <div class="term-header">
+                        <h3 class="term-title">RPA</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Robotic Process Automation</p>
+                        <p class="term-definition">Automazione di processi aziendali ripetitivi attraverso "robot software" che imitano le azioni umane.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ia" class="tag">IA</a>, <a href="#api" class="tag">API</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional AI/ML Terms -->
+                <div class="term-card" data-category="ia" data-letter="A">
+                    <div class="term-header">
+                        <h3 class="term-title">AGI</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Artificial General Intelligence</p>
+                        <p class="term-definition">Intelligenza artificiale con capacità cognitive umane generalizzate, capace di comprendere, apprendere e applicare conoscenza in diversi domini.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ia" class="tag">IA</a>, <a href="#gpai" class="tag">GPAI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="B">
+                    <div class="term-header">
+                        <h3 class="term-title">Big Data</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Insiemi di dati così grandi e complessi da richiedere strumenti avanzati per l'acquisizione, archiviazione, analisi e visualizzazione.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ml" class="tag">Machine Learning</a>, <a href="#data-analytics" class="tag">Data Analytics</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="C">
+                    <div class="term-header">
+                        <h3 class="term-title">Chatbot</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Programma software che simula conversazioni umane attraverso intelligenza artificiale, utilizzato per customer service e supporto automatizzato.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#nlp" class="tag">NLP</a>, <a href="#ia" class="tag">IA</a>, <a href="#crm" class="tag">CRM</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="C">
+                    <div class="term-header">
+                        <h3 class="term-title">Computer Vision</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Campo dell'IA che consente ai computer di interpretare e comprendere il mondo visivo attraverso immagini digitali e video.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#deep-learning" class="tag">Deep Learning</a>, <a href="#ia" class="tag">IA</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="D">
+                    <div class="term-header">
+                        <h3 class="term-title">Data Analytics</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Processo di esame dei dati per identificare tendenze, pattern e insights utili per il business decision-making.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#big-data" class="tag">Big Data</a>, <a href="#kpi" class="tag">KPI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="D">
+                    <div class="term-header">
+                        <h3 class="term-title">Deep Learning</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Sottocampo del machine learning basato su reti neurali artificiali con molteplici livelli, capace di apprendere rappresentazioni complesse dai dati.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ml" class="tag">Machine Learning</a>, <a href="#neural-network" class="tag">Neural Network</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & PMI Terms -->
+                <div class="term-card" data-category="business" data-letter="A">
+                    <div class="term-header">
+                        <h3 class="term-title">Automazione</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Utilizzo di tecnologia per eseguire processi e compiti con minimo intervento umano, migliorando efficienza e riducendo errori.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#rpa" class="tag">RPA</a>, <a href="#workflow" class="tag">Workflow</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="business" data-letter="B">
+                    <div class="term-header">
+                        <h3 class="term-title">Business Intelligence</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">BI</p>
+                        <p class="term-definition">Insieme di strategie e tecnologie utilizzate dalle aziende per analizzare informazioni e dati di business.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#data-analytics" class="tag">Data Analytics</a>, <a href="#kpi" class="tag">KPI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="business" data-letter="C">
+                    <div class="term-header">
+                        <h3 class="term-title">Change Management</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Approccio strutturato per gestire la transizione di individui, team e organizzazioni da uno stato attuale a uno stato desiderato futuro.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#leadership" class="tag">Leadership</a>, <a href="#training" class="tag">Training</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="business" data-letter="D">
+                    <div class="term-header">
+                        <h3 class="term-title">Digital Twin</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Replica digitale di un oggetto fisico, processo o sistema che può essere utilizzata per simulazioni, monitoraggio e ottimizzazione.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#iot" class="tag">IoT</a>, <a href="#simulazione" class="tag">Simulazione</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Terms -->
+                <div class="term-card" data-category="tecnico" data-letter="C">
+                    <div class="term-header">
+                        <h3 class="term-title">Cloud Computing</h3>
+                        <span class="term-category">Tecnico</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Distribuzione di servizi informatici (server, storage, database, rete, software) tramite Internet con tariffazione pay-per-use.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#saas" class="tag">SaaS</a>, <a href="#scalabilità" class="tag">Scalabilità</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="tecnico" data-letter="I">
+                    <div class="term-header">
+                        <h3 class="term-title">IoT</h3>
+                        <span class="term-category">Tecnico</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Internet of Things</p>
+                        <p class="term-definition">Rete di oggetti fisici incorporati con sensori, software e connettività per raccogliere e scambiare dati.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#edge-ai" class="tag">Edge AI</a>, <a href="#sensori" class="tag">Sensori</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regulatory Terms -->
+                <div class="term-card" data-category="normativo" data-letter="G">
+                    <div class="term-header">
+                        <h3 class="term-title">GDPR</h3>
+                        <span class="term-category">Normativo</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">General Data Protection Regulation</p>
+                        <p class="term-definition">Regolamento europeo sulla protezione dei dati personali, entrato in vigore nel 2018, che disciplina il trattamento dei dati personali nell'UE.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#privacy" class="tag">Privacy</a>, <a href="#compliance" class="tag">Compliance</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More AI Technical Terms -->
+                <div class="term-card" data-category="ia" data-letter="N">
+                    <div class="term-header">
+                        <h3 class="term-title">NLP</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Natural Language Processing</p>
+                        <p class="term-definition">Campo dell'IA che consente ai computer di comprendere, interpretare e generare linguaggio umano in modo significativo.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#chatbot" class="tag">Chatbot</a>, <a href="#sentiment-analysis" class="tag">Sentiment Analysis</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="ia" data-letter="N">
+                    <div class="term-header">
+                        <h3 class="term-title">Neural Network</h3>
+                        <span class="term-category">IA & Tecnologia</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Reti Neurali</p>
+                        <p class="term-definition">Sistema computazionale ispirato alle reti neurali biologiche, utilizzato per riconoscere pattern e apprendere dai dati.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#deep-learning" class="tag">Deep Learning</a>, <a href="#ml" class="tag">Machine Learning</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Process Terms -->
+                <div class="term-card" data-category="business" data-letter="L">
+                    <div class="term-header">
+                        <h3 class="term-title">Lean Manufacturing</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Metodologia di produzione che si concentra sulla minimizzazione degli sprechi massimizzando il valore per il cliente.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#automazione" class="tag">Automazione</a>, <a href="#efficienza" class="tag">Efficienza</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="business" data-letter="S">
+                    <div class="term-header">
+                        <h3 class="term-title">Supply Chain</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Catena di Fornitura</p>
+                        <p class="term-definition">Rete di tutte le entità, persone, attività, informazioni e risorse coinvolte nella creazione e consegna di un prodotto al consumatore finale.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#logistica" class="tag">Logistica</a>, <a href="#erp" class="tag">ERP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Implementation Terms -->
+                <div class="term-card" data-category="tecnico" data-letter="S">
+                    <div class="term-header">
+                        <h3 class="term-title">SaaS</h3>
+                        <span class="term-category">Tecnico</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Software as a Service</p>
+                        <p class="term-definition">Modello di distribuzione software dove le applicazioni sono ospitate da un provider e rese disponibili ai clienti via Internet.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#cloud-computing" class="tag">Cloud Computing</a>, <a href="#subscription" class="tag">Subscription</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="term-card" data-category="business" data-letter="D">
+                    <div class="term-header">
+                        <h3 class="term-title">Dashboard</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Interfaccia grafica che fornisce una vista consolidata di metriche e KPI aziendali chiave, spesso in tempo reale.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#kpi" class="tag">KPI</a>, <a href="#business-intelligence" class="tag">Business Intelligence</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 4.0 Terms -->
+                <div class="term-card" data-category="business" data-letter="I">
+                    <div class="term-header">
+                        <h3 class="term-title">Industria 4.0</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Quarta rivoluzione industriale caratterizzata dall'integrazione di tecnologie digitali avanzate nei processi produttivi.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#iot" class="tag">IoT</a>, <a href="#digital-twin" class="tag">Digital Twin</a>, <a href="#automazione" class="tag">Automazione</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance & Analytics -->
+                <div class="term-card" data-category="business" data-letter="P">
+                    <div class="term-header">
+                        <h3 class="term-title">Predictive Analytics</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Analisi Predittiva</p>
+                        <p class="term-definition">Utilizzo di dati storici, algoritmi statistici e machine learning per identificare la probabilità di risultati futuri.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ml" class="tag">Machine Learning</a>, <a href="#forecasting" class="tag">Forecasting</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quality & Compliance -->
+                <div class="term-card" data-category="business" data-letter="Q">
+                    <div class="term-header">
+                        <h3 class="term-title">Quality Management</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">Gestione della Qualità</p>
+                        <p class="term-definition">Approccio sistematico per garantire che prodotti e servizi soddisfino i requisiti e le aspettative dei clienti.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#iso-9001" class="tag">ISO 9001</a>, <a href="#continuous-improvement" class="tag">Continuous Improvement</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Experience -->
+                <div class="term-card" data-category="tecnico" data-letter="U">
+                    <div class="term-header">
+                        <h3 class="term-title">UX</h3>
+                        <span class="term-category">Tecnico</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-full">User Experience</p>
+                        <p class="term-definition">L'esperienza complessiva di una persona che utilizza un prodotto, sistema o servizio, specialmente in termini di facilità e piacere d'uso.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#ui" class="tag">UI</a>, <a href="#design-thinking" class="tag">Design Thinking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow & Process -->
+                <div class="term-card" data-category="business" data-letter="W">
+                    <div class="term-header">
+                        <h3 class="term-title">Workflow</h3>
+                        <span class="term-category">Business</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Sequenza di processi industriali, amministrativi o di altro tipo attraverso cui un pezzo di lavoro passa dall'inizio al completamento.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#automazione" class="tag">Automazione</a>, <a href="#bpm" class="tag">BPM</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Virtualization -->
+                <div class="term-card" data-category="tecnico" data-letter="V">
+                    <div class="term-header">
+                        <h3 class="term-title">Virtualizzazione</h3>
+                        <span class="term-category">Tecnico</span>
+                    </div>
+                    <div class="term-content">
+                        <p class="term-definition">Creazione di una versione virtuale di qualcosa, come sistemi operativi, server, dispositivi di storage o risorse di rete.</p>
+                        <div class="term-related">
+                            <strong>Correlati:</strong> <a href="#cloud-computing" class="tag">Cloud Computing</a>, <a href="#infrastructure" class="tag">Infrastructure</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="no-results" class="text-center py-12" style="display: none;">
+                <div class="text-6xl mb-4">🔍</div>
+                <h3 class="text-xl font-semibold mb-2">Nessun termine trovato</h3>
+                <p class="text-gray-600">Prova con un altro termine o rimuovi i filtri</p>
+                <button id="clear-filters" class="btn btn-outline mt-4">Rimuovi Filtri</button>
             </div>
         </div>
     </main>
@@ -239,5 +790,309 @@
 
     <!-- Scripts -->
     <script src="../assets/js/main.min.js"></script>
+    
+    <style>
+        /* Glossary-specific styles */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .term-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .term-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+        
+        .term-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .term-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #003366;
+            margin: 0;
+        }
+        
+        .term-category {
+            background: #f3f4f6;
+            color: #6b7280;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .term-category[data-category="ia"] { background: #dbeafe; color: #1d4ed8; }
+        .term-category[data-category="business"] { background: #d1fae5; color: #065f46; }
+        .term-category[data-category="normativo"] { background: #fef3c7; color: #92400e; }
+        .term-category[data-category="tecnico"] { background: #f3e8ff; color: #6b21a8; }
+        
+        .term-full {
+            font-style: italic;
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .term-definition {
+            color: #374151;
+            line-height: 1.6;
+            margin: 0 0 1rem 0;
+        }
+        
+        .term-related {
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f3f4f6;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #f8fafc;
+            color: #475569;
+            padding: 0.125rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0 0.25rem 0.25rem 0;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        
+        .tag:hover {
+            background: #003366;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .filter-btn, .alphabet-btn {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-btn:hover, .alphabet-btn:hover,
+        .filter-btn.active, .alphabet-btn.active {
+            background: #003366;
+            color: white;
+            border-color: #003366;
+        }
+        
+        .alphabet-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .term-card.hidden {
+            display: none;
+        }
+        
+        .highlight {
+            background-color: #fef08a;
+            padding: 0 0.125rem;
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .glossary-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .term-card {
+                padding: 1rem;
+            }
+            
+            .term-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .filter-btn, .alphabet-btn {
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
+            }
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('glossary-search');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const alphabetButtons = document.querySelectorAll('.alphabet-btn');
+            const termCards = document.querySelectorAll('.term-card');
+            const visibleCount = document.getElementById('visible-count');
+            const noResults = document.getElementById('no-results');
+            const clearFiltersBtn = document.getElementById('clear-filters');
+            
+            let currentCategory = 'all';
+            let currentLetter = 'all';
+            let currentSearch = '';
+            
+            function updateVisibleCount() {
+                const visible = document.querySelectorAll('.term-card:not(.hidden)').length;
+                visibleCount.textContent = visible;
+                
+                if (visible === 0) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            }
+            
+            function highlightText(text, search) {
+                if (!search) return text;
+                const regex = new RegExp(`(${search})`, 'gi');
+                return text.replace(regex, '<span class="highlight">$1</span>');
+            }
+            
+            function filterTerms() {
+                termCards.forEach(card => {
+                    const category = card.dataset.category;
+                    const letter = card.dataset.letter;
+                    const termTitle = card.querySelector('.term-title').textContent.toLowerCase();
+                    const termDefinition = card.querySelector('.term-definition').textContent.toLowerCase();
+                    const termFull = card.querySelector('.term-full')?.textContent.toLowerCase() || '';
+                    
+                    let showCard = true;
+                    
+                    // Category filter
+                    if (currentCategory !== 'all' && category !== currentCategory) {
+                        showCard = false;
+                    }
+                    
+                    // Letter filter
+                    if (currentLetter !== 'all' && letter !== currentLetter) {
+                        showCard = false;
+                    }
+                    
+                    // Search filter
+                    if (currentSearch) {
+                        const searchLower = currentSearch.toLowerCase();
+                        if (!termTitle.includes(searchLower) && 
+                            !termDefinition.includes(searchLower) && 
+                            !termFull.includes(searchLower)) {
+                            showCard = false;
+                        }
+                    }
+                    
+                    // Show/hide card
+                    if (showCard) {
+                        card.classList.remove('hidden');
+                        
+                        // Highlight search terms
+                        if (currentSearch) {
+                            const titleEl = card.querySelector('.term-title');
+                            const definitionEl = card.querySelector('.term-definition');
+                            const fullEl = card.querySelector('.term-full');
+                            
+                            titleEl.innerHTML = highlightText(titleEl.textContent, currentSearch);
+                            definitionEl.innerHTML = highlightText(definitionEl.textContent, currentSearch);
+                            if (fullEl) {
+                                fullEl.innerHTML = highlightText(fullEl.textContent, currentSearch);
+                            }
+                        }
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                updateVisibleCount();
+            }
+            
+            // Search functionality
+            searchInput.addEventListener('input', function(e) {
+                currentSearch = e.target.value.trim();
+                filterTerms();
+            });
+            
+            // Category filter functionality
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.category;
+                    filterTerms();
+                });
+            });
+            
+            // Alphabet filter functionality
+            alphabetButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    alphabetButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentLetter = this.dataset.letter;
+                    filterTerms();
+                });
+            });
+            
+            // Clear filters
+            clearFiltersBtn.addEventListener('click', function() {
+                currentCategory = 'all';
+                currentLetter = 'all';
+                currentSearch = '';
+                searchInput.value = '';
+                
+                filterButtons.forEach(b => b.classList.remove('active'));
+                alphabetButtons.forEach(b => b.classList.remove('active'));
+                filterButtons[0].classList.add('active');
+                alphabetButtons[0].classList.add('active');
+                
+                filterTerms();
+            });
+            
+            // Tag click functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('tag') && e.target.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const termId = e.target.getAttribute('href').substring(1);
+                    const targetCard = document.querySelector(`[data-term="${termId}"]`);
+                    if (targetCard) {
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        targetCard.style.borderColor = '#3b82f6';
+                        setTimeout(() => {
+                            targetCard.style.borderColor = '#e5e7eb';
+                        }, 2000);
+                    }
+                }
+            });
+            
+            // Initialize
+            filterTerms();
+            
+            // Set first alphabet button as active
+            alphabetButtons[0].classList.add('active');
+        });
+    </script>
 </body>
 </html>

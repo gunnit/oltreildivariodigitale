@@ -97,13 +97,103 @@
 
     <!-- Main Content -->
     <main id="main-content" role="main">
-        <article class="container py-16">
-            <header class="text-center mb-12">
-                <h1 class="text-4xl font-playfair font-bold mb-4">Prefazione</h1>
-                <p class="text-xl text-gray-600">Perché questo libro è per te, imprenditore italiano.</p>
-            </header>
+        <!-- Hero Section with Visual Storytelling -->
+        <section class="preface-hero">
+            <div class="hero-background">
+                <img src="../assets/images/bridge.png" alt="Ponte simbolico" class="hero-bg-image bridge-img">
+                <img src="../assets/images/mapofitalydigital.png" alt="Mappa digitale Italia" class="hero-bg-image italy-map">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="container hero-content">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <span>📖 Prefazione</span>
+                        </div>
+                        <h1 class="hero-title">Un Ponte Verso il Futuro</h1>
+                        <p class="hero-subtitle">
+                            Come l'Intelligenza Artificiale può unire <strong>tradizione italiana</strong> 
+                            e <strong>innovazione globale</strong> nel cuore delle nostre PMI
+                        </p>
+                        <div class="scroll-indicator">
+                            <span>Scorri per iniziare il viaggio</span>
+                            <div class="scroll-arrow">↓</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="author-card">
+                            <div class="book-cover-container">
+                                <img src="../assets/images/bookcover.jpg" alt="Copertina di Oltre il Divario Digitale" class="book-cover">
+                                <div class="book-glow"></div>
+                            </div>
+                            <div class="author-intro">
+                                <img src="../assets/images/gregor_givingspeach.jpeg" alt="Gregor Maric durante una presentazione" class="author-photo">
+                                <div class="author-info">
+                                    <h3>Gregor Maric</h3>
+                                    <p>Direttore e co-fondatore di PugliAI<br>14 anni di esperienza in IA e automazione</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <div class="prose max-w-prose mx-auto">
+        <!-- Interactive Journey Section -->
+        <section class="journey-section">
+            <div class="container">
+                <div class="journey-header">
+                    <h2>Il Mio Viaggio nell'IA</h2>
+                    <p>14 anni di esperienza trasformati in una guida pratica per le PMI italiane</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item" data-year="2011">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>L'Inizio del Viaggio</h3>
+                            <p>Quando l'AI era ancora fantascienza e le PMI italiane gestivano tutto con Excel</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-year="2018">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>ProcessLenz & Scale-up</h3>
+                            <p>CEO di ProcessLenz (SaaS per automazione) - acquisita da multinazionale</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-year="2022">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Leadership in KPMG & EY</h3>
+                            <p>Portafogli tecnologici €5M+, team 25+ persone, Centri di Eccellenza</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-year="2025">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>PugliAI & Questo Libro</h3>
+                            <p>Co-fondatore PugliAI - Soluzioni IA enterprise per il mercato italiano</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Article -->
+        <article class="container main-article">
+            <div class="article-grid">
+                <div class="content-main">
+                    <div class="chapter-intro">
+                        <div class="location-badge">
+                            <span>📍 Milano, gennaio 2025</span>
+                        </div>
+                    </div>
                 
                 <h2 class="font-playfair">Perché questo libro</h2>
                 
@@ -170,12 +260,73 @@
                 
                 <p>L'Italia del 2025 si trova a un bivio storico. Possiamo scegliere di subire la trasformazione AI lasciando che altri ne definiscano le regole, oppure possiamo guidarla, plasmandola secondo i nostri valori di eccellenza, sostenibilità e umanità.</p>
                 
-                <p class="font-bold text-2xl text-center my-8 text-blue-600">Questo libro è per chi sceglie di guidare.</p>
+                <div class="final-message">
+                    <div class="quote-highlight">
+                        <blockquote>
+                            "L'Italia del 2025 si trova a un bivio storico. Possiamo scegliere di subire la trasformazione AI lasciando che altri ne definiscano le regole, oppure possiamo guidarla, plasmandola secondo i nostri valori di eccellenza, sostenibilità e umanità."
+                        </blockquote>
+                    </div>
+                    
+                    <div class="call-to-action">
+                        <h3>Questo libro è per chi sceglie di guidare.</h3>
+                        <div class="action-buttons">
+                            <a href="../tools/roi-calculator.html" class="btn btn-primary">Calcola il Tuo ROI IA</a>
+                            <a href="../chapters/capitolo-1.html" class="btn btn-outline">Inizia il Viaggio</a>
+                        </div>
+                    </div>
+                </div>
                 
-                <hr class="my-8">
+                </div>
                 
-                <p class="text-right text-lg"><em>Gregor Maric</em><br><em>Milano, gennaio 2025</em></p>
-                
+                <!-- Sidebar with Key Stats -->
+                <aside class="content-sidebar">
+                    <div class="stats-card">
+                        <h3>L'Urgenza dei Numeri</h3>
+                        <div class="stat-item">
+                            <div class="stat-number">26%</div>
+                            <div class="stat-label">PMI italiane ad alta digitalizzazione</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">6.9%</div>
+                            <div class="stat-label">PMI che utilizzano IA</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">+58%</div>
+                            <div class="stat-label">Crescita mercato IA Italia 2024</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">€1.2B</div>
+                            <div class="stat-label">Valore mercato IA 2024</div>
+                        </div>
+                    </div>
+                    
+                    <div class="book-info-card">
+                        <img src="../assets/images/bookcover.jpg" alt="Copertina libro" class="sidebar-book-cover">
+                        <h4>Cosa troverai nel libro</h4>
+                        <ul class="book-features">
+                            <li>✅ Casi studio reali di PMI italiane</li>
+                            <li>✅ Framework applicabili immediatamente</li>
+                            <li>✅ Checklist operative concrete</li>
+                            <li>✅ Indicatori di performance misurabili</li>
+                            <li>✅ ROI Calculator integrato</li>
+                        </ul>
+                        <div class="book-chapters">
+                            <h5>7 Capitoli</h5>
+                            <p>Un viaggio completo dalla diagnosi all'implementazione dell'IA nella tua PMI</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <div class="author-signature">
+                <div class="signature-content">
+                    <img src="../assets/images/gregor_givingspeach.jpeg" alt="Gregor Maric" class="signature-photo">
+                    <div class="signature-text">
+                        <p class="signature-name"><strong>Gregor Maric</strong></p>
+                        <p class="signature-title">Direttore e co-fondatore di PugliAI</p>
+                        <p class="signature-location">Milano, gennaio 2025</p>
+                    </div>
+                </div>
             </div>
         </article>
     </main>
@@ -240,5 +391,470 @@
 
     <!-- Scripts -->
     <script src="../assets/js/main.min.js"></script>
+    
+    <style>
+        /* Preface-specific styles */
+        .preface-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #003366 0%, #004080 50%, #0056b3 100%);
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .hero-bg-image {
+            position: absolute;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .bridge-img {
+            top: 20%;
+            right: 10%;
+            width: 300px;
+            height: auto;
+            transform: rotate(-15deg);
+        }
+        
+        .italy-map {
+            bottom: 10%;
+            left: 5%;
+            width: 200px;
+            height: auto;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 51, 102, 0.8);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 80vh;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid #FFD700;
+            color: #FFD700;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .scroll-indicator {
+            text-align: center;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-arrow {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .author-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            color: #003366;
+            text-align: center;
+        }
+        
+        .book-cover-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .book-cover {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .book-glow {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 15px;
+            opacity: 0.3;
+            filter: blur(20px);
+            z-index: -1;
+        }
+        
+        .author-intro {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-align: left;
+        }
+        
+        .author-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #FFD700;
+        }
+        
+        .author-info h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #003366;
+        }
+        
+        .author-info p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .journey-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .journey-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .journey-header h2 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #003366, #FFD700);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #FFD700;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid #003366;
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+        
+        .timeline-content h3 {
+            color: #003366;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item::before {
+            content: attr(data-year);
+            position: absolute;
+            left: 50%;
+            top: -30px;
+            transform: translateX(-50%);
+            background: #003366;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .main-article {
+            padding: 4rem 0;
+        }
+        
+        .article-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .content-main {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .location-badge {
+            background: #e6f3ff;
+            color: #0066cc;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .final-message {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 15px;
+            border-left: 5px solid #003366;
+        }
+        
+        .quote-highlight blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #003366;
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+        }
+        
+        .call-to-action h3 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .content-sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .stats-card, .book-info-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .stats-card h3 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFD700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        
+        .sidebar-book-cover {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto 1rem auto;
+            display: block;
+        }
+        
+        .book-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .book-features li {
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .book-chapters {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .author-signature {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .signature-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .signature-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .signature-name {
+            font-size: 1.3rem;
+            color: #003366;
+            margin: 0;
+        }
+        
+        .signature-title, .signature-location {
+            color: #666;
+            margin: 0.25rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .article-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 50px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            
+            .signature-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </body>
 </html>
