@@ -36,6 +36,58 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://oltreildivariodigitale.com/pages/prefazione.html">
     
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Prefazione - Oltre il Divario Digitale",
+        "description": "La prefazione del libro 'Oltre il Divario Digitale' - Una guida completa per le PMI italiane nell'era dell'Intelligenza Artificiale.",
+        "url": "https://oltreildivariodigitale.com/pages/prefazione.html",
+        "mainEntity": {
+            "@type": "Book",
+            "name": "Oltre il Divario Digitale",
+            "description": "Una guida completa per le PMI italiane nell'era dell'Intelligenza Artificiale",
+            "inLanguage": "it",
+            "about": [
+                {
+                    "@type": "Thing",
+                    "name": "Intelligenza Artificiale"
+                },
+                {
+                    "@type": "Thing", 
+                    "name": "PMI italiane"
+                },
+                {
+                    "@type": "Thing",
+                    "name": "Trasformazione digitale"
+                }
+            ],
+            "publisher": {
+                "@type": "Organization",
+                "name": "Oltre il Divario Digitale"
+            }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://oltreildivariodigitale.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Prefazione",
+                    "item": "https://oltreildivariodigitale.com/pages/prefazione.html"
+                }
+            ]
+        }
+    }
+    </script>
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
     <link rel="preload" href="../assets/css/main.css" as="style">
@@ -819,6 +871,20 @@
         }
         
         @media (max-width: 768px) {
+            /* Mobile header text visibility fixes */
+            .preface-hero h1,
+            .preface-hero p,
+            .hero-title {
+                color: var(--pure-white) !important;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            }
+            
+            .hero-content {
+                padding: var(--space-2xl) var(--space-md);
+                position: relative;
+                z-index: 3;
+            }
+            
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -841,6 +907,8 @@
             .timeline-item {
                 flex-direction: row !important;
                 padding-left: 50px;
+                margin-right: var(--space-md);
+                padding-right: var(--space-md);
             }
             
             .timeline-dot {

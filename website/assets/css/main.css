@@ -1578,8 +1578,22 @@ html {
 /* Media Queries - Mobile First */
 @media (max-width: 640px) {
     .container {
-        padding-left: var(--space-sm);
-        padding-right: var(--space-sm);
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+    
+    /* Ensure text doesn't touch screen edges */
+    .main-content,
+    .hero-content,
+    .section-content {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+    
+    /* Assessment container mobile padding */
+    .assessment-container {
+        padding: 0 var(--space-md);
+        margin: 0 auto;
     }
     
     h1 { font-size: 2.25rem; }
@@ -1627,6 +1641,55 @@ html {
     :root {
         --section-padding: clamp(3rem, 8vw, 5rem);
         --section-gap: clamp(2rem, 6vw, 4rem);
+    }
+    
+    /* Mobile header visibility fixes */
+    .header {
+        background-color: var(--pure-white) !important;
+        box-shadow: 0 2px 12px rgba(0,51,102,0.15);
+    }
+    
+    .nav-logo {
+        color: var(--deep-italian-blue) !important;
+        text-shadow: none;
+    }
+    
+    .nav-menu a {
+        color: var(--deep-italian-blue) !important;
+        font-weight: 600;
+    }
+    
+    /* Assessment header mobile fixes */
+    .assessment-header {
+        background: linear-gradient(135deg, #003366 0%, #1a4480 100%) !important;
+        color: var(--pure-white) !important;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .assessment-header h1,
+    .assessment-header p {
+        color: var(--pure-white) !important;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    /* Footer mobile visibility fixes */
+    .footer {
+        background-color: var(--deep-italian-blue) !important;
+        color: var(--pure-white) !important;
+    }
+    
+    .footer h4 {
+        color: var(--warm-gold) !important;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    .footer a {
+        color: var(--pure-white) !important;
+        font-weight: 500;
+    }
+    
+    .footer a:hover {
+        color: var(--warm-gold) !important;
     }
     
     /* Responsive grid system */
@@ -1885,6 +1948,29 @@ html {
         hyphens: auto;
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
+    }
+    
+    /* Mobile text content improvements */
+    .timeline-item {
+        margin-left: var(--space-md);
+        margin-right: var(--space-md);
+    }
+    
+    /* Prefazione hero mobile text visibility */
+    .preface-hero .hero-content {
+        padding: var(--space-2xl) var(--space-md);
+    }
+    
+    .preface-hero h1,
+    .preface-hero p {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.4) !important;
+        color: var(--pure-white) !important;
+    }
+    
+    /* Better mobile typography contrast */
+    .hero h1,
+    .hero p {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 }
 
