@@ -833,5 +833,73 @@
             }
         });
     </script>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-description">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <h3 id="cookie-banner-title">🍪 Utilizzo dei Cookie</h3>
+                <p id="cookie-banner-description">
+                    Questo sito utilizza cookie tecnici per garantire il corretto funzionamento e Google Analytics 
+                    per analizzare l'utilizzo in forma anonima. Continuando la navigazione accetti l'uso dei cookie.
+                    <a href="../privacy.html" class="cookie-link">Leggi la Privacy Policy</a>
+                </p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button id="cookie-accept" class="btn-cookie btn-accept" aria-label="Accetta tutti i cookie">
+                    Accetta Tutti
+                </button>
+                <button id="cookie-necessary" class="btn-cookie btn-necessary" aria-label="Accetta solo cookie tecnici">
+                    Solo Necessari
+                </button>
+                <button id="cookie-settings" class="btn-cookie btn-settings" aria-label="Gestisci preferenze cookie">
+                    Gestisci
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-settings-modal" class="cookie-modal" role="dialog" aria-labelledby="cookie-settings-title" aria-hidden="true">
+        <div class="cookie-modal-content">
+            <div class="cookie-modal-header">
+                <h3 id="cookie-settings-title">⚙️ Gestisci Preferenze Cookie</h3>
+                <button id="cookie-modal-close" class="cookie-modal-close" aria-label="Chiudi modal">&times;</button>
+            </div>
+            <div class="cookie-modal-body">
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4>Cookie Necessari</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="necessary-cookies" checked disabled>
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        Cookie tecnici indispensabili per il funzionamento del sito web. 
+                        Non possono essere disabilitati.
+                    </p>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h4>Cookie Analytics</h4>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="analytics-cookies">
+                            <span class="cookie-slider"></span>
+                        </label>
+                    </div>
+                    <p class="cookie-category-description">
+                        Google Analytics per analizzare l'utilizzo del sito in forma 
+                        anonima e migliorare l'esperienza utente.
+                    </p>
+                </div>
+            </div>
+            <div class="cookie-modal-footer">
+                <button id="cookie-save-preferences" class="btn-cookie btn-accept">
+                    Salva Preferenze
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
