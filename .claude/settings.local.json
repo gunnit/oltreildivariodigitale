@@ -9,7 +9,8 @@
       "Bash(gh api:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
-      "Bash(gh workflow run:*)"
+      "Bash(gh workflow run:*)",
+      "mcp__playwright__browser_navigate"
     ],
     "deny": [],
     "ask": []
