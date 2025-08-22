@@ -949,6 +949,10 @@ li {
     color: var(--warm-gold);
 }
 
+.footer p {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
 .footer a {
     color: var(--pure-white);
     text-decoration: none;
@@ -966,6 +970,10 @@ li {
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .sr-only {
