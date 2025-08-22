@@ -590,7 +590,7 @@
                 steps.forEach(step => step.style.display = 'none');
                 
                 // Show current step
-                const currentStepElement = document.querySelector(`[data-step="${currentStep}"]`);
+                const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
                 if (currentStepElement) {
                     currentStepElement.style.display = 'block';
                 }
@@ -612,7 +612,7 @@
             }
             
             function validateCurrentStep() {
-                const currentStepElement = document.querySelector(`[data-step="${currentStep}"]`);
+                const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
                 const requiredFields = currentStepElement.querySelectorAll('input[required], select[required]');
                 
                 for (let field of requiredFields) {
