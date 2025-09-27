@@ -4,11 +4,11 @@
     --warm-gold: #FFD700;
     --pure-white: #FFFFFF;
     
-    /* Secondary Colors */
-    --sage-green: #87A96B;
+    /* Secondary Colors - WCAG AA Compliant */
+    --sage-green: #6B8E4F;  /* Improved contrast ratio */
     --warm-gray: #F8F9FA;
-    --charcoal: #2C3E50;
-    --alert-red: #E74C3C;
+    --charcoal: #1A2332;    /* Darker for better contrast */
+    --alert-red: #C0392B;   /* Darker red for better contrast */
     
     /* Gradients */
     --hero-gradient: linear-gradient(135deg, #003366 0%, #004080 100%);

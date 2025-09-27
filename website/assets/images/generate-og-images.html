@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>OG Image Generator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #003366 0%, #1e3a8a 40%, #0f172a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .og-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .og-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .og-text {
+            flex: 1;
+            color: white;
+        }
+
+        .og-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .og-subtitle {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .og-features {
+            display: flex;
+            gap: 30px;
+        }
+
+        .og-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            color: #FFD700;
+        }
+
+        .og-book {
+            width: 300px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+            transform: perspective(1000px) rotateY(-10deg);
+        }
+
+        .twitter-container {
+            width: 1200px;
+            height: 600px;
+            background: linear-gradient(135deg, #003366 0%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .twitter-content {
+            text-align: center;
+            color: white;
+        }
+
+        .twitter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .twitter-subtitle {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+        }
+
+        .twitter-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .twitter-stat {
+            text-align: center;
+        }
+
+        .twitter-stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFD700;
+        }
+
+        .twitter-stat-label {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <h2>Open Graph Image (1200x630)</h2>
+    <div class="og-container">
+        <div class="og-content">
+            <div class="og-text">
+                <h1 class="og-title">Oltre il Divario Digitale</h1>
+                <p class="og-subtitle">La guida pratica all'intelligenza artificiale per le PMI italiane</p>
+                <div class="og-features">
+                    <div class="og-feature">
+                        <span>✓</span>
+                        <span>+47% Produttività</span>
+                    </div>
+                    <div class="og-feature">
+                        <span>✓</span>
+                        <span>200+ PMI Analizzate</span>
+                    </div>
+                    <div class="og-feature">
+                        <span>✓</span>
+                        <span>ROI in 6 Mesi</span>
+                    </div>
+                </div>
+            </div>
+            <img src="../bookcover.png" alt="Book Cover" class="og-book">
+        </div>
+    </div>
+
+    <h2>Twitter Card Image (1200x600)</h2>
+    <div class="twitter-container">
+        <div class="twitter-content">
+            <h1 class="twitter-title">Intelligenza Artificiale per PMI</h1>
+            <p class="twitter-subtitle">Trasforma la tua azienda con l'IA: guida pratica con casi studio reali</p>
+            <div class="twitter-stats">
+                <div class="twitter-stat">
+                    <div class="twitter-stat-value">+47%</div>
+                    <div class="twitter-stat-label">Produttività</div>
+                </div>
+                <div class="twitter-stat">
+                    <div class="twitter-stat-value">200+</div>
+                    <div class="twitter-stat-label">PMI Analizzate</div>
+                </div>
+                <div class="twitter-stat">
+                    <div class="twitter-stat-value">6 Mesi</div>
+                    <div class="twitter-stat-label">ROI Garantito</div>
+                </div>
+                <div class="twitter-stat">
+                    <div class="twitter-stat-value">15+</div>
+                    <div class="twitter-stat-label">Casi Studio</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p><strong>Note:</strong> Take screenshots of these designs to create og-image.jpg and twitter-image.jpg</p>
+</body>
+</html>
