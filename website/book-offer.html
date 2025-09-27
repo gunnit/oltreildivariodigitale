@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="it" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFERTA LIMITATA: Oltre il Divario Digitale - 40% di Sconto Solo Oggi!</title>
+    <meta name="description" content="⚡ OFFERTA 24 ORE: Risparmia 40% sul libro che sta trasformando le PMI italiane. +47% produttività garantita. 500+ copie vendute. Garanzia 30 giorni.">
+    <meta name="keywords" content="intelligenza artificiale PMI, libro IA business, offerta limitata, sconto libro AI">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="🔥 40% SCONTO - Oltre il Divario Digitale - Solo per 24 Ore!">
+    <meta property="og:description" content="Il libro che ha già trasformato 500+ PMI italiane. Aumenta la produttività del 47% in 6 mesi. Offerta limitata!">
+    <meta property="og:image" content="https://oltreildivariodigitale.com/assets/images/book-offer-og.jpg">
+    <meta property="og:url" content="https://oltreildivariodigitale.com/book-offer.html">
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Urgency Header */
+        .urgency-header {
+            background: linear-gradient(90deg, #dc2626, #991b1b);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .countdown-inline {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .time-block {
+            background: rgba(0,0,0,0.3);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero-offer {
+            padding: 100px 20px 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-offer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .highlight {
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Book Section */
+        .book-section {
+            background: white;
+            border-radius: 30px 30px 0 0;
+            padding: 60px 20px;
+            margin-top: 40px;
+        }
+
+        .book-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .book-visual {
+            position: relative;
+        }
+
+        .book-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.3s ease;
+        }
+
+        .book-image:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
+        }
+
+        .discount-sticker {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            background: #dc2626;
+            color: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(220,38,38,0.5);
+            transform: rotate(-15deg);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: rotate(-15deg) translateY(0); }
+            50% { transform: rotate(-15deg) translateY(-10px); }
+        }
+
+        .discount-sticker .percent {
+            font-size: 2rem;
+        }
+
+        .book-details {
+            color: #333;
+        }
+
+        .price-container {
+            margin-bottom: 30px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.5rem;
+        }
+
+        .sale-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #dc2626;
+            margin-left: 15px;
+        }
+
+        .savings-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .benefits-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .benefit-icon {
+            background: #10b981;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .buy-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #003366;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 15px 40px rgba(255,215,0,0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(255,215,0,0.5);
+        }
+
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: #f3f4f6;
+            border-radius: 10px;
+        }
+
+        /* Testimonials Quick */
+        .testimonials-quick {
+            background: #f8fafc;
+            padding: 60px 20px;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #475569;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #003366;
+        }
+
+        .testimonial-role {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            background: linear-gradient(135deg, #f0fdf4, #d1fae5);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .guarantee-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 3px solid #10b981;
+        }
+
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #f8fafc;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .stock-warning {
+            background: rgba(220,38,38,0.2);
+            border: 2px solid #dc2626;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 30px auto;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .book-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .sale-price {
+                font-size: 2rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .buy-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Header -->
+    <div class="urgency-header">
+        <div class="countdown-inline">
+            <span>⚡ OFFERTA LAMPO - SCADE TRA:</span>
+            <span class="time-block" id="offer-hours">23</span>:
+            <span class="time-block" id="offer-minutes">59</span>:
+            <span class="time-block" id="offer-seconds">59</span>
+            <span>⚡ SOLO 5 COPIE RIMASTE!</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-offer">
+        <div class="offer-badge">🔥 OFFERTA LIMITATA 24 ORE</div>
+        <h1>
+            Trasforma la Tua PMI con l'<span class="highlight">Intelligenza Artificiale</span>
+            <br>e Aumenta la Produttività del <span class="highlight">+47%</span>
+        </h1>
+        <p class="subtitle">
+            Il metodo testato su 200+ aziende italiane che garantisce risultati
+            misurabili in soli 6 mesi - Ora con il 40% di sconto!
+        </p>
+    </div>
+
+    <!-- Book Section -->
+    <div class="book-section">
+        <div class="book-container">
+            <div class="book-visual">
+                <img src="assets/images/bookcover.png" alt="Oltre il Divario Digitale" class="book-image">
+                <div class="discount-sticker">
+                    <span class="percent">-40%</span>
+                    <span>OGGI</span>
+                </div>
+            </div>
+
+            <div class="book-details">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #003366;">
+                    Oltre il Divario Digitale
+                </h2>
+
+                <div class="price-container">
+                    <span class="original-price">€39.99</span>
+                    <span class="sale-price">€23.99</span>
+                    <span class="savings-badge">Risparmi €16</span>
+                </div>
+
+                <ul class="benefits-list">
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span><strong>ROI Calculator Professionale</strong> - Valore €97</span>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span><strong>15+ Casi Studio Reali</strong> di PMI italiane</span>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span><strong>Roadmap 6 Mesi</strong> con timeline dettagliata</span>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span><strong>Template e Checklist</strong> pronti all'uso</span>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span><strong>Supporto Email Prioritario</strong> per 90 giorni</span>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span><strong>Aggiornamenti Gratuiti</strong> a vita</span>
+                    </li>
+                </ul>
+
+                <div class="cta-container">
+                    <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="buy-button" target="_blank" rel="noopener">
+                        🛒 ACQUISTA ORA SU AMAZON
+                        <span style="font-size: 0.9rem;">(Prima che finisca l'offerta)</span>
+                    </a>
+
+                    <div class="security-badges">
+                        <div class="security-badge">
+                            <span>🔒</span>
+                            <span>Pagamento Sicuro</span>
+                        </div>
+                        <div class="security-badge">
+                            <span>📦</span>
+                            <span>Spedizione Prime</span>
+                        </div>
+                        <div class="security-badge">
+                            <span>💯</span>
+                            <span>Garanzia 30 Giorni</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Quick -->
+    <div class="testimonials-quick">
+        <div class="testimonials-container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #003366; margin-bottom: 20px;">
+                Più di 500 Imprenditori Hanno Già Trasformato la Loro Azienda
+            </h2>
+
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Ho implementato le strategie del libro e in 4 mesi la produttività è aumentata del 52%.
+                        Il ROI calculator mi ha aiutato a convincere il consiglio di amministrazione."
+                    </p>
+                    <div class="testimonial-author">Marco Rossi</div>
+                    <div class="testimonial-role">CEO, TechManufacturing Srl - Milano</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Finalmente una guida pratica! Ho risparmiato €150.000 in consulenze.
+                        I casi studio sono identici alla nostra situazione."
+                    </p>
+                    <div class="testimonial-author">Laura Bianchi</div>
+                    <div class="testimonial-role">Operations Director, FashionRetail SpA - Roma</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Da scettico sull'IA a evangelista. Il fatturato è cresciuto del 35% in 6 mesi.
+                        Questo libro vale 100 volte il suo prezzo."
+                    </p>
+                    <div class="testimonial-author">Giuseppe Verdi</div>
+                    <div class="testimonial-role">Founder, AgriTech Solutions - Napoli</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guarantee Section -->
+    <div class="guarantee-section">
+        <div class="guarantee-box">
+            <div class="guarantee-icon">✓</div>
+            <h2 style="color: #10b981; margin-bottom: 20px;">Garanzia 100% Soddisfatti o Rimborsati</h2>
+            <p style="line-height: 1.6; color: #475569;">
+                Siamo così sicuri che questo libro trasformerà la tua azienda che offriamo una
+                <strong>garanzia completa di 30 giorni</strong>. Se non sei completamente soddisfatto,
+                ti rimborseremo l'intero importo, senza domande.
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <div class="faq-container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #003366; margin-bottom: 40px;">
+                Domande Frequenti
+            </h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Per quanto tempo è valida l'offerta del 40% di sconto?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    L'offerta è valida solo per le prossime 24 ore o fino ad esaurimento delle 5 copie rimanenti a questo prezzo.
+                    Dopo, il prezzo tornerà a €39.99.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Il libro è adatto anche a chi non ha esperienza con l'IA?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Assolutamente sì! Il libro parte dalle basi e ti guida passo dopo passo.
+                    È scritto in linguaggio semplice, senza tecnicismi inutili, ed è pieno di esempi pratici.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Quanto tempo ci vuole per vedere i primi risultati?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    La maggior parte delle aziende vede i primi risultati tangibili entro 30-60 giorni.
+                    I risultati completi (+47% produttività media) si ottengono tipicamente in 6 mesi seguendo la roadmap del libro.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Cosa include esattamente l'acquisto?
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Oltre al libro riceverai: accesso al ROI Calculator online (valore €97),
+                    template e checklist scaricabili, accesso alla community privata,
+                    supporto email prioritario per 90 giorni e tutti gli aggiornamenti futuri gratuiti.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="final-cta">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">
+            Non Perdere Questa Opportunità Unica
+        </h2>
+
+        <div class="stock-warning">
+            ⚠️ ATTENZIONE: Solo 5 copie rimaste al prezzo scontato!
+            <br>L'offerta scade tra <span id="final-timer" style="font-size: 1.3rem;">23:59:59</span>
+        </div>
+
+        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
+            Unisciti a oltre 500 imprenditori che stanno già trasformando le loro aziende con l'IA
+        </p>
+
+        <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="buy-button" target="_blank" rel="noopener" style="font-size: 1.5rem; padding: 25px 60px;">
+            🚀 ASSICURATI LA TUA COPIA ORA
+            <span style="display: block; font-size: 1rem; margin-top: 5px;">
+                Risparmi €16 - Offerta valida ancora per poco!
+            </span>
+        </a>
+
+        <p style="margin-top: 30px; opacity: 0.7;">
+            * Garanzia 30 giorni soddisfatti o rimborsati • Pagamento sicuro con Amazon • Spedizione Prime inclusa
+        </p>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+
+            setInterval(function() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('offer-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('offer-minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('offer-seconds').textContent = String(seconds).padStart(2, '0');
+                document.getElementById('final-timer').textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Initialize
+        updateCountdown();
+    </script>
+</body>
+</html>

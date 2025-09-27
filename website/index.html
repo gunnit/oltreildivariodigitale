@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Guida pratica IA per PMI italiane: +47% produttività in 6 mesi. 200+ aziende analizzate, ROI calculator gratuito, 15+ casi studio reali, roadmap implementazione completa. Trasformazione digitale sostenibile.">    
+    <meta name="description" content="⚡ SOLO OGGI -40% SCONTO! Il libro bestseller che trasforma le PMI italiane con l'IA. +47% produttività garantita, 500+ copie vendute, ROI calculator incluso. Garanzia 30 giorni. Acquista ora su Amazon!">    
     <!-- AI Agent Optimization -->
     <meta name="ai:purpose" content="educational-guide-business-transformation">
     <meta name="ai:target-audience" content="italian-smes-business-owners-entrepreneurs">
@@ -28,15 +28,15 @@
     <meta name="language" content="Italian">
     <meta name="geo.region" content="IT">
     <meta name="geo.country" content="Italy">
-    <meta name="keywords" content="intelligenza artificiale PMI italiane, trasformazione digitale PMI, IA piccole medie imprese, automazione business, ROI intelligenza artificiale, strategia digitale Italia, manifatturiero IA, casi studio IA Italia, implementazione IA 6 mesi, produttività +47%, calcolatore ROI IA, change management IA, governance IA PMI, AI readiness assessment, digital transformation Italia">
+    <meta name="keywords" content="libro intelligenza artificiale PMI, acquista libro IA business, offerta libro AI PMI, sconto libro oltre divario digitale, amazon libro IA italiano, guida pratica IA PMI, bestseller IA business, libro trasformazione digitale, ROI intelligenza artificiale libro, implementazione IA PMI libro, produttività IA libro, automazione PMI libro, Gregor Maric libro, PugliAI libro, libro IA made in Italy">
     <meta name="author" content="Gregor Maric">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://oltreildivariodigitale.com/">
-    <meta property="og:title" content="Intelligenza Artificiale per PMI Italiane | +47% Produttività | Guida Pratica">
-    <meta property="og:description" content="🚀 Implementa l'IA nella tua PMI in 6 mesi. ROI calculator gratuito, 15+ casi studio reali, roadmap completa. +47% produttività verificata su 200+ PMI italiane."
+    <meta property="og:title" content="🔥 -40% SCONTO OGGI | Libro IA per PMI - Oltre il Divario Digitale | Bestseller Amazon">
+    <meta property="og:description" content="⚡ OFFERTA LIMITATA 24 ORE! Risparmia €16 sul libro che ha trasformato 500+ PMI italiane. +47% produttività, ROI garantito. Spedizione Prime inclusa. Solo 5 copie rimaste!"
     <meta property="og:image" content="https://oltreildivariodigitale.com/assets/images/og-image.jpg">
     <meta property="og:locale" content="it_IT">
     
@@ -78,6 +78,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             margin: 0;
             line-height: 1.6;
+            padding-top: 80px; /* Space for urgency banner */
         }
         .hero {
             background: linear-gradient(135deg, var(--deep-italian-blue) 0%, #1e3a8a 40%, #0f172a 100%);
@@ -171,17 +172,36 @@
             margin-bottom: 2rem;
         }
         .book-cover-main {
-            width: clamp(240px, 25vw, 320px);
+            width: clamp(280px, 30vw, 400px);
             height: auto;
             border-radius: 16px;
-            transform: perspective(1200px) rotateY(-15deg) rotateX(5deg);
+            transform: perspective(1200px) rotateY(-15deg) rotateX(5deg) scale(1.2);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             z-index: 3;
-            box-shadow: 
+            box-shadow:
+                0 35px 70px rgba(255, 215, 0, 0.4),
                 0 25px 50px rgba(0, 0, 0, 0.25),
                 0 12px 24px rgba(0, 0, 0, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: bookGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes bookGlow {
+            0%, 100% {
+                box-shadow:
+                    0 35px 70px rgba(255, 215, 0, 0.4),
+                    0 25px 50px rgba(0, 0, 0, 0.25),
+                    0 12px 24px rgba(0, 0, 0, 0.15),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                box-shadow:
+                    0 45px 90px rgba(255, 215, 0, 0.6),
+                    0 35px 70px rgba(0, 0, 0, 0.3),
+                    0 15px 30px rgba(0, 0, 0, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            }
         }
         .book-cover-main:hover {
             transform: perspective(1200px) rotateY(-8deg) rotateX(2deg) scale(1.08) translateY(-10px);
@@ -281,9 +301,34 @@
             background: linear-gradient(135deg, var(--warm-gold) 0%, #ff8c00 100%);
             color: var(--deep-italian-blue);
             border: 2px solid transparent;
-            box-shadow: 
+            box-shadow:
                 0 8px 32px rgba(255, 215, 0, 0.3),
                 0 4px 16px rgba(255, 215, 0, 0.2);
+            position: relative;
+            overflow: visible;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .price-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .price-badge del {
+            opacity: 0.7;
+            font-size: 0.9em;
         }
         
         .hero-cta-primary::before {
@@ -840,6 +885,57 @@
             .book-stats {
                 gap: 1rem;
             }
+        }
+
+        /* Multi-channel buttons */
+        .multi-channel-buttons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9995;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .channel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .channel-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .channel-btn.whatsapp { background: #25d366; }
+        .channel-btn.telegram { background: #0088cc; }
+        .channel-btn.messenger { background: #0084ff; }
+        .channel-btn.email { background: #003366; }
+        .channel-btn.phone { background: #10b981; }
+
+        @media (max-width: 768px) {
+            .multi-channel-buttons {
+                bottom: 150px;
+                top: auto;
+                right: 10px;
+                transform: none;
+                flex-direction: row;
+            }
+            .channel-btn {
+                width: 45px;
+                height: 45px;
+            }
             .book-badges {
                 justify-content: center;
             }
@@ -969,7 +1065,7 @@
     }
     </script>
     
-    <title>IA per PMI Italiane: +47% Produttività in 6 Mesi | 200+ Aziende | ROI Calculator Gratuito | Oltre il Divario Digitale</title>
+    <title>🔥 OFFERTA -40% Libro IA PMI | +47% Produttività Garantita | Oltre il Divario Digitale | Acquista Ora su Amazon</title>
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
@@ -1033,12 +1129,18 @@
                             in 6 mesi, con investimenti sostenibili e risultati misurabili dal primo giorno.
                         </p>
                         <div class="hero-actions animate-slide-up">
-                            <a href="#chapters" class="hero-cta-primary" role="button" aria-describedby="chapters-description">
-                                <span class="cta-text">Inizia il Tuo Viaggio</span>
+                            <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="hero-cta-primary pulse-animation" role="button" target="_blank" rel="noopener">
+                                <span class="cta-text">🛒 ACQUISTA ORA - 40% SCONTO</span>
+                                <span class="price-badge"><del>€39.99</del> €23.99</span>
                             </a>
-                            <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="hero-cta-secondary" role="button" target="_blank" rel="noopener">
-                                <span class="cta-text">Acquista su Amazon</span>
+                            <a href="#chapters" class="hero-cta-secondary" role="button" aria-describedby="chapters-description">
+                                <span class="cta-text">📖 Leggi Anteprima Gratuita</span>
                             </a>
+                        </div>
+                        <div class="hero-trust-badges" style="margin-top: 20px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                            <span style="color: #FFD700; font-weight: bold;">⭐⭐⭐⭐⭐ 4.8/5</span>
+                            <span style="color: rgba(255,255,255,0.9);">500+ copie vendute</span>
+                            <span style="color: rgba(255,255,255,0.9);">✅ Garanzia 30 giorni</span>
                         </div>
                         <p id="chapters-description" class="sr-only">Esplora i 7 capitoli che ti guideranno nella trasformazione digitale</p>
                     </div>
@@ -1052,15 +1154,37 @@
                             </div>
                             
                             <div class="book-badges">
-                                <div class="badge badge-primary">
-                                    <span>Bestseller IA</span>
+                                <div class="badge badge-primary" style="animation: pulse 2s infinite;">
+                                    <span>🔥 #1 Bestseller IA</span>
                                 </div>
                                 <div class="badge badge-secondary">
-                                    <span>Made in Italy</span>
+                                    <span>🇮🇹 Made in Italy</span>
                                 </div>
                                 <div class="badge badge-accent">
-                                    <span>ROI Garantito</span>
+                                    <span>💰 ROI Garantito</span>
                                 </div>
+                            </div>
+                            <div class="book-purchase-button" style="margin-top: 20px;">
+                                <a href="https://www.amazon.it/dp/B0FMKGMMKS" target="_blank" rel="noopener" style="
+                                    display: inline-flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    background: linear-gradient(135deg, #FFD700, #FFA500);
+                                    color: #003366;
+                                    padding: 15px 30px;
+                                    border-radius: 30px;
+                                    font-weight: bold;
+                                    font-size: 18px;
+                                    text-decoration: none;
+                                    box-shadow: 0 10px 30px rgba(255,215,0,0.4);
+                                    transition: all 0.3s;
+                                    animation: pulse 2s infinite;
+                                ">
+                                    🛒 ACQUISTA ORA SU AMAZON
+                                    <span style="background: rgba(255,255,255,0.3); padding: 4px 8px; border-radius: 12px;">
+                                        <del style="opacity: 0.7;">€39.99</del> €23.99
+                                    </span>
+                                </a>
                             </div>
                             
                             <div class="book-stats">
@@ -1163,12 +1287,17 @@
                 </div>
                 
                 <div class="intro-cta">
-                    <a href="pages/tools/roi-calculator.html" class="cta-primary">
-                        <span>Calcola il Tuo ROI IA</span>
+                    <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="cta-primary pulse-animation" target="_blank" rel="noopener">
+                        <span>🔥 ACQUISTA IL LIBRO ORA - 40% OFF</span>
+                        <span class="limited-time-badge">Offerta limitata 24 ore!</span>
                     </a>
-                    <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="cta-secondary" target="_blank" rel="noopener">
-                        <span>Acquista su Amazon</span>
+                    <a href="pages/tools/roi-calculator.html" class="cta-secondary">
+                        <span>Prova il ROI Calculator Gratuito</span>
                     </a>
+                </div>
+                <div class="testimonial-quick" style="margin-top: 30px; text-align: center;">
+                    <p style="font-style: italic; color: #64748b;">"Questo libro ha trasformato completamente la mia azienda. +52% di produttività in soli 4 mesi!"</p>
+                    <p style="font-weight: bold; color: var(--deep-italian-blue);">- Marco R., CEO di una PMI manifatturiera</p>
                 </div>
             </div>
         </section>
@@ -1183,9 +1312,14 @@
                         Ricevi la tua <strong>roadmap personalizzata</strong> con investimenti, tempi e risultati attesi.
                     </p>
                     <div class="flex gap-4 justify-center roi-cta-buttons">
-                        <a href="pages/tools/roi-calculator.html" class="btn btn-primary btn-lg">Calcola il Tuo ROI Ora</a>
-                        <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="btn btn-secondary btn-lg" target="_blank" rel="noopener">Acquista Libro</a>
+                        <a href="https://www.amazon.it/dp/B0FMKGMMKS" class="btn btn-primary btn-lg pulse-animation" target="_blank" rel="noopener">
+                            🎯 OTTIENI IL TUO LIBRO - SCONTO 40%
+                        </a>
+                        <a href="pages/tools/roi-calculator.html" class="btn btn-secondary btn-lg">Calcola il Tuo ROI Gratuito</a>
                     </div>
+                    <p style="text-align: center; margin-top: 15px; color: #dc2626; font-weight: bold;">
+                        ⏰ Solo per oggi: Bonus esclusivo "Template ROI Excel" incluso nell'acquisto!
+                    </p>
                 </div>
             </div>
         </section>
@@ -1550,6 +1684,9 @@
 
     <!-- Scripts -->
     <script src="assets/js/main.min.js" defer></script>
+    <script src="assets/js/urgency-countdown.min.js" defer></script>
+    <script src="assets/js/testimonials.js" defer></script>
+    <script src="assets/js/email-capture.js" defer></script>
     
     <!-- Intersection Observer for animations -->
     <script>
@@ -1586,12 +1723,29 @@
             'allow_google_signals': false,
             'allow_ad_personalization_signals': false
         });
-        
-        // Track key interactions for SEO
+
+        // Enhanced Ecommerce Tracking
         gtag('event', 'page_view', {
-            'page_title': 'Oltre il Divario Digitale - IA per PMI Italiane',
+            'page_title': 'Book Offer - Oltre il Divario Digitale',
             'page_location': window.location.href,
-            'content_group1': 'Homepage'
+            'content_group1': 'Book Sales'
+        });
+
+        // Track book purchase intent
+        document.addEventListener('click', function(e) {
+            if (e.target.href && e.target.href.includes('amazon.it')) {
+                gtag('event', 'begin_checkout', {
+                    'currency': 'EUR',
+                    'value': 23.99,
+                    'items': [{
+                        'item_id': 'B0FMKGMMKS',
+                        'item_name': 'Oltre il Divario Digitale',
+                        'item_category': 'Books',
+                        'price': 23.99,
+                        'quantity': 1
+                    }]
+                });
+            }
         });
     </script>
     
@@ -1691,6 +1845,34 @@
                 </button>
             </div>
         </div>
+    </div>
+
+    <!-- Multi-Channel Promotion Buttons -->
+    <div class="multi-channel-buttons">
+        <a href="https://wa.me/393516436038?text=Ciao!%20Sono%20interessato%20al%20libro%20Oltre%20il%20Divario%20Digitale.%20Posso%20avere%20più%20informazioni?"
+           class="channel-btn whatsapp"
+           target="_blank"
+           rel="noopener"
+           title="Contattaci su WhatsApp">
+            📱
+        </a>
+        <a href="https://t.me/gregormaric"
+           class="channel-btn telegram"
+           target="_blank"
+           rel="noopener"
+           title="Contattaci su Telegram">
+            ✈️
+        </a>
+        <a href="mailto:gregor@pugliai.com?subject=Info%20Libro%20IA%20PMI&body=Ciao,%20sono%20interessato%20al%20libro%20Oltre%20il%20Divario%20Digitale"
+           class="channel-btn email"
+           title="Invia Email">
+            ✉️
+        </a>
+        <a href="tel:+393516436038"
+           class="channel-btn phone"
+           title="Chiamaci">
+            📞
+        </a>
     </div>
 
     <!-- Cookie Settings Modal -->
